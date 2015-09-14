@@ -1,0 +1,85 @@
+﻿@using System.Web.Script.Serialization;
+@using System.Configuration;
+@{
+    string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+    
+}
+<script type="text/javascript">
+
+    var returnUrl ="@(Html.Raw(returnUrl))";
+    var returnUrl3 ="@(Html.Raw(returnUrl3))";
+
+
+</script>
+<div class="container">
+    <div class="row" >
+        <div class="col s12 l12 m12" ><h4>@(Html.Raw(ViewBag.Description))</h4></div>
+        <div class="col s12 l9 m9" style="padding-right:50px">
+            <div class="row">
+                <div class="col s12" id="rss">
+                </div>
+                @*<div class="col s3" id="add">
+                </div>*@
+            </div>
+            <div class="row">
+                @*<div class="col s12 l12 m12"><h3>Popular Comments</h3></div>*@
+                <div class="col s12" id="story">
+                </div>
+                <div class="col s12" id="wall">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 l12 m12"><h4>Picture Gallery</h4></div>
+                <div class="col s12" id="pc">
+                </div>
+            </div>
+
+        </div>
+        <div class="col s12 l3 m3">
+            <div class="row">
+                <div class="col s12" id="si">
+                </div>
+                <div class="col s12" id="story1">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col s12 l12 m12"><h4>Video Gallery</h4></div>
+    <div class="col s12" id="vc">
+    </div>
+</div>
+
+<script type="text/javascript">
+            var Bubbly = new BubblyCard();
+
+            var data =@(Html.Raw(ViewBag.Summary));
+            var ID ="@(Html.Raw(ViewBag.ID))";
+            var ReturnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
+            var ReturnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+            var SearchQuery ="@(Html.Raw(ViewBag.SearchQuery))";
+
+
+
+            Bubbly.showComments({ "campaignId": ID, "cardType": "COMMENTS", "returnUrl": returnUrl3, "styles": {}, "clientId": 100, "commentsType": "popular", "commentsTitle": "", "commentsQ": "", "commentsSkipBy": "1", "commentsLimit": "20" }, null, document.getElementById("wall"));
+
+            Bubbly.showRSSCard({ "campaignId": ID, "cardType": "RSSDESC", "returnUrl": ReturnUrl, "styles": {}, "clientId": 100, "rssCriteria": SearchQuery}, null, document.getElementById("rss"));
+            Bubbly.showCard({ "campaignId": ID, "cardType": "VC", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 }, data, document.getElementById("vc"));
+            Bubbly.showCard({ "campaignId":ID, "cardType": "IMGGALLERY", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 }, data, document.getElementById("pc"));
+            Bubbly.showCard({ "campaignId": ID, "cardType": "SIM", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 },data, document.getElementById("si"));
+           
+            //var paraStory ={
+            //    "campaignId" : "bolly_data3618",
+            //    "cardType" : "STORY",
+            //    "returnUrl" : "http://bharatmovies.social",
+            //    "styles" : { },
+            //    "title" : "",
+            //    "description" : "",
+            //    "clientId" : "100" ,
+            //    "storyId" : "story_default"
+            //};
+           // Bubbly.showStoryCards(paraStory,null,document.getElementById("story"));
+           // Bubbly.showStoryCards(paraStory,null,document.getElementById("story1"));
+</script>

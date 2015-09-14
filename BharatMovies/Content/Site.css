@@ -1,0 +1,64 @@
+﻿@media only screen and (min-width: 993px) {
+    .container {
+       padding: 0 .15rem;
+        width: 100%;
+    }
+}
+@media only screen and (min-width: 601px) {
+    .container {
+       padding: 0 .15rem;
+        width: 100%;
+    }
+}
+    
+.container {
+    padding: 0 .15rem;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 95%;
+}
+.card-panel {
+    padding: 0px;
+    margin: 0rem 0 1rem 0; 
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    background-clip: padding-box;
+    background-color: #000;
+   
+}
+/*.row .col {
+    float: left;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 0.25rem;
+}*/
+
+.social-card {
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0px 1rem;
+    background-color: #FFF;
+    border-radius: 0px;
+    border-style: solid;
+    border-color: #DFDFDD;
+    -moz-border-top-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    border-image: none;
+    border-width: 0px 0.1rem 0.1rem 0px;
+}
+.social-card {
+    position: relative;
+    overflow: hidden;
+    margin: 0.5rem 0 1rem 0;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.z-depth-3 {
+    -webkit-box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    -moz-box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}

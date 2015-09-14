@@ -1,0 +1,1101 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Super Awesome Social24x7</title>
+
+    <!-- CSS -->
+
+
+
+    <link href="stylesheets/materialize.min.css" rel="stylesheet" />
+    <link href="stylesheets/bubbly.css" rel="stylesheet" />
+    <link href="stylesheets/custom.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
+
+    <style>
+    @media only screen and (min-width: 993px)
+    .container {
+    width: 70%;
+    }
+    @media only screen and (min-width: 601px)
+    .container {
+    width: 85%;
+    }
+    .container {
+    padding: 0 1.5rem;
+    margin: 0 auto;
+    max-width: none;
+    width: 95%;
+    }
+
+    </style>
+
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script>
+(function(d, s, id) {
+			  var js, fjs = d.getElementsByTagName(s)[0];
+			  if (d.getElementById(id)) return;
+			  js = d.createElement(s); js.id = id;
+			  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
+			  fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));</script>
+    <header class="starter-template">
+
+        <div class="row social-main-nav">
+            <nav class="social-nav" style="position:fixed;top:0px;z-index:100;background-color:#cf1c2e;">
+                <div class="container nav-wrapper" style="width:1238px;">
+                    <a href="http://107.155.108.49:30000/" class="brand-logo"><img src="images/logo.png"></img><p>Your Unlimited Bollywood's Social Media Destination</p></a>
+                    <a href="http://107.155.108.49:30000/" data-activates="mobile-demo" class="button-collapse">
+                        <i class="material-icons">menu</i>
+                    </a>
+
+                    <ul class="socialmedia-nav">
+                        <li><i class="fa fa-facebook-square"></i></li>
+                        <li><i class="fa fa-twitter-square"></i></li>
+                        <li><i class="fa fa-envelope-square"></i></li>
+                        <li>
+                            <i class="fa fa-pinterest-square"></i>
+                        </li>
+                    </ul>
+
+                    <ul class="social-follower">
+                        <li>
+                            <a class="white-text" href="https://www.facebook.com/joash.c.pereira"></a>
+                            <div class="socialright col l6 s12 ">
+                                <div class="fb-follow" data-href="https://www.facebook.com/bharatmovies" data-layout="button_count" data-show-faces="true"></div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="white-text" href="https://twitter.com/bharatmovies"></a>
+                            <div class="socialright col l6 s12 ">
+                                <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <!--<li><a href="/">Bollywood</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/movies">Movies</a></li>-->
+
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <!--<li><a href="/">Bollywood</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/movies">Movies</a></li>-->
+                        <li><i class="fa fa-facebook-square"></i></li>
+                        <li><i class="fa fa-twitter-square"></i></li>
+                        <li><i class="fa fa-envelope-square"></i></li>
+                        <li><i class="fa fa-pinterest-square"></i></li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+
+    </header>
+
+    <script src="javascripts/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="javascripts/materialize.min.js"></script>
+    <script type="text/javascript" src="javascripts/dataBollyWoodFirstPage.js"></script>
+    <script type="text/javascript" src="javascripts/player_api.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.js"></script>
+    <script type="text/javascript" src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script type="text/javascript" src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script type="text/javascript" src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/vectormap-script.js"></script>
+    <script type='text/javascript' src='http://social24x7.azurewebsites.net/cdn/js/imagesloaded.pkgd.js?ver=4.2.2'></script>
+    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/morris.js"></script>
+    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/raphael.js"></script>
+    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/sparklines.js"></script>
+    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/chartjs/chart.min.js"></script>
+
+    <script src="javascripts/bubbly.min.js"></script>
+
+
+
+    <div>
+
+        <div class="starter-template">
+
+            <div class="main-bg" style="background-color:#262629; width:100%; padding:0px 0px;margin-bottom: 0px;">
+                <div class="container" style="width: 95% !important;">
+                    <div class="row panel">
+                        <div class="col s12 m12 l7 sub-panel" style="padding: 0px 0.0rem;">
+                            <div class="col s12 m12 l6 sub-panel3x2" style="width: 98.6%;height:501px; overflow:hidden;margin:5px !important;border: 0px solid #1F1F1F;padding: 0px 0rem;">
+                                <div id="pcardm"></div>
+                            </div>
+                            <div class="col s12 m6 l12 sub-panel3x2" style="width: 62.7%;height:247px; overflow:hidden;margin:5px !important;border: 0px solid #1F1F1F;">
+                                <div id="vcardm"></div>
+                            </div>
+                            <div class="col s12 m6 l12 sub-panel3x2" style="width: 34.24%;height:247px; overflow:hidden;margin:5px !important;border: 0px solid #1F1F1F;">
+                                <div id="pcardm1"></div>
+                            </div>
+                        </div>
+
+                        <div class="col s12 m12 l5 sub-panel" style="padding: 0px 0.0rem;">
+                            <div class="col s12 m6 l12 sub-panel3x2" style="width: 47.9%;height:247px; overflow:hidden;margin:5px !important;border: 0px solid #1F1F1F;">
+                                <div id="cardpanelm1"></div>
+                            </div>
+                            <div class="col s12 m6 l12 sub-panel3x2" style="width: 47.9%;height:247px; overflow:hidden;margin:5px !important;border: 0px solid #1F1F1F;">
+                                <div id="pcardm2"></div>
+                            </div>
+
+                            <div class="col s12 m6 l12 sub-panel3x2" style="width: 98%;height:502px; overflow:hidden;margin:5px !important;border: 0px solid #1F1F1F;">
+                                <div id="vcardm1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+	 $(document).ready(function(e) {
+		$(".button-collapse").sideNav();
+
+	});
+            </script>
+
+
+            <!---------------row start-------------------->
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6 l6">
+                        <div id="imagegallery"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="col s12">
+                            <div id="PCARD"></div>
+                        </div>
+                        <div class="col s12">
+                            <div id="small1"></div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="col s12">
+                            <div id="small2"></div>
+                        </div>
+                        <div class="col s12">
+                            <div id="PCARD2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!---------------row finish-------------------->
+            <div class="container">
+                <div class="row social-smallcard">
+                    <div class="col s12 m6 l3">
+                        <div id="small3"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="small4"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="small5"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="small6"></div>
+                    </div>
+                </div>
+            </div>
+            <!---------------row finish-------------------->
+            <!---------------row start-------------------->
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6 l3">
+                        <div id="small7"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="small8"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="small9"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="small10"></div>
+                    </div>
+                </div>
+            </div>
+            <!---------------row finish-------------------->
+            <!---------------row start-------------------->
+            <div class="container">
+                <div class="row social-news-travel-celeb-weird">
+                    <div class="col s12 m6 l3">
+                        <div class="divider social-divider"></div>
+                        <h6 style="color:#624F87;">Latest  <i class="fa fa-angle-right fa-lg"></i></i></h6>
+                        <ul>
+                            <li><div id="cardpanel1"></div></a></li>
+                            <li><div id="cardpanel2"></div></a></li>
+                            <li><div id="cardpanel3"></div></a></li>
+                            <li><div id="cardpanel4"></div></a></li>
+                        </ul>
+
+                        <div id="cardpanel2"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="divider social-divider"></div>
+                        <h6 style="color:blue;">What's Hot   <i class="fa fa-angle-right fa-lg"></i></i></h6>
+                        <ul>
+                            <li><div id="cardpanel5"></div></a></li>
+                            <li><div id="cardpanel6"></div></a></li>
+                            <li><div id="cardpanel7"></div></a></li>
+                            <li><div id="cardpanel8"></div></a></li>
+                        </ul>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="divider social-divider"></div>
+                        <h6 style="color:#08893E;">Fashion  <i class="fa fa-angle-right fa-lg"></i></i></h6>
+                        <ul>
+                            <li><div id="cardpanel9"></div></a></li>
+                            <li><div id="cardpanel10"></div></a></li>
+                            <li><div id="cardpanel11"></div></a></li>
+                            <li><div id="cardpanel12"></div></a></li>
+                        </ul>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="divider social-divider"></div>
+                        <h6 style="color:#AB1142;">Celebrity Spotted  <i class="fa fa-angle-right fa-lg"></i></i></h6>
+                        <ul>
+                            <li><div id="cardpanel13"></div></a></li>
+                            <li><div id="cardpanel14"></div></a></li>
+                            <li><div id="cardpanel15"></div></a></li>
+                            <li><div id="cardpanel16"></div></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!---------------row finish-------------------->
+            <!---------------row STRAT-------------------->
+            <div class="container">
+                <div class="row">
+                    <div class="divider social-divider" style="background-color:#624F87;"></div>
+                    <h6 style="color:#624F87;">Parties and Gossip   <i class="fa fa-angle-right fa-lg"></i></i></h6>
+                    <div class="col s12 m6 l3">
+                        <div id="smallvertical1"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="smallvertical2"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="smallvertical3"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="smallvertical4"></div>
+                    </div>
+                </div>
+            </div>
+            <!---------------row finish-------------------->
+            <div class="container">
+                <div class="row">
+                    <div class="divider social-divider" style="background-color:blue;"></div>
+                    <h6 style="color:blue;">Bollywood Events   <i class="fa fa-angle-right fa-lg"></i></i></h6>
+                    <div class="col s12 m6 l3">
+                        <div id="pcardm3"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="small15"></div>
+                        <div id="small16"></div>
+
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="small17"></div>
+                        <div id="small18"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="pcardm4"></div>
+                    </div>
+                </div>
+            </div>
+            <!---------------row STRAT-------------------->
+            <div class="container">
+                <div class="row">
+                    <div class="divider social-divider" style="background-color:#08893E;"></div>
+                    <h6 style="color:#08893E;">Television   <i class="fa fa-angle-right fa-lg"></i></i></h6>
+                    <div class="col s12 m6 l3">
+                        <div id="mediumM1"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="mediumM2"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="mediumM3"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="mediumM4"></div>
+                    </div>
+                </div>
+            </div>
+            <!---------------row finish-------------------->
+            <!---------------row STRAT-------------------->
+            <div class="container">
+                <div class="row">
+                    <div class="divider social-divider" style="background-color:#AB1142;"></div>
+                    <h6 style="color:#AB1142;">Releases This Month   <i class="fa fa-angle-right fa-lg"></i></i></h6>
+                    <div class="col s12 m6 l3">
+                        <div id="largeL1"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="largeL2"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="largeL3"></div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div id="largeL4"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      
+        <script type="text/javascript">
+
+   var serveripScript = "107.155.108.49";
+	console.log('serverip: ' + serveripScript);
+
+	var Bubbly = new BubblyCard();
+
+	var containerRSSImg = document.getElementById('imagegallery') ;
+	var paraImgGallery ={
+		  "campaignId" : "bolly_data3570",
+		  "cardType" : "IMGGALLERY",
+		  "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3570",
+		  "styles" : {} ,
+		  "clientId" : "100"
+ };
+
+	Bubbly.showCard(paraImgGallery,null,containerRSSImg);
+
+
+	var paraPCardM ={
+		"campaignId" : "bolly_data3618",
+		"cardType" : "PCARD",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3618",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'503px;', 'border-radius':'5px !important;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color':'rgba(255, 80, 10, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'503px !important;', 'border-radius':'5px !important;'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCardM1 ={
+		"campaignId" : "bolly_data3599",
+		"cardType" : "PCARD",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3599",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px !important;','color':'#fff;', 'bottom':'90px;', 'font-weight': 'normal !important;'},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;",},
+    	pictureStyle:{'height':'247px !important;'}} ,
+	    "clientId" : "100"
+	};
+
+
+	var paraPCardM2 ={
+		"campaignId" : "bolly_data3575",
+		"cardType" : "PCARD",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3575",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'247px !important'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCardM3 ={
+		"campaignId" : "bolly_data3638",
+		"cardType" : "PCARD",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3638",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'247px !important;'}} ,
+	    "clientId" : "100"
+	};
+
+
+	var paraPCardM4 ={
+		"campaignId" : "bolly_data3644",
+		"cardType" : "PCARD",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3644",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'247px !important;'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCard ={
+		"campaignId" : "bolly_data3615",
+		"cardType" : "PCARD",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3615",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'346px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'346px !important'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCard1 ={
+		"campaignId" : "bolly_data3579",
+		"cardType" : "PCARD",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3579",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'280px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;'},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "25%"},
+    	pictureStyle:{'height':'280px !important'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCard2 ={
+		"campaignId" : "bolly_data3579",
+		"cardType" : "PCARD",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3579",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'354px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;','bottom':'88px;'},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "88px;"},
+    	pictureStyle:{'height':'354px !important'}} ,
+	    "clientId" : "100"
+	};
+
+
+	Bubbly.showCard(paraPCardM,null,document.getElementById('pcardm'));
+	Bubbly.showCard(paraPCardM1,null,document.getElementById('pcardm1'));
+	Bubbly.showCard(paraPCardM2,null,document.getElementById('pcardm2'));
+	Bubbly.showCard(paraPCardM3,null,document.getElementById('pcardm3'));
+	Bubbly.showCard(paraPCardM4,null,document.getElementById('pcardm4'));
+	Bubbly.showCard(paraPCard,null,document.getElementById('PCARD'));
+	Bubbly.showCard(paraPCard1,null,document.getElementById('PCARD1'));
+	Bubbly.showCard(paraPCard2,null,document.getElementById('PCARD2'));
+
+	var paraSmall1 ={
+		"campaignId" : "bolly_data3616",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3616",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall2 ={
+		"campaignId" : "bolly_data3552",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3552",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall3 ={
+		"campaignId" : "bolly_data3612",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3612",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall4 ={
+		"campaignId" : "bolly_data3619",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3619",
+	    "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall5 ={
+		"campaignId" : "bolly_data3623",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3623",
+	    "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall6 ={
+		"campaignId" : "bolly_data3624",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3624",
+	    "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall7 ={
+		"campaignId" : "bolly_data3625",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3525",
+	    "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall8 ={
+		"campaignId" : "bolly_data229",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data229",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall9 ={
+		"campaignId" : "bolly_data231",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data231",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall10 ={
+		"campaignId" : "bolly_data167",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data167",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+
+	var paraSmall11 ={
+		"campaignId" : "bolly_data3596",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3596",
+	    "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall12={
+		"campaignId" : "bolly_data3393",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3393",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall13={
+		"campaignId" : "bolly_data3598",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3598",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall14 ={
+		"campaignId" : "bolly_data310",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data310",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall15 ={
+		"campaignId" : "bolly_data3643",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3643",
+	    "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall16={
+		"campaignId" : "bolly_data3645",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3645",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall17={
+		"campaignId" : "bolly_data3646",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3646",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmall18 ={
+		"campaignId" : "bolly_data3650",
+		"cardType" : "SMALL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3650",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	Bubbly.showCard(paraSmall1,null,document.getElementById('small1'));
+	Bubbly.showCard(paraSmall2,null,document.getElementById('small2'));
+	Bubbly.showCard(paraSmall3,null,document.getElementById('small3'));
+	Bubbly.showCard(paraSmall4,null,document.getElementById('small4'));
+	Bubbly.showCard(paraSmall5,null,document.getElementById('small5'));
+	Bubbly.showCard(paraSmall6,null,document.getElementById('small6'));
+	Bubbly.showCard(paraSmall7,null,document.getElementById('small7'));
+	Bubbly.showCard(paraSmall8,null,document.getElementById('small8'));
+	Bubbly.showCard(paraSmall9,null,document.getElementById('small9'));
+	Bubbly.showCard(paraSmall10,null,document.getElementById('small10'));
+
+
+	Bubbly.showCard(paraSmall11,null,document.getElementById('small11'));
+	Bubbly.showCard(paraSmall12,null,document.getElementById('small12'));
+	Bubbly.showCard(paraSmall13,null,document.getElementById('small13'));
+	Bubbly.showCard(paraSmall14,null,document.getElementById('small14'));
+
+	Bubbly.showCard(paraSmall15,null,document.getElementById('small15'));
+	Bubbly.showCard(paraSmall16,null,document.getElementById('small16'));
+	Bubbly.showCard(paraSmall17,null,document.getElementById('small17'));
+	Bubbly.showCard(paraSmall18,null,document.getElementById('small18'));
+
+
+
+
+	var paraSmallVertical1 ={
+		"campaignId" : "bolly_data3630",
+		"cardType" : "SMALLVERTICAL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3630",
+	    "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmallVertical2 ={
+		"campaignId" : "bolly_data3632",
+		"cardType" : "SMALLVERTICAL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3632",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmallVertical3 ={
+		"campaignId" : "bolly_data3634",
+		"cardType" : "SMALLVERTICAL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3634",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraSmallVertical4 ={
+		"campaignId" : "bolly_data3636",
+		"cardType" : "SMALLVERTICAL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3636",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+
+	Bubbly.showCard(paraSmallVertical1,null,document.getElementById('smallvertical1'));
+	Bubbly.showCard(paraSmallVertical2,null,document.getElementById('smallvertical2'));
+	Bubbly.showCard(paraSmallVertical3,null,document.getElementById('smallvertical3'));
+	Bubbly.showCard(paraSmallVertical4,null,document.getElementById('smallvertical4'));
+
+
+
+
+
+
+	var paraPanelCardM1 ={
+		"campaignId" : "bolly_data3606",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3606",
+	    "styles" : {cardStyle:{'background-color': '#017ede;','min-height': '247px;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '247px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','font-weight':'bold'}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCardM2 ={
+		"campaignId" : "bolly_data327",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data327",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2;','min-height': '58px;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','font-weight':'bold'}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+
+
+
+
+	Bubbly.showCard(paraPanelCardM1,null, document.getElementById('cardpanelm1'));
+	Bubbly.showCard(paraPanelCardM2,null, document.getElementById('cardpanelm2'));
+
+var paraPanelCard ={
+		"campaignId" : "bolly_data3639",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3639",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard1 ={
+		"campaignId" : "bolly_data3639",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3639",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard2 ={
+		"campaignId" : "bolly_data3651",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3651",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard3 ={
+		"campaignId" : "bolly_data3652",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3652",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard4 ={
+		"campaignId" : "bolly_data3653",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3653",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+
+	var paraPanelCard5 ={
+		"campaignId" : "bolly_data3649",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3649",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard6 ={
+		"campaignId" : "bolly_data3654",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3654",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard7 ={
+		"campaignId" : "bolly_data3655",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3655",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard8 ={
+		"campaignId" : "bolly_data3656",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3656",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+
+	var paraPanelCard9 ={
+		"campaignId" : "bolly_data3640",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3640",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard10 ={
+		"campaignId" : "bolly_data3641",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3641",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard11 ={
+		"campaignId" : "bolly_data3642",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3642",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard12 ={
+		"campaignId" : "bolly_data3647",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3647",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard13 ={
+		"campaignId" : "bolly_data3633",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3633",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard14 ={
+		"campaignId" : "bolly_data3635",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3635",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard15 ={
+		"campaignId" : "bolly_data3637",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3637",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard16 ={
+		"campaignId" : "bolly_data3631",
+		"cardType" : "CARDPANEL",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3631",
+	    "styles" : {cardStyle:{'background-color': '#7b1fa2','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+
+	Bubbly.showCard(paraPanelCard1,null, document.getElementById('cardpanel1'));
+	Bubbly.showCard(paraPanelCard2,null, document.getElementById('cardpanel2'));
+	Bubbly.showCard(paraPanelCard3,null, document.getElementById('cardpanel3'));
+	Bubbly.showCard(paraPanelCard4,null, document.getElementById('cardpanel4'));
+	Bubbly.showCard(paraPanelCard5,null, document.getElementById('cardpanel5'));
+	Bubbly.showCard(paraPanelCard6,null, document.getElementById('cardpanel6'));
+	Bubbly.showCard(paraPanelCard7,null, document.getElementById('cardpanel7'));
+	Bubbly.showCard(paraPanelCard8,null, document.getElementById('cardpanel8'));
+	Bubbly.showCard(paraPanelCard9,null, document.getElementById('cardpanel9'));
+	Bubbly.showCard(paraPanelCard10,null, document.getElementById('cardpanel10'));
+	Bubbly.showCard(paraPanelCard11,null, document.getElementById('cardpanel11'));
+	Bubbly.showCard(paraPanelCard12,null, document.getElementById('cardpanel12'));
+	Bubbly.showCard(paraPanelCard13,null, document.getElementById('cardpanel13'));
+	Bubbly.showCard(paraPanelCard14,null, document.getElementById('cardpanel14'));
+	Bubbly.showCard(paraPanelCard15,null, document.getElementById('cardpanel15'));
+	Bubbly.showCard(paraPanelCard16,null, document.getElementById('cardpanel16'));
+
+	var paraVCardM ={
+		"campaignId" : "bolly_data3621",
+		"cardType" : "VCARDAUTO",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3621",
+	    "styles" :{panelStyle:{'padding':'0px;','height':'247px !important;'},
+	    titleStyle:{
+	    'background-color': 'rgba(40, 180, 220, 0.85)!important;',
+        'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
+        subTitleStyle:{'background-color' : 'rgba(40, 180, 220, 0.85);',
+    	'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
+    	pictureStyle:{'width' : '100%;','height':'247px !important;','border' : 'none !important;',},
+    	iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}},
+	    "clientId" : "100"
+	};
+
+
+	var paraVCardM1 ={
+		"campaignId" : "bolly_data3570",
+		"cardType" : "VCARDAUTO",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3570",
+	    "styles" :{panelStyle:{'padding':'0px;','height':'502px;', 'margin': '0px;'},
+	    titleStyle:{
+	    'background-color':'rgba(145, 205, 40, 0.85)!important;',
+        'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);',
+    	'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
+    	pictureStyle:{'width' : '100%;','height':'502px !important;','border' : 'none !important;',},
+    	iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}},
+	    "clientId" : "100"
+	};
+
+	Bubbly.showCard(paraVCardM,null,document.getElementById('vcardm'));
+	Bubbly.showCard(paraVCardM1,null,document.getElementById('vcardm1'));
+
+
+	var paraMediumM1 ={
+		"campaignId" : "bolly_data3596",
+		"cardType" : "MEDIUM",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3596",
+	    "returnUrl3" : "http://"+serveripScript+":30000/comments",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraMediumM2 ={
+		"campaignId" : "bolly_data3393",
+		"cardType" : "MEDIUM",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3393",
+	    "returnUrl3" : "http://"+serveripScript+":30000/comments",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraMediumM3 ={
+		"campaignId" : "bolly_data3598",
+		"cardType" : "MEDIUM",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3598",
+	    "returnUrl3" : "http://"+serveripScript+":30000/comments",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraMediumM4 ={
+		"campaignId" : "bolly_data310",
+		"cardType" : "MEDIUM",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data310",
+	    "returnUrl3" : "http://"+serveripScript+":30000/comments",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+	Bubbly.showCard(paraMediumM1,null,document.getElementById('mediumM1'));
+	Bubbly.showCard(paraMediumM2,null,document.getElementById('mediumM2'));
+	Bubbly.showCard(paraMediumM3,null,document.getElementById('mediumM3'));
+	Bubbly.showCard(paraMediumM4,null,document.getElementById('mediumM4'));
+
+	var paraLargeL1 ={
+		"campaignId" : "bolly_data3628",
+		"cardType" : "LARGE",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3628",
+	    "returnUrl3" : "http://"+serveripScript+":30000/comments",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraLargeL2 ={
+		"campaignId" : "bolly_data3648",
+		"cardType" : "LARGE",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3648",
+	    "returnUrl3" : "http://"+serveripScript+":30000/comments",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraLargeL3 ={
+		"campaignId" : "bolly_data3627",
+		"cardType" : "LARGE",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3627",
+	    "returnUrl3" : "http://"+serveripScript+":30000/comments",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+
+	var paraLargeL4 ={
+		"campaignId" : "bolly_data3570",
+		"cardType" : "LARGE",
+	    "returnUrl" : "http://"+serveripScript+":30000/news?id=bolly_data3570",
+	    "returnUrl3" : "http://"+serveripScript+":30000/comments",
+	    "styles" : {} ,
+	    "clientId" : "100"
+	};
+	Bubbly.showCard(paraLargeL1,null,document.getElementById('largeL1'));
+	Bubbly.showCard(paraLargeL2,null,document.getElementById('largeL2'));
+	Bubbly.showCard(paraLargeL3,null,document.getElementById('largeL3'));
+	Bubbly.showCard(paraLargeL4,null,document.getElementById('largeL4'));
+
+        </script>
+
+
+    </div>
+
+   
+
+    <footer style="padding:0px !important; background-color:#cf1c2e;; color:white;height:60px; line-height:60px; text-align: center;">
+
+        <div class="footer">
+            <nav style="position:relative;bottom:0px;z-index:100;background-color:#cf1c2e;">
+                <div class="container">
+                    <p class="text-left" style="margin:0px !important;float:left;">&copy; Copyright 2015 The Awesome People of Social24x7</p>
+                    <a href="http://107.155.108.49:30000/" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <li><a href="/">Home </a></li>
+                        <li><a href="/contactus">Advertise </a></li>
+                        <li><a href="/pnp">Privacy Policy</a></li>
+                        <li><a href="/rcv">Report Copyright violation</a></li>
+                        <li><a href="/contactus">Contact Us</a></li>
+                    </ul>
+                    <ul class="side-nav" id="mobile-demo">
+                        <li><a href="/">Bollywood</a></li>
+                        <li><a href="/sports">Sports</a></li>
+                        <li><a href="/movies">Movies</a></li>
+
+                    </ul>
+                </div>
+            </nav>
+        </div>
+       
+
+    </footer>
+
+</body>
+</html>

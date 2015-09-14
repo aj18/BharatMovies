@@ -1,0 +1,50 @@
+﻿
+@using System.Web.Script.Serialization;
+@using System.Configuration;
+@{
+    string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+
+}
+<script type="text/javascript">
+
+    var returnUrl ="@(Html.Raw(returnUrl))";
+    var returnUrl3 ="@(Html.Raw(returnUrl3))";
+
+
+</script>
+<div class="row">
+    <div class="col s12 l12 m12"><h4>@(Html.Raw(ViewBag.Description))</h4></div>
+    <div class="col s12 l9 m9">
+
+        <div class="row">
+
+            <div class="col s12" id="wall">
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col s12 l3 m3">
+        <div class="row">
+            <div class="col s12" id="si">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+        var Bubbly = new BubblyCard();
+
+        var data =@(Html.Raw(ViewBag.Summary));
+        var ID ="@(Html.Raw(ViewBag.ID))";
+        var q = "@(Html.Raw(ViewBag.q))";
+        var type ="@(Html.Raw(ViewBag.type))" ;
+        var ReturnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
+        var ReturnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+
+
+        Bubbly.showComments({ "campaignId": ID, "cardType": "COMMENTS", "returnUrl": ReturnUrl3, "styles": {}, "clientId": 100, "commentsType":type, "commentsTitle": "", "commentsQ": q, "commentsSkipBy": "1", "commentsLimit": "20" }, null, document.getElementById("wall"));
+
+        Bubbly.showCard({ "campaignId": ID, "cardType": "SIM", "returnUrl":ReturnUrl3, "styles": {}, "clientId": 100 },data, document.getElementById("si"));
+</script>
