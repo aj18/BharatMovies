@@ -4,10 +4,10 @@
     string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
     string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
     ViewBag.Title = "Index";
-    JavaScriptSerializer serializer = new JavaScriptSerializer();
-    dynamic templatedata = serializer.Deserialize<object>(ViewBag.Summary);
+    //JavaScriptSerializer serializer = new JavaScriptSerializer();
+    //dynamic templatedata = serializer.Deserialize<object>(ViewBag.Summary);
 }
-@foreach (var item in templatedata["layout"])
+@*@foreach (var item in templatedata["layout"])
 {
     <h2>@(Html.Raw(item["id"]))</h2>
     foreach (var itemdetail in item["collection"])
@@ -15,7 +15,7 @@
         <h2>@(Html.Raw(itemdetail["cardType"]))</h2>
         <h2>@(Html.Raw(itemdetail["campaignId"]))</h2>
     }
-}
+}*@
 <script type="text/javascript">
 
     var returnUrl ="@(Html.Raw(returnUrl))";
@@ -263,6 +263,888 @@
 
 <script type="text/javascript">
 
+  
+	var Bubbly = new BubblyCard();
+
+	var containerRSSImg = document.getElementById('imagegallery') ;
+	var paraImgGallery ={
+		  "campaignId" : "bolly_data3736",
+		  "cardType" : "IMGGALLERY",
+		  "returnUrl": returnUrl+"?id=bolly_data3736",
+		  "styles" : {} ,
+		  "clientId" : "100"
+ };
+
+	Bubbly.showCard(paraImgGallery,null,containerRSSImg);
+
+
+	var paraPCardM ={
+		"campaignId" : "bolly_data3703",
+		"cardType" : "PCARD",
+		"returnUrl": returnUrl+"?id=bolly_data3703",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'503px;', 'border-radius':'5px !important;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color':'rgba(255, 80, 10, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'503px !important;', 'border-radius':'5px !important;'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCardM1 ={
+		"campaignId" : "bolly_data3707",
+		"cardType" : "PCARD",
+		"returnUrl": returnUrl+"?id=bolly_data3707",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px !important;','color':'#fff;', 'bottom':'90px;', 'font-weight': 'normal !important;'},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;",},
+    	pictureStyle:{'height':'247px !important;'}} ,
+	    "clientId" : "100"
+	};
+
+
+	var paraPCardM2 ={
+		"campaignId" : "bolly_data3704",
+		"cardType" : "PCARD",
+		"returnUrl": returnUrl+"?id=bolly_data3704",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'240px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'240px !important'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCardM3 ={
+		"campaignId" : "bolly_data3638",
+		"cardType" : "PCARD",
+		"returnUrl": returnUrl+"?id=bolly_data3638",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'247px !important;'}} ,
+	    "clientId" : "100"
+	};
+
+
+	var paraPCardM4 ={
+		"campaignId" : "bolly_data3644",
+		"cardType" : "PCARD",
+		"returnUrl": returnUrl+"?id=bolly_data3644",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'247px !important;'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCard ={
+		"campaignId" : "bolly_data3737",
+		"cardType" : "PCARD",
+		"returnUrl": returnUrl+"?id=bolly_data3737",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'346px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;',
+		'bottom':'90px;',},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+    	pictureStyle:{'height':'346px !important'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCard1 ={
+		"campaignId" : "bolly_data3579",
+		"cardType" : "PCARD",
+		"returnUrl": returnUrl+"?id=bolly_data3579",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'280px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;'},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "25%"},
+    	pictureStyle:{'height':'280px !important'}} ,
+	    "clientId" : "100"
+	};
+
+	var paraPCard2 ={
+		"campaignId" : "bolly_data3579",
+		"cardType" : "PCARD",
+		"returnUrl": returnUrl+"?id=bolly_data3579",
+	    "styles" : {panelStyle:{'padding':'0px;','height':'354px;'},
+	    titleStyle:{
+		"position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;','bottom':'88px;'},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "88px;"},
+    	pictureStyle:{'height':'354px !important'}} ,
+	    "clientId" : "100"
+	};
+
+
+	Bubbly.showCard(paraPCardM,null,document.getElementById('pcardm'));
+	Bubbly.showCard(paraPCardM1,null,document.getElementById('pcardm1'));
+	Bubbly.showCard(paraPCardM2,null,document.getElementById('pcardm2'));
+	Bubbly.showCard(paraPCardM3,null,document.getElementById('pcardm3'));
+	Bubbly.showCard(paraPCardM4,null,document.getElementById('pcardm4'));
+	Bubbly.showCard(paraPCard,null,document.getElementById('PCARD'));
+	Bubbly.showCard(paraPCard1,null,document.getElementById('PCARD1'));
+	Bubbly.showCard(paraPCard2,null,document.getElementById('PCARD2'));
+
+	var paraSmall1 ={
+		  "campaignId" : "bolly_data3732",
+		  "cardType" : "SMALL",
+		  "returnUrl": returnUrl,
+		   "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall2 ={
+		"campaignId" : "bolly_data3552",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+		"styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall3 ={
+		"campaignId" : "bolly_data3735",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall4 ={
+		"campaignId" : "bolly_data3619",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall5 ={
+		"campaignId" : "bolly_data3705",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall6 ={
+		"campaignId" : "bolly_data3624",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall7 ={
+		"campaignId" : "bolly_data3625",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall8 ={
+		"campaignId" : "bolly_data3708",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall9 ={
+		"campaignId" : "bolly_data231",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall10 ={
+		"campaignId" : "bolly_data167",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+
+	var paraSmall11 ={
+		"campaignId" : "bolly_data3596",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall12={
+		"campaignId" : "bolly_data3393",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall13={
+		"campaignId" : "bolly_data3598",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall14 ={
+		"campaignId" : "bolly_data310",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall15 ={
+		"campaignId" : "bolly_data3643",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall16={
+		"campaignId" : "bolly_data3645",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall17={
+		"campaignId" : "bolly_data3646",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	var paraSmall18 ={
+		"campaignId" : "bolly_data3650",
+		"cardType" : "SMALL",
+		"returnUrl": returnUrl,
+			  "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+			 mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+			 smallBoxStyle :{'background-color': '#ffffff;'} ,
+			 cardTitleAnchoStyle :{'color':'#FFAB40'},
+			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+			 actionStyle : {}
+		   } ,
+			 "clientId" : "100"
+		 };
+
+	Bubbly.showCard(paraSmall1,null,document.getElementById('small1'));
+	Bubbly.showCard(paraSmall2,null,document.getElementById('small2'));
+	Bubbly.showCard(paraSmall3,null,document.getElementById('small3'));
+	Bubbly.showCard(paraSmall4,null,document.getElementById('small4'));
+	Bubbly.showCard(paraSmall5,null,document.getElementById('small5'));
+	Bubbly.showCard(paraSmall6,null,document.getElementById('small6'));
+	Bubbly.showCard(paraSmall7,null,document.getElementById('small7'));
+	Bubbly.showCard(paraSmall8,null,document.getElementById('small8'));
+	Bubbly.showCard(paraSmall9,null,document.getElementById('small9'));
+	Bubbly.showCard(paraSmall10,null,document.getElementById('small10'));
+
+
+	Bubbly.showCard(paraSmall11,null,document.getElementById('small11'));
+	Bubbly.showCard(paraSmall12,null,document.getElementById('small12'));
+	Bubbly.showCard(paraSmall13,null,document.getElementById('small13'));
+	Bubbly.showCard(paraSmall14,null,document.getElementById('small14'));
+
+	Bubbly.showCard(paraSmall15,null,document.getElementById('small15'));
+	Bubbly.showCard(paraSmall16,null,document.getElementById('small16'));
+	Bubbly.showCard(paraSmall17,null,document.getElementById('small17'));
+	Bubbly.showCard(paraSmall18,null,document.getElementById('small18'));
+
+	var paraSmallVertical1 ={
+	  "campaignId" : "bolly_data3630",
+	  "cardType" : "SMALLVERTICAL",
+	  "returnUrl": returnUrl+"?id=bolly_data3630",
+		  "styles" : {cardStyle : {'background-color': '#624f87;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);' ,'height': '260px !important;'},
+		 cardImageStyle : {'height':'200px;'},
+		 cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','bottom':'0px','padding':'5px;', 'background-color': '#909542;'},
+		 cardTitleAnchoStyle :{'color':'#ffffff'},
+		 descriptionStyle : {'color': '#ffffff !important'},
+		 actionStyle : {}
+	   } ,
+		 "clientId" : "100"
+	 };
+
+	 var paraSmallVertical2 ={
+	  "campaignId" : "bolly_data3632",
+	  "cardType" : "SMALLVERTICAL",
+	  "returnUrl": returnUrl+"?id=bolly_data3632",
+		  "styles" : {cardStyle : {'background-color': '#624f87;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);' ,'height': '260px !important;'},
+		 cardImageStyle : {'height':'200px;'},
+		 cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','bottom':'0px','padding':'5px;', 'background-color': '#909542;'},
+		 cardTitleAnchoStyle :{'color':'#ffffff'},
+		 descriptionStyle : {'color': '#ffffff !important'},
+		 actionStyle : {}
+	   } ,
+		 "clientId" : "100"
+	 };
+
+	 var paraSmallVertical3 ={
+	  "campaignId" : "bolly_data3634",
+	  "cardType" : "SMALLVERTICAL",
+	  "returnUrl": returnUrl+"?id=bolly_data3634",
+		  "styles" : {cardStyle : {'background-color': '#624f87;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);' ,'height': '260px !important;'},
+		 cardImageStyle : {'height':'200px;'},
+		 cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','bottom':'0px','padding':'5px;', 'background-color': '#909542;'},
+		 cardTitleAnchoStyle :{'color':'#ffffff'},
+		 descriptionStyle : {'color': '#ffffff !important'},
+		 actionStyle : {}
+	   } ,
+		 "clientId" : "100"
+	 };
+
+	var paraSmallVertical4 ={
+	  "campaignId" : "bolly_data3636",
+	  "cardType" : "SMALLVERTICAL",
+	  "returnUrl": returnUrl+"?id=bolly_data3636",
+		  "styles" : {cardStyle : {'background-color': '#624f87;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);' ,'height': '260px !important;'},
+		 cardImageStyle : {'height':'200px;'},
+		 cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','bottom':'0px','padding':'5px;', 'background-color': '#909542;'},
+		 cardTitleAnchoStyle :{'color':'#ffffff'},
+		 descriptionStyle : {'color': '#ffffff !important'},
+		 actionStyle : {}
+	   } ,
+		 "clientId" : "100"
+	 };
+
+
+	Bubbly.showCard(paraSmallVertical1,null,document.getElementById('smallvertical1'));
+	Bubbly.showCard(paraSmallVertical2,null,document.getElementById('smallvertical2'));
+	Bubbly.showCard(paraSmallVertical3,null,document.getElementById('smallvertical3'));
+	Bubbly.showCard(paraSmallVertical4,null,document.getElementById('smallvertical4'));
+
+
+
+
+
+
+	var paraPanelCardM1 ={
+		"campaignId" : "bolly_data3733",
+		"cardType" : "CARDPANEL",
+		"returnUrl": returnUrl+"?id=bolly_data3733",
+	    "styles" : {cardStyle:{'background-color': '#017ede;','min-height': '247px;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '247px !important;', 'display':'table-cell;'}
+	                ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'left;','font-size':'18px;','font-weight':'bold'}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCardM2 ={
+		"campaignId" : "bolly_data327",
+		"cardType" : "CARDPANEL",
+		"returnUrl": returnUrl+"?id=bolly_data327",
+	    "styles" : {cardStyle:{'background-color': '#ffffff;','min-height': '58px;',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '72px !important;'}
+	                ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','font-weight':'bold'}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+
+
+
+
+	Bubbly.showCard(paraPanelCardM1,null, document.getElementById('cardpanelm1'));
+	Bubbly.showCard(paraPanelCardM2,null, document.getElementById('cardpanelm2'));
+
+var paraPanelCard ={
+		"campaignId" : "bolly_data3639",
+		"cardType" : "CARDPANEL",
+		"returnUrl": returnUrl+"?id=bolly_data3639",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '247px',
+	                'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '247px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'center;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard1 ={
+		"campaignId" : "bolly_data3639",
+		"cardType" : "CARDPANEL",
+		"returnUrl": returnUrl+"?id=bolly_data3639",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard2 ={
+		"campaignId" : "bolly_data3651",
+		"cardType" : "CARDPANEL",
+		"returnUrl": returnUrl+"?id=bolly_data3651",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard3 ={
+		"campaignId" : "bolly_data3652",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3652",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard4 ={
+		"campaignId" : "bolly_data3653",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3653",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+
+	var paraPanelCard5 ={
+		"campaignId" : "bolly_data3649",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3649",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard6 ={
+		"campaignId" : "bolly_data3654",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3654",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard7 ={
+		"campaignId" : "bolly_data3655",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3655",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard8 ={
+		"campaignId" : "bolly_data3656",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3656",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+
+	var paraPanelCard9 ={
+		"campaignId" : "bolly_data3640",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3640",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard10 ={
+		"campaignId" : "bolly_data3641",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3641",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard11 ={
+		"campaignId" : "bolly_data3642",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3642",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard12 ={
+		"campaignId" : "bolly_data3647",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3647",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard13 ={
+		"campaignId" : "bolly_data3633",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3633",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+	var paraPanelCard14 ={
+		"campaignId" : "bolly_data3635",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3635",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard15 ={
+		"campaignId" : "bolly_data3637",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3637",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+	var paraPanelCard16 ={
+		"campaignId" : "bolly_data3631",
+		"cardType" : "CARDPANEL",
+	    "returnUrl": returnUrl+"?id=bolly_data3631",
+	    "styles" : {cardStyle:{'background-color': '#ffffff','min-height': '58px', 'width' : '33% !important;',
+	                'text-align':'left;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+	            	'vertical-align': 'middle;','height': '58px !important;', 'display': 'table-cell !important;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+	    "clientId" : "100"
+	};
+
+
+	Bubbly.showCard(paraPanelCard1,null, document.getElementById('cardpanel1'));
+	Bubbly.showCard(paraPanelCard2,null, document.getElementById('cardpanel2'));
+	Bubbly.showCard(paraPanelCard3,null, document.getElementById('cardpanel3'));
+	Bubbly.showCard(paraPanelCard4,null, document.getElementById('cardpanel4'));
+	Bubbly.showCard(paraPanelCard5,null, document.getElementById('cardpanel5'));
+	Bubbly.showCard(paraPanelCard6,null, document.getElementById('cardpanel6'));
+	Bubbly.showCard(paraPanelCard7,null, document.getElementById('cardpanel7'));
+	Bubbly.showCard(paraPanelCard8,null, document.getElementById('cardpanel8'));
+	Bubbly.showCard(paraPanelCard9,null, document.getElementById('cardpanel9'));
+	Bubbly.showCard(paraPanelCard10,null, document.getElementById('cardpanel10'));
+	Bubbly.showCard(paraPanelCard11,null, document.getElementById('cardpanel11'));
+	Bubbly.showCard(paraPanelCard12,null, document.getElementById('cardpanel12'));
+	Bubbly.showCard(paraPanelCard13,null, document.getElementById('cardpanel13'));
+	Bubbly.showCard(paraPanelCard14,null, document.getElementById('cardpanel14'));
+	Bubbly.showCard(paraPanelCard15,null, document.getElementById('cardpanel15'));
+	Bubbly.showCard(paraPanelCard16,null, document.getElementById('cardpanel16'));
+
+	var paraVCardM ={
+		"campaignId" : "bolly_data3706",
+		"cardType" : "VCARDAUTO",
+	    "returnUrl": returnUrl+"?id=bolly_data3706",
+	    "styles" :{panelStyle:{'padding':'0px;','height':'247px !important;'},
+	    titleStyle:{
+	    'background-color': 'rgba(40, 180, 220, 0.85)!important;',
+        'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
+		cardTitleAnchoStyle :{'color':'#000000'},
+        subTitleStyle:{'background-color' : '#A6A6A6;',
+    	'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
+    	pictureStyle:{'width' : '100%;','height':'247px !important;','border' : 'none !important;',},
+    	iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}},
+	    "clientId" : "100"
+	};
+
+
+	var paraVCardM1 ={
+		"campaignId" : "bolly_data3705",
+		"cardType" : "VCARDAUTO",
+	    "returnUrl": returnUrl+"?id=bolly_data3705",
+	    "styles" :{panelStyle:{'padding':'0px;','height':'502px;', 'margin': '0px;'},
+	    titleStyle:{
+	    'background-color':'rgba(145, 205, 40, 0.85)!important;',
+        'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
+		cardTitleAnchoStyle :{'color':'#000000'},
+        subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);',
+    	'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
+    	pictureStyle:{'width' : '100%;','height':'502px !important;','border' : 'none !important;',},
+    	iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}},
+	    "clientId" : "100"
+	};
+
+	Bubbly.showCard(paraVCardM,null,document.getElementById('vcardm'));
+	Bubbly.showCard(paraVCardM1,null,document.getElementById('vcardm1'));
+
+
+	var paraMediumM1 ={
+		"campaignId" : "bolly_data3596",
+		"cardType" : "MEDIUM",
+	    "returnUrl": returnUrl+"?id=bolly_data3596",
+	    "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+     cardImageStyle : {},
+     cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+     cardTitleAnchoStyle :{'color':'#ffffff'},
+     descriptionStyle : {'color': '#000000 !important'},
+     actionStyle : {}
+   } ,
+     "clientId" : "100"
+ };
+
+	var paraMediumM2 ={
+		"campaignId" : "bolly_data3393",
+		"cardType" : "MEDIUM",
+	    "returnUrl": returnUrl+"?id=bolly_data3393",
+	    "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+     cardImageStyle : {},
+     cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+     cardTitleAnchoStyle :{'color':'#ffffff'},
+     descriptionStyle : {'color': '#000000 !important'},
+     actionStyle : {}
+   } ,
+     "clientId" : "100"
+ };
+
+	var paraMediumM3 ={
+		"campaignId" : "bolly_data3598",
+		"cardType" : "MEDIUM",
+	    "returnUrl": returnUrl+"?id=bolly_data3598",
+	    "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+     cardImageStyle : {},
+     cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+     cardTitleAnchoStyle :{'color':'#ffffff'},
+     descriptionStyle : {'color': '#000000 !important'},
+     actionStyle : {}
+   } ,
+     "clientId" : "100"
+ };
+
+	var paraMediumM4 ={
+		"campaignId" : "bolly_data310",
+		"cardType" : "MEDIUM",
+	    "returnUrl": returnUrl+"?id=bolly_data310",
+	    "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+     cardImageStyle : {},
+     cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+     cardTitleAnchoStyle :{'color':'#ffffff'},
+     descriptionStyle : {'color': '#000000 !important'},
+     actionStyle : {}
+   } ,
+     "clientId" : "100"
+ };
+	Bubbly.showCard(paraMediumM1,null,document.getElementById('mediumM1'));
+	Bubbly.showCard(paraMediumM2,null,document.getElementById('mediumM2'));
+	Bubbly.showCard(paraMediumM3,null,document.getElementById('mediumM3'));
+	Bubbly.showCard(paraMediumM4,null,document.getElementById('mediumM4'));
+
+	var paraLargeL1 ={
+		"campaignId" : "bolly_data3628",
+		"cardType" : "LARGE",
+		"returnUrl": returnUrl+"?id=bolly_data3628",
+		"returnUrl3": returnUrl3,
+	    "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+     cardImageStyle : {},
+     cardTitleStyle : {'color': '#AB1142 !important','text-align':'center;','font-size':'18px;'},
+     cardTitleAnchoStyle :{'color':'#AB1142'},
+     descriptionStyle : {'color': '#000000 !important'},
+     actionStyle : {}
+   } ,
+     "clientId" : "100"
+ };
+
+	var paraLargeL2 ={
+		"campaignId" : "bolly_data3648",
+		"cardType" : "LARGE",
+		"returnUrl": returnUrl+"?id=bolly_data3648",
+		"returnUrl3": returnUrl3,
+	    "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+     cardImageStyle : {},
+     cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+     cardTitleAnchoStyle :{'color':'#AB1142'},
+     descriptionStyle : {'color': '#000000 !important'},
+     actionStyle : {}
+   } ,
+     "clientId" : "100"
+ };
+
+	var paraLargeL3 ={
+		"campaignId" : "bolly_data3627",
+		"cardType" : "LARGE",
+		"returnUrl": returnUrl+"?id=bolly_data3627",
+		"returnUrl3": returnUrl3,
+	    "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+     cardImageStyle : {},
+     cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+     cardTitleAnchoStyle :{'color':'#AB1142'},
+     descriptionStyle : {'color': '#000000 !important'},
+     actionStyle : {}
+   } ,
+     "clientId" : "100"
+ };
+
+	var paraLargeL4 ={
+		"campaignId" : "bolly_data3570",
+		"cardType" : "LARGE",
+		"returnUrl": returnUrl+"?id=bolly_data3570",
+		"returnUrl3": returnUrl3,
+	    "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+     cardImageStyle : {},
+     cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+     cardTitleAnchoStyle :{'color':'#AB1142'},
+     descriptionStyle : {'color': '#000000 !important'},
+     actionStyle : {}
+   } ,
+     "clientId" : "100"
+ };
+	Bubbly.showCard(paraLargeL1,null,document.getElementById('largeL1'));
+	Bubbly.showCard(paraLargeL2,null,document.getElementById('largeL2'));
+	Bubbly.showCard(paraLargeL3,null,document.getElementById('largeL3'));
+	Bubbly.showCard(paraLargeL4,null,document.getElementById('largeL4'));
+
+</script> 
+
+@*<script type="text/javascript">
+
    
 
 	var Bubbly = new BubblyCard();
@@ -272,9 +1154,18 @@
 		  "campaignId" : "bolly_data3570",
 		  "cardType" : "IMGGALLERY",
 		  "returnUrl" : returnUrl+"?id=bolly_data3570",
-		  "styles" : {} ,
+		  "styles": {
+		      cardStyle: { 'padding': '0px;', 'height': '475px;' },
+		      sliderStyle: { 'padding': '0px;', 'height': '475px !important;' },
+		      slidesStyle: { 'padding': '0px;', 'height': '475px !important;' },
+		      cardTitleStyle: { 'z-index': '10 !important', 'bottom': '80px !important;' },
+		      cardSubTitleStyle: { 'z-index': '9999 !important', 'bottom': '70px !important;' },
+		  },
 		  "clientId" : "100"
  };
+
+
+	
 
 	Bubbly.showCard(paraImgGallery,null,containerRSSImg);
 
@@ -1035,5 +1926,5 @@ var paraPanelCard ={
 	Bubbly.showCard(paraLargeL3,null,document.getElementById('largeL3'));
 	Bubbly.showCard(paraLargeL4,null,document.getElementById('largeL4'));
 
-</script>
+</script>*@
 

@@ -44,99 +44,77 @@
 <body>
     <div id="fb-root"></div>
     <script>
-(function(d, s, id) {
-			  var js, fjs = d.getElementsByTagName(s)[0];
-			  if (d.getElementById(id)) return;
-			  js = d.createElement(s); js.id = id;
-			  js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.4";
-			  fjs.parentNode.insertBefore(js, fjs);
-			}(document, 'script', 'facebook-jssdk'));</script>
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_IN/sdk.js#xfbml=1&appId=224596094404149&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));</script>
+
     <header class="starter-template">
-        <div class="navbar-fixed">
-            <nav style="background-color:#cf1c2e;">
-                <div class="nav-wrapper container" >
+        <div class="row social-main-nav">
+            <nav class="social-nav">
+                <div class="container nav-wrapper" style="">
+                    <a href="@Url.Action("Index", "Home")" class="brand-logo"><img src=" ~/Images/logo.png" /></a>
+                    <p>Your Unlimited Bollywood's Social Media Destination</p>
+                    <a href="@Url.Action("Index", "Home")"
+                        data-activates="mobile-demo" class="button-collapse">
+                        <i class="material-icons">menu</i>
+                    </a>
 
-
-                    <a href="@Url.Action("Index", "Home")" class="brand-logo"><img src="~/Images/logo.png" /></a>
-                    <ul class="right hide-on-med-and-down">
-                        @*<li style="padding-bottom:50px">
-                          
-                          
-                            <div  class="fb-follow" data-href="https://www.facebook.com/bharatmovies" data-layout="button_count" data-show-faces="true"></div>   
-                           
+                    <ul class="socialmedia-nav">
+                        <li><a href="https://www.facebook.com/bharatmovies"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="https://twitter.com/bharatmovies"><i class="fa fa-twitter-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope-square"></i></a></li>
+                        <li>
+                            <a href="https://www.pinterest.com/bharatmovies/"><i class="fa fa-pinterest-square"></a></i>
                         </li>
-                        <li style="padding-bottom:50px">
-                            <a class="white-text" href="https://twitter.com/bharatmovies"></a>
-                          
-                                <a href="https://twitter.com/share" class="twitter-share-button"></a>
-                                <script>!function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https'; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = p + '://platform.twitter.com/widgets.js'; fjs.parentNode.insertBefore(js, fjs); } }(document, 'script', 'twitter-wjs');</script>
-                         
-                        </li>*@
-                        <li style="padding-left:15px;"><i class="fa fa-facebook-square  fa-2x"></i></li>
-                        <li style="padding-left:15px;"><i class="fa fa-twitter-square   fa-2x"></i></li>
-                        <li style="padding-left:15px;"><i class="fa fa-envelope-square  fa-2x"></i></li>
-                        <li style="padding-left:15px;"><i class="fa fa-pinterest-square  fa-2x"></i></li>
+                    </ul>
+
+                    <ul class="social-follower"  >
+                        <li>
+                            <a class="white-text" href="https://www.facebook.com/bharatmovies"></a>
+                            <div class="socialright col l6 s12 ">
+                                <div class="fb-like" data-href="https://www.facebook.com/bharatmovies" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+
+                            </div>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/bharatmovies" class="twitter-follow-button" data-show-count="vertical" data-width="100px"
+                               data-count="vertical" data-align="right" data-show-screen-name="false" data-lang="en"></a>
+                            <script>
+                        !function (d, s, id) {
+                            var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id))
+                            { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); }
+                        } (document, "script", "twitter-wjs");
+                            </script>
+
+                        </li>
+                    </ul>
+
+                    <ul id="nav-mobile" class="hide-on-med-and-down">
+                        <!--<li><a href="/">Bollywood</a></li>
+                    <li><a href="/sports">Sports</a></li>
+                    <li><a href="/movies">Movies</a></li>-->
+
                     </ul>
                     <ul class="side-nav" id="mobile-demo">
-                        <li><i class="fa fa-facebook-square"></i></li>
-                        <li><a href="badges.html">Components</a></li>
-                        <li><a href="collapsible.html">Javascript</a></li>
-                        <li><a href="mobile.html">Mobile</a></li>
+                        <!--<li><a href="/">Bollywood</a></li>
+                    <li><a href="/sports">Sports</a></li>
+                    <li><a href="/movies">Movies</a></li>-->
+                        <li><a href="https://www.facebook.com/bharatmovies"><i class="fa fa-facebook-square"></i></a></li>
+                        <li><a href="https://twitter.com/bharatmovies"><i class="fa fa-twitter-square"></i></a></li>
+                        <li><a href="#"><i class="fa fa-envelope-square"></i></a></li>
+                        <li>
+                            <a href="https://www.pinterest.com/bharatmovies/"><i class="fa fa-pinterest-square"></a></i>
+                        </li>
+
                     </ul>
                 </div>
             </nav>
         </div>
-                    @*<div class="row social-main-nav">
-                            <nav class="social-nav" style="position:fixed;top:0px;z-index:100;background-color:#cf1c2e;">
-                                <div class="nav-wrapper">
-                                    <a href="http://107.155.108.49:30000/" class="brand-logo">
-                                        <img src="~/Images/logo.png" /><p>Your Unlimited Bollywood's Social Media Destination</p></a>
-                                    <a href="http://107.155.108.49:30000/" data-activates="mobile-demo" class="button-collapse">
-                                        <i class="material-icons">menu</i>
-                                    </a>
-
-                                    <ul class="socialmedia-nav">
-                                        <li><i class="fa fa-facebook-square"></i></li>
-                                        <li><i class="fa fa-twitter-square"></i></li>
-                                        <li><i class="fa fa-envelope-square"></i></li>
-                                        <li><i class="fa fa-pinterest-square"></i></li>
-                                    </ul>
-
-                                    <ul class="social-follower">
-                                        <li>
-                                            <a class="white-text" href="https://www.facebook.com/joash.c.pereira"></a>
-                                            <div class="socialright col l6 s12 ">
-                                                <div class="fb-follow" data-href="https://www.facebook.com/bharatmovies" data-layout="button_count" data-show-faces="true"></div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a class="white-text" href="https://twitter.com/bharatmovies"></a>
-                                            <div class="socialright col l6 s12 ">
-                                                <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-                                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
-                                            </div>
-                                        </li>
-                                    </ul>
-
-                                    <ul id="nav-mobile" class="hide-on-med-and-down">
-                                        <!--<li><a href="/">Bollywood</a></li>
-                                        <li><a href="/sports">Sports</a></li>
-                                        <li><a href="/movies">Movies</a></li>-->
-
-                                    </ul>
-                                    <ul class="side-nav" id="mobile-demo">
-                                        <!--<li><a href="/">Bollywood</a></li>
-                                        <li><a href="/sports">Sports</a></li>
-                                        <li><a href="/movies">Movies</a></li>-->
-                                        <li><i class="fa fa-facebook-square"></i></li>
-                                        <li><i class="fa fa-twitter-square"></i></li>
-                                        <li><i class="fa fa-envelope-square"></i></li>
-                                        <li><i class="fa fa-pinterest-square"></i></li>
-
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>*@
+       
 
 
     </header>
