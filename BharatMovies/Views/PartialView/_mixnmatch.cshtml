@@ -1,0 +1,45 @@
+﻿<div class="container">
+    <div class="divider social-divider" style="background-color:#AB1142;"></div>
+    <h5 style="color:#AB1142;">@ViewBag.Item["title"] <i class="fa fa-angle-right fa-lg"></i></h5>
+    <div class="row">
+        <div class="col s12 m12 l6">
+            @if (ViewBag.Item["collection"][0]["id"] == "1")
+            {
+                @Html.Action("ImgGallary", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], did = "imagegallery" })
+            }
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="row">
+                <div class="col s12">
+                    @if (ViewBag.Item["collection"][1]["id"] == "2")
+                    {
+                        @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "PCARD" })
+                    }
+                </div>
+                <div class="col s12">
+                    @if (ViewBag.Item["collection"][2]["id"] == "3")
+                    {
+                        @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], did = "small1" })
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col s12 m6 l3">
+            <div class="row">
+                <div class="col s12">
+                    @if (ViewBag.Item["collection"][3]["id"] == "4")
+                    {
+                        @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], did = "small2" })
+                    }
+                </div>
+                <div class="col s12">
+                    @if (ViewBag.Item["collection"][4]["id"] == "5")
+                    {
+                        @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], did = "PCARD2" })
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

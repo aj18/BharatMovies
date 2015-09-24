@@ -1,0 +1,1515 @@
+﻿@using  System.Web.Script.Serialization;
+@using System.Configuration;
+@{
+        string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+        string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+        ViewBag.Title = "Index";
+    JavaScriptSerializer serializer = new JavaScriptSerializer();
+    dynamic templatedata = serializer.Deserialize<object>(ViewBag.data);
+}
+@foreach (var item in templatedata["layout"])
+{
+    <h2>@(Html.Raw(item["id"]))</h2>
+        if (item["id"] == "missionary")
+        {
+            <div style="background-color:#262629; width:100%;">
+                <div class="container">
+                    <div class="row ">
+                        <div class="col s12 m12 l7 ">
+                            <div class="row ">
+                                <div class="col s12" style="height:501px;margin-bottom:5px;margin-top:25px;">
+                                    @if(item["collection"][0]["id"] == "1")
+                                    {
+                                        @Html.Action("PCard", "PartialView", new { cardType = item["collection"][0]["cardType"], cNo = item["collection"][0]["campaignId"], did = "pcardm" })
+                                    }
+                                </div>
+                                <div class="col m7 s12 " style="height:247px;margin-bottom:5px;margin-top:25px;">
+                                    @if (item["collection"][2]["id"] == "3")
+                                    {
+                                    @Html.Action("VCard", "PartialView", new { cardType = item["collection"][2]["cardType"], cNo = item["collection"][2]["campaignId"], did = "vcardm" })
+                                    }
+                                </div>
+                                <div class="col m5 s12 " style="height:247px;margin-bottom:5px;margin-top:25px;">
+                                    @if (item["collection"][3]["id"] == "4")
+                                    {
+                                    @Html.Action("PCard", "PartialView", new { cardType = item["collection"][3]["cardType"], cNo = item["collection"][3]["campaignId"], did = "pcardm1" })
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col s12 m12 l5">
+                            <div class="row ">
+                                <div class="col m6 s12" style="height:247px;margin-bottom:5px;margin-top:25px;">
+                                    @if (item["collection"][1]["id"] == "2")
+                                    {
+                                    @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"] , did = "cardpanelm1" })
+                                    }
+                                </div>
+                                <div class="col m6 s12" style="height:247px;margin-bottom:5px;margin-top:25px;">
+                                    @if (item["collection"][4]["id"] == "5")
+                                    {
+                                    @Html.Action("PCard", "PartialView", new { cardType = item["collection"][4]["cardType"], cNo = item["collection"][4]["campaignId"] , did = "pcardm2" })
+                                    }
+                                </div>
+
+                                <div class="col s12" style="height:502px;margin-bottom:5px;margin-top:25px;">
+                                    @if (item["collection"][5]["id"] == "6")
+                                    {
+                                    @Html.Action("VCard", "PartialView", new { cardType = item["collection"][5]["cardType"], cNo = item["collection"][5]["campaignId"] , did = "vcardm1" })
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        if (item["id"] == "mixnmatch")
+        {
+            <div class="container">
+                <div class="divider social-divider" style="background-color:#AB1142;"></div>
+                <h5 style="color:#AB1142;">@item["title"] <i class="fa fa-angle-right fa-lg"></i></h5>
+                <div class="row">
+                    <div class="col s12 m12 l6">
+                        @if (item["collection"][0]["id"] == "1")
+                        {
+                        @Html.Action("ImgGallary", "PartialView", new { cardType = item["collection"][0]["cardType"], cNo = item["collection"][0]["campaignId"] ,did= "imagegallery" })
+                        }
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="row">
+                            <div class="col s12">
+                                @if (item["collection"][1]["id"] == "2")
+                                {
+                                @Html.Action("PCard", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"],did="PCARD" })
+                                }
+                            </div>
+                            <div class="col s12">
+                                @if (item["collection"][2]["id"] == "3")
+                                {
+                                @Html.Action("Small", "PartialView", new { cardType = item["collection"][2]["cardType"], cNo = item["collection"][2]["campaignId"], did = "small1" })
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col s12 m6 l3">
+                        <div class="row">
+                            <div class="col s12">
+                                @if (item["collection"][3]["id"] == "4")
+                                {
+                                @Html.Action("Small", "PartialView", new { cardType = item["collection"][3]["cardType"], cNo = item["collection"][3]["campaignId"], did = "small2" })
+                                }
+                            </div>
+                            <div class="col s12">
+                                @if (item["collection"][4]["id"] == "5")
+                                {
+                                @Html.Action("PCard", "PartialView", new { cardType = item["collection"][4]["cardType"], cNo = item["collection"][4]["campaignId"],did = "PCARD2" })
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+
+        if (item["id"] == "smallcard")
+        {
+            <!---------------row finish-------------------->
+            <div class="container">
+                <div class="row ">
+                    <div class="col s12 m6 l3">
+                        @if (item["collection"][0]["id"] == "1")
+                        {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][0]["cardType"], cNo = item["collection"][0]["campaignId"], did="small3" })
+                        }
+                    </div>
+                    <div class="col s12 m6 l3">
+                        @if (item["collection"][1]["id"] == "2")
+                        {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"] , did = "small4" })
+                        }
+                    </div>
+                    <div class="col s12 m6 l3">
+                        @if (item["collection"][2]["id"] == "3")
+                        {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][2]["cardType"], cNo = item["collection"][2]["campaignId"], did = "small5" })
+                        }
+                    </div>
+                    <div class="col s12 m6 l3">
+                        @if (item["collection"][3]["id"] == "4")
+                        {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][3]["cardType"], cNo = item["collection"][3]["campaignId"], did = "small6" })
+                        }
+                    </div>
+                </div>
+            </div>
+    <!---------------row finish-------------------->
+    <!---------------row start-------------------->
+            <div class="container">
+                <div class="row">
+                    <div class="col s12 m6 l3">
+                        @if (item["collection"][4]["id"] == "5")
+                        {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][4]["cardType"], cNo = item["collection"][4]["campaignId"], did = "small7" })
+                        }
+                    </div>
+                    <div class="col s12 m6 l3">
+                        @if (item["collection"][5]["id"] == "6")
+                        {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][5]["cardType"], cNo = item["collection"][5]["campaignId"], did = "small8" })
+                        }
+                    </div>
+                    <div class="col s12 m6 l3">
+                        @if (item["collection"][6]["id"] == "7")
+                        {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][6]["cardType"], cNo = item["collection"][6]["campaignId"], did = "small9" })
+                        }
+                    </div>
+                    <div class="col s12 m6 l3">
+                        @if (item["collection"][7]["id"] == "8")
+                        {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][7]["cardType"], cNo = item["collection"][7]["campaignId"], did = "small10" })
+                        }
+                    </div>
+                </div>
+            </div>
+    <!---------------row finish-------------------->
+    }
+
+    if (item["id"] == "cardpanel")
+    {
+
+        <div class="container">
+            <div class="row social-news-travel-celeb-weird">
+                <div class="col s12 m6 l3">
+                    <div class="divider social-divider"></div>
+                    <h5 style="color:#624F87;">Latest  <i class="fa fa-angle-right fa-lg"></i></h5>
+                    <ul>
+                        <li>
+                            @if (item["collection"][0]["id"] == "1")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][0]["cardType"], cNo = item["collection"][0]["campaignId"], did = "cardpanel1" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][1]["id"] == "2")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"], did = "cardpanel2" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][2]["id"] == "3")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][2]["cardType"], cNo = item["collection"][2]["campaignId"], did = "cardpanel3" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][3]["id"] == "4")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][3]["cardType"], cNo = item["collection"][3]["campaignId"], did = "cardpanel4" })
+                            }
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="divider social-divider"></div>
+                    <h5 style="color:blue;">What's Hot   <i class="fa fa-angle-right fa-lg"></i></h5>
+                    <ul>
+                        <li>
+                            @if (item["collection"][4]["id"] == "5")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][4]["cardType"], cNo = item["collection"][4]["campaignId"], did = "cardpanel5" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][5]["id"] == "6")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][5]["cardType"], cNo = item["collection"][5]["campaignId"], did = "cardpanel6" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][6]["id"] == "7")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][6]["cardType"], cNo = item["collection"][6]["campaignId"], did = "cardpanel7" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][7]["id"] == "8")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][7]["cardType"], cNo = item["collection"][7]["campaignId"], did = "cardpanel8" })
+                            }
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="divider social-divider"></div>
+                    <h5 style="color:#08893E;">Fashion  <i class="fa fa-angle-right fa-lg"></i></h5>
+                    <ul>
+                        <li>
+                            @if (item["collection"][8]["id"] == "9")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][8]["cardType"], cNo = item["collection"][8]["campaignId"], did = "cardpanel9" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][9]["id"] == "10")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][9]["cardType"], cNo = item["collection"][9]["campaignId"], did = "cardpanel10" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][10]["id"] == "11")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][10]["cardType"], cNo = item["collection"][10]["campaignId"], did = "cardpanel11" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][11]["id"] == "12")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][11]["cardType"], cNo = item["collection"][11]["campaignId"], did = "cardpanel12" })
+                            }
+                        </li>
+                    </ul>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="divider social-divider"></div>
+                    <h5 style="color:#AB1142;">Celebrity Spotted  <i class="fa fa-angle-right fa-lg"></i></h5>
+                    <ul>
+                        <li>
+                            @if (item["collection"][12]["id"] == "13")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][12]["cardType"], cNo = item["collection"][12]["campaignId"], did = "cardpanel13" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][13]["id"] == "14")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][13]["cardType"], cNo = item["collection"][13]["campaignId"], did = "cardpanel14" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][14]["id"] == "15")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][14]["cardType"], cNo = item["collection"][14]["campaignId"], did = "cardpanel15" })
+                            }
+                        </li>
+                        <li>
+                            @if (item["collection"][15]["id"] == "16")
+                            {
+                                @Html.Action("CardPanel", "PartialView", new { cardType = item["collection"][15]["cardType"], cNo = item["collection"][15]["campaignId"], did = "cardpanel16" })
+                            }
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    }
+
+    if (item["id"] == "smallvertical")
+    {
+        <div class="container">
+            <div class="row">
+                <div class="divider social-divider" style="background-color:#624F87;"></div>
+                <h5 style="color:#624F87;">@item["title"]   <i class="fa fa-angle-right fa-lg"></i></h5>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][0]["id"] == "1")
+                    {
+                        @Html.Action("SmallVertical", "PartialView", new { cardType = item["collection"][0]["cardType"], cNo = item["collection"][0]["campaignId"], did = "smallvertical1" })
+                    }
+                </div>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][1]["id"] == "2")
+                    {
+                        @Html.Action("SmallVertical", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"], did = "smallvertical2" })
+                    }
+                </div>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][2]["id"] == "3")
+                    {
+                        @Html.Action("SmallVertical", "PartialView", new { cardType = item["collection"][2]["cardType"], cNo = item["collection"][2]["campaignId"], did = "smallvertical3" })
+                    }
+                </div>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][3]["id"] == "4")
+                    {
+                        @Html.Action("SmallVertical", "PartialView", new { cardType = item["collection"][3]["cardType"], cNo = item["collection"][3]["campaignId"], did = "smallvertical4" })
+                    }
+                </div>
+            </div>
+        </div>
+    }
+    if (item["id"] == "Events")
+    {
+        <div class="container">
+            <div class="row">
+                <div class="divider social-divider" style="background-color:blue;"></div>
+                <h5 style="color:blue;">@item["title"]   <i class="fa fa-angle-right fa-lg"></i></h5>
+                <div class="col s12 m12 l3">
+                    @if (item["collection"][0]["id"] == "1")
+                    {
+                        @Html.Action("PCard", "PartialView", new { cardType = item["collection"][0]["cardType"], cNo = item["collection"][0]["campaignId"], did = "pcardm3" })
+                    }
+                </div>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][1]["id"] == "2")
+                    {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"], did = "small15" })
+                    }<br />
+                    @if (item["collection"][2]["id"] == "3")
+                    {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][2]["cardType"], cNo = item["collection"][2]["campaignId"], did = "small16" })
+                    }
+                </div>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][3]["id"] == "4")
+                    {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][3]["cardType"], cNo = item["collection"][3]["campaignId"], did = "small17" })
+                    }<br />
+                    @if (item["collection"][4]["id"] == "5")
+                    {
+                        @Html.Action("Small", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"], did = "small18" })
+                    }
+                </div>
+                <div class="col s12 m12 l3">
+                    @if (item["collection"][5]["id"] == "6")
+                    {
+                        @Html.Action("PCard", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"], did = "pcardm4" })
+                    }
+                </div>
+            </div>
+        </div>
+    }
+    if (item["id"] == "medium")
+    {
+   <div class="container">
+    <div class="row">
+        <div class="divider social-divider" style="background-color:#08893E;"></div>
+        <h5 style="color:#08893E;">@item["title"]  <i class="fa fa-angle-right fa-lg"></i></h5>
+            <div class="col s12 m6 l3">
+                @if (item["collection"][0]["id"] == "1")
+                    {
+                    @Html.Action("Medium", "PartialView", new { cardType = item["collection"][0]["cardType"], cNo = item["collection"][0]["campaignId"], did = "mediumM1" })
+                }
+            </div>
+            <div class="col s12 m6 l3">
+                @if (item["collection"][1]["id"] == "2")
+                    {
+                    @Html.Action("Medium", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"], did = "mediumM2" })
+                }
+            </div>
+            <div class="col s12 m6 l3">
+                @if (item["collection"][2]["id"] == "3")
+                    {
+                    @Html.Action("Medium", "PartialView", new { cardType = item["collection"][2]["cardType"], cNo = item["collection"][2]["campaignId"], did = "mediumM3" })
+                }
+            </div>
+            <div class="col s12 m6 l3">
+                @if (item["collection"][3]["id"] == "4")
+                    {
+                    @Html.Action("Medium", "PartialView", new { cardType = item["collection"][3]["cardType"], cNo = item["collection"][3]["campaignId"], did = "mediumM4" })
+                }
+            </div>
+        </div>
+    </div>
+    }
+    if (item["id"] == "large")
+    {
+        <div class="container">
+            <div class="row">
+                <div class="divider social-divider" style="background-color:#AB1142;"></div>
+                <h5 style="color:#AB1142;">@item["title"]  <i class="fa fa-angle-right fa-lg"></i></h5>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][0]["id"] == "1")
+                    {
+                        @Html.Action("Large", "PartialView", new { cardType = item["collection"][0]["cardType"], cNo = item["collection"][0]["campaignId"], did = "largeL1" })
+                    }
+                </div>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][1]["id"] == "2")
+                    {
+                        @Html.Action("Large", "PartialView", new { cardType = item["collection"][1]["cardType"], cNo = item["collection"][1]["campaignId"], did = "largeL2" })
+                    }
+                </div>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][2]["id"] == "3")
+                    {
+                        @Html.Action("Large", "PartialView", new { cardType = item["collection"][2]["cardType"], cNo = item["collection"][2]["campaignId"], did = "largeL3" })
+                    }
+                </div>
+                <div class="col s12 m6 l3">
+                    @if (item["collection"][3]["id"] == "4")
+                    {
+                        @Html.Action("Large", "PartialView", new { cardType = item["collection"][3]["cardType"], cNo = item["collection"][3]["campaignId"], did = "largeL4" })
+                    }
+                </div>
+            </div>
+        </div>
+    }
+    @*if (item["id"] == "smallnews1")
+        {
+
+            if (itemdetail["cardType"] == "VCARD")
+            {
+                @Html.Action("VCard", "PartialView", new { cardType = itemdetail["cardType"], cNo = itemdetail["campaignId"] })
+            }
+            else if (itemdetail["cardType"] == "CARDPANEL")
+            {
+                @Html.Action("CardPanel", "PartialView", new { cardType = itemdetail["cardType"], cNo = itemdetail["campaignId"] })
+            }
+            else if (itemdetail["cardType"] == "IMGGALLERY")
+            {
+                @Html.Action("ImgGallary", "PartialView", new { cardType = itemdetail["cardType"], cNo = itemdetail["campaignId"] })
+            }
+            else if (itemdetail["cardType"] == "LARGE")
+            {
+                @Html.Action("Large", "PartialView", new { cardType = itemdetail["cardType"], cNo = itemdetail["campaignId"] })
+            }
+            else if (itemdetail["cardType"] == "MEDIUM")
+            {
+                @Html.Action("Medium", "PartialView", new { cardType = itemdetail["cardType"], cNo = itemdetail["campaignId"] })
+            }
+            else if (itemdetail["cardType"] == "PCARD")
+            {
+                @Html.Action("PCard", "PartialView", new { cardType = itemdetail["cardType"], cNo = itemdetail["campaignId"] })
+            }
+            else if (itemdetail["cardType"] == "SMALL")
+            {
+                @Html.Action("Small", "PartialView", new { cardType = itemdetail["cardType"], cNo = itemdetail["campaignId"] })
+            }
+            else if (itemdetail["cardType"] == "SMALLVERTICAL")
+            {
+                @Html.Action("SmallVertical", "PartialView", new { cardType = itemdetail["cardType"], cNo = itemdetail["campaignId"] })
+            }
+            else if (itemdetail["cardType"] == "VCARDAUTO")
+            {
+                @Html.Action("VCardAuto", "PartialView", new { cardType = itemdetail["cardType"], cNo = itemdetail["campaignId"] })
+            }
+        }*@
+    //}
+}
+@*<script type="text/javascript">
+
+        var returnUrl ="@(Html.Raw(returnUrl))";
+        var returnUrl3 ="@(Html.Raw(returnUrl3))";
+
+
+    </script>*@
+@*<div class="starter-template">
+
+        <div style="background-color:#262629; width:100%;">
+            <div class="container">
+                <div class="row ">
+                    <div class="col s12 m12 l7 ">
+                        <div class="row ">
+                            <div class="col s12" style="height:501px;margin-bottom:5px;margin-top:25px;">
+                                <div id="pcardm"></div>
+                            </div>
+                            <div class="col m7 s12 " style="height:247px;margin-bottom:5px;margin-top:25px;">
+                                <div id="vcardm"></div>
+                            </div>
+                            <div class="col m5 s12 " style="height:247px;margin-bottom:5px;margin-top:25px;">
+                                <div id="pcardm1"></div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col s12 m12 l5">
+                        <div class="row ">
+                            <div class="col m6 s12" style="height:247px;margin-bottom:5px;margin-top:25px;">
+                                <div id="cardpanelm1"></div>
+                            </div>
+                            <div class="col m6 s12" style="height:247px;margin-bottom:5px;margin-top:25px;">
+                                <div id="pcardm2"></div>
+                            </div>
+
+                            <div class="col s12" style="height:502px;margin-bottom:5px;margin-top:25px;">
+                                <div id="vcardm1"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <!---------------row start-------------------->
+        <div class="container">
+            <div class="divider social-divider" style="background-color:#AB1142;"></div>
+            <h5 style="color:#AB1142;">What's Trending in Social Media <i class="fa fa-angle-right fa-lg"></i></h5>
+            <div class="row">
+                <div class="col s12 m12 l6">
+                    <div id="imagegallery"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="row">
+                        <div class="col s12">
+                            <div id="PCARD"></div>
+                        </div>
+                        <div class="col s12">
+                            <div id="small1"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="row">
+                        <div class="col s12">
+                            <div id="small2"></div>
+                        </div>
+                        <div class="col s12">
+                            <div id="PCARD2"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!---------------row finish-------------------->
+        <div class="container">
+            <div class="row ">
+                <div class="col s12 m6 l3">
+                    <div id="small3"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="small4"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="small5"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="small6"></div>
+                </div>
+            </div>
+        </div>
+        <!---------------row finish-------------------->
+        <!---------------row start-------------------->
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m6 l3">
+                    <div id="small7"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="small8"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="small9"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="small10"></div>
+                </div>
+            </div>
+        </div>
+        <!---------------row finish-------------------->
+        <!---------------row start-------------------->
+        <div class="container">
+            <div class="row social-news-travel-celeb-weird">
+                <div class="col s12 m6 l3">
+                    <div class="divider social-divider"></div>
+                    <h5 style="color:#624F87;">Latest  <i class="fa fa-angle-right fa-lg"></i></i></h5>
+                    <ul>
+                        <li><div id="cardpanel1"></div></a></li>
+                        <li><div id="cardpanel2"></div></a></li>
+                        <li><div id="cardpanel3"></div></a></li>
+                        <li><div id="cardpanel4"></div></a></li>
+                    </ul>
+
+                    <div id="cardpanel2"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="divider social-divider"></div>
+                    <h5 style="color:blue;">What's Hot   <i class="fa fa-angle-right fa-lg"></i></i></h5>
+                    <ul>
+                        <li><div id="cardpanel5"></div></a></li>
+                        <li><div id="cardpanel6"></div></a></li>
+                        <li><div id="cardpanel7"></div></a></li>
+                        <li><div id="cardpanel8"></div></a></li>
+                    </ul>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="divider social-divider"></div>
+                    <h5 style="color:#08893E;">Fashion  <i class="fa fa-angle-right fa-lg"></i></i></h5>
+                    <ul>
+                        <li><div id="cardpanel9"></div></a></li>
+                        <li><div id="cardpanel10"></div></a></li>
+                        <li><div id="cardpanel11"></div></a></li>
+                        <li><div id="cardpanel12"></div></a></li>
+                    </ul>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div class="divider social-divider"></div>
+                    <h5 style="color:#AB1142;">Celebrity Spotted  <i class="fa fa-angle-right fa-lg"></i></i></h5>
+                    <ul>
+                        <li><div id="cardpanel13"></div></a></li>
+                        <li><div id="cardpanel14"></div></a></li>
+                        <li><div id="cardpanel15"></div></a></li>
+                        <li><div id="cardpanel16"></div></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!---------------row finish-------------------->
+        <!---------------row STRAT-------------------->
+        <div class="container">
+            <div class="row">
+                <div class="divider social-divider" style="background-color:#624F87;"></div>
+                <h5 style="color:#624F87;">Parties and Gossip   <i class="fa fa-angle-right fa-lg"></i></i></h5>
+                <div class="col s12 m6 l3">
+                    <div id="smallvertical1"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="smallvertical2"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="smallvertical3"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="smallvertical4"></div>
+                </div>
+            </div>
+        </div>
+        <!---------------row finish-------------------->
+        <div class="container">
+            <div class="row">
+                <div class="divider social-divider" style="background-color:blue;"></div>
+                <h5 style="color:blue;">Bollywood Events   <i class="fa fa-angle-right fa-lg"></i></i></h5>
+                <div class="col s12 m12 l3">
+                    <div id="pcardm3"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="small15"></div><br />
+                    <div id="small16"></div>
+
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="small17"></div><br />
+                    <div id="small18"></div>
+                </div>
+                <div class="col s12 m12 l3">
+                    <div id="pcardm4"></div>
+                </div>
+            </div>
+        </div>
+        <!---------------row STRAT-------------------->
+        <div class="container">
+            <div class="row">
+                <div class="divider social-divider" style="background-color:#08893E;"></div>
+                <h5 style="color:#08893E;">Television   <i class="fa fa-angle-right fa-lg"></i></i></h5>
+                <div class="col s12 m6 l3">
+                    <div id="mediumM1"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="mediumM2"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="mediumM3"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="mediumM4"></div>
+                </div>
+            </div>
+        </div>
+        <!---------------row finish-------------------->
+        <!---------------row STRAT-------------------->
+        <div class="container">
+            <div class="row">
+                <div class="divider social-divider" style="background-color:#AB1142;"></div>
+                <h5 style="color:#AB1142;">Releases This Month   <i class="fa fa-angle-right fa-lg"></i></i></h5>
+                <div class="col s12 m6 l3">
+                    <div id="largeL1"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="largeL2"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="largeL3"></div>
+                </div>
+                <div class="col s12 m6 l3">
+                    <div id="largeL4"></div>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+@*<script type="text/javascript">
+
+
+
+        var Bubbly = new BubblyCard();
+        var serveripScript = "";
+        var containerRSSImg = document.getElementById('imagegallery') ;
+        var paraImgGallery ={
+              "campaignId" : "bolly_data3570",
+              "cardType" : "IMGGALLERY",
+              "returnUrl" : returnUrl+"?id=bolly_data3570",
+              "styles" : {} ,
+              "clientId" : "100"
+     };
+
+        Bubbly.showCard(paraImgGallery,null,containerRSSImg);
+
+
+        var paraPCardM ={
+            "campaignId" : "bolly_data3618",
+            "cardType" : "PCARD",
+            "returnUrl": returnUrl+"?id=bolly_data3618",
+            "styles" : {panelStyle:{'padding':'0px;','height':'503px;', 'border-radius':'5px !important;'},
+            titleStyle:{
+            "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color':'rgba(255, 80, 10, 0.85);', 'font-size': '16px;','color':'#fff;',
+            'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'503px !important;', 'border-radius':'5px !important;'}} ,
+            "clientId" : "100"
+        };
+
+        var paraPCardM1 ={
+            "campaignId" : "bolly_data3599",
+            "cardType" : "PCARD",
+           "returnUrl": returnUrl+"?id=bolly_data3599",
+            "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+            titleStyle:{
+            "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px !important;','color':'#fff;', 'bottom':'90px;', 'font-weight': 'normal !important;'},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;",},
+            pictureStyle:{'height':'247px !important;'}} ,
+            "clientId" : "100"
+        };
+
+
+        var paraPCardM2 ={
+            "campaignId" : "bolly_data3575",
+            "cardType" : "PCARD",
+           "returnUrl": returnUrl+"?id=bolly_data3575",
+            "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+            titleStyle:{
+            "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+            'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'247px !important'}} ,
+            "clientId" : "100"
+        };
+
+        var paraPCardM3 ={
+            "campaignId" : "bolly_data3638",
+            "cardType" : "PCARD",
+           "returnUrl": returnUrl+"?id=bolly_data3638",
+            "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+            titleStyle:{
+            "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+            'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'247px !important;'}} ,
+            "clientId" : "100"
+        };
+
+
+        var paraPCardM4 ={
+            "campaignId" : "bolly_data3644",
+            "cardType" : "PCARD",
+           "returnUrl": returnUrl+"?id=bolly_data3644",
+            "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+            titleStyle:{
+            "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+            'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'247px !important;'}} ,
+            "clientId" : "100"
+        };
+
+        var paraPCard ={
+            "campaignId" : "bolly_data3615",
+            "cardType" : "PCARD",
+           "returnUrl": returnUrl+"?id=bolly_data3615",
+            "styles" : {panelStyle:{'padding':'0px;','height':'346px;'},
+            titleStyle:{
+            "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;',
+            'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'346px !important'}} ,
+            "clientId" : "100"
+        };
+
+        var paraPCard1 ={
+            "campaignId" : "bolly_data3579",
+            "cardType" : "PCARD",
+           "returnUrl": returnUrl+"?id=bolly_data3579",
+            "styles" : {panelStyle:{'padding':'0px;','height':'280px;'},
+            titleStyle:{
+            "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;'},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "25%"},
+            pictureStyle:{'height':'280px !important'}} ,
+            "clientId" : "100"
+        };
+
+        var paraPCard2 ={
+            "campaignId" : "bolly_data3579",
+            "cardType" : "PCARD",
+           "returnUrl": returnUrl+"?id=bolly_data3579",
+            "styles" : {panelStyle:{'padding':'0px;','height':'354px;'},
+            titleStyle:{
+            "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;','bottom':'88px;'},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "88px;"},
+            pictureStyle:{'height':'354px !important'}} ,
+            "clientId" : "100"
+        };
+
+
+        Bubbly.showCard(paraPCardM,null,document.getElementById('pcardm'));
+        Bubbly.showCard(paraPCardM1,null,document.getElementById('pcardm1'));
+        Bubbly.showCard(paraPCardM2,null,document.getElementById('pcardm2'));
+        Bubbly.showCard(paraPCardM3,null,document.getElementById('pcardm3'));
+        Bubbly.showCard(paraPCardM4,null,document.getElementById('pcardm4'));
+        Bubbly.showCard(paraPCard,null,document.getElementById('PCARD'));
+        Bubbly.showCard(paraPCard1,null,document.getElementById('PCARD1'));
+        Bubbly.showCard(paraPCard2,null,document.getElementById('PCARD2'));
+
+        var paraSmall1 ={
+            "campaignId" : "bolly_data3616",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3616",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall2 ={
+            "campaignId" : "bolly_data3552",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3552",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall3 ={
+            "campaignId" : "bolly_data3612",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3612",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall4 ={
+            "campaignId" : "bolly_data3619",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3619",
+            "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall5 ={
+            "campaignId" : "bolly_data3623",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3623",
+            "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall6 ={
+            "campaignId" : "bolly_data3624",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3624",
+            "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall7 ={
+            "campaignId" : "bolly_data3625",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3525",
+            "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall8 ={
+            "campaignId" : "bolly_data229",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data229",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall9 ={
+            "campaignId" : "bolly_data231",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data231",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall10 ={
+            "campaignId" : "bolly_data167",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data167",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+
+        var paraSmall11 ={
+            "campaignId" : "bolly_data3596",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3596",
+            "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall12={
+            "campaignId" : "bolly_data3393",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3393",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall13={
+            "campaignId" : "bolly_data3598",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3598",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall14 ={
+            "campaignId" : "bolly_data310",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data310",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall15 ={
+            "campaignId" : "bolly_data3643",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3643",
+            "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall16={
+            "campaignId" : "bolly_data3645",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3645",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall17={
+            "campaignId" : "bolly_data3646",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3646",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmall18 ={
+            "campaignId" : "bolly_data3650",
+            "cardType" : "SMALL",
+           "returnUrl": returnUrl+"?id=bolly_data3650",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        Bubbly.showCard(paraSmall1,null,document.getElementById('small1'));
+        Bubbly.showCard(paraSmall2,null,document.getElementById('small2'));
+        Bubbly.showCard(paraSmall3,null,document.getElementById('small3'));
+        Bubbly.showCard(paraSmall4,null,document.getElementById('small4'));
+        Bubbly.showCard(paraSmall5,null,document.getElementById('small5'));
+        Bubbly.showCard(paraSmall6,null,document.getElementById('small6'));
+        Bubbly.showCard(paraSmall7,null,document.getElementById('small7'));
+        Bubbly.showCard(paraSmall8,null,document.getElementById('small8'));
+        Bubbly.showCard(paraSmall9,null,document.getElementById('small9'));
+        Bubbly.showCard(paraSmall10,null,document.getElementById('small10'));
+
+
+        Bubbly.showCard(paraSmall11,null,document.getElementById('small11'));
+        Bubbly.showCard(paraSmall12,null,document.getElementById('small12'));
+        Bubbly.showCard(paraSmall13,null,document.getElementById('small13'));
+        Bubbly.showCard(paraSmall14,null,document.getElementById('small14'));
+
+        Bubbly.showCard(paraSmall15,null,document.getElementById('small15'));
+        Bubbly.showCard(paraSmall16,null,document.getElementById('small16'));
+        Bubbly.showCard(paraSmall17,null,document.getElementById('small17'));
+        Bubbly.showCard(paraSmall18,null,document.getElementById('small18'));
+
+
+
+
+        var paraSmallVertical1 ={
+            "campaignId" : "bolly_data3630",
+            "cardType" : "SMALLVERTICAL",
+           "returnUrl": returnUrl+"?id=bolly_data3630",
+            "styles" : {cardStyle:{'color': '#333333 !important;',}} ,
+            "clientId" : "100"
+        };
+
+        var paraSmallVertical2 ={
+            "campaignId" : "bolly_data3632",
+            "cardType" : "SMALLVERTICAL",
+           "returnUrl": returnUrl+"?id=bolly_data3632",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmallVertical3 ={
+            "campaignId" : "bolly_data3634",
+            "cardType" : "SMALLVERTICAL",
+           "returnUrl": returnUrl+"?id=bolly_data3634",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraSmallVertical4 ={
+            "campaignId" : "bolly_data3636",
+            "cardType" : "SMALLVERTICAL",
+           "returnUrl": returnUrl+"?id=bolly_data3636",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+
+        Bubbly.showCard(paraSmallVertical1,null,document.getElementById('smallvertical1'));
+        Bubbly.showCard(paraSmallVertical2,null,document.getElementById('smallvertical2'));
+        Bubbly.showCard(paraSmallVertical3,null,document.getElementById('smallvertical3'));
+        Bubbly.showCard(paraSmallVertical4,null,document.getElementById('smallvertical4'));
+
+
+
+
+
+
+        var paraPanelCardM1 ={
+            "campaignId" : "bolly_data3606",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3606",
+            "styles" : {cardStyle:{'background-color': '#017ede;','min-height': '247px;',
+                        'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+                        'vertical-align': 'middle;','height': '247px !important;','display': 'table-cell;'}
+                        ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','font-weight':'bold'}
+                        ,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+            "clientId" : "100"
+        };
+
+        var paraPanelCardM2 ={
+            "campaignId" : "bolly_data327",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data327",
+            "styles" : {cardStyle:{'background-color': '#fff;','min-height': '58px;',
+                        'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+                        'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+                        ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','font-weight':'bold'}
+                        ,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+            "clientId" : "100"
+        };
+
+
+
+
+
+        Bubbly.showCard(paraPanelCardM1,null, document.getElementById('cardpanelm1'));
+        Bubbly.showCard(paraPanelCardM2,null, document.getElementById('cardpanelm2'));
+
+
+    var paraPanelCard ={
+            "campaignId" : "bolly_data3639",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3639",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'min-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                         , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                         , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+        var paraPanelCard1 ={
+            "campaignId" : "bolly_data3639",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3639",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                        , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                        , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+        var paraPanelCard2 ={
+            "campaignId" : "bolly_data3651",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3651",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                        , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                        , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+
+        var paraPanelCard3 ={
+            "campaignId" : "bolly_data3652",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3652",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                         , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                         , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+        var paraPanelCard4 ={
+            "campaignId" : "bolly_data3653",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3653",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                            , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                            , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+
+        var paraPanelCard5 ={
+            "campaignId" : "bolly_data3649",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3649",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                          , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                          , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+        var paraPanelCard6 ={
+            "campaignId" : "bolly_data3654",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3654",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                          , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                          , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+        var paraPanelCard7 ={
+            "campaignId" : "bolly_data3655",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3655",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                         , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                         , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+        var paraPanelCard8 ={
+            "campaignId" : "bolly_data3656",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3656",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                          , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                          , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+
+        var paraPanelCard9 ={
+            "campaignId" : "bolly_data3640",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3640",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                         , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                         , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+        var paraPanelCard10 ={
+            "campaignId" : "bolly_data3641",
+            "cardType" : "CARDPANEL",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                          , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                          , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+        var paraPanelCard11 ={
+            "campaignId" : "bolly_data3642",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3642",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                          , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                          , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+        var paraPanelCard12 ={
+            "campaignId" : "bolly_data3647",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3647",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                         , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                         , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+        var paraPanelCard13 ={
+            "campaignId" : "bolly_data3633",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3633",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                           , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                           , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+        var paraPanelCard14 ={
+            "campaignId" : "bolly_data3635",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3635",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                         , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                         , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+        var paraPanelCard15 ={
+            "campaignId" : "bolly_data3637",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3637",
+            "styles": {
+                cardStyle: {
+                    'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                    'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                    'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+                }
+                         , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                         , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+        var paraPanelCard16 ={
+            "campaignId" : "bolly_data3631",
+            "cardType" : "CARDPANEL",
+           "returnUrl": returnUrl+"?id=bolly_data3631",
+            "styles" : {cardStyle:{'background-color': '#fff','max-height': '58px', 'width' : '33% !important;',
+                        'text-align':'center;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+                        'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+                        ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+                        , cardDiscriptionStyle: { 'color': '#606060 !important' }
+            },
+            "clientId" : "100"
+        };
+
+
+        Bubbly.showCard(paraPanelCard1,null, document.getElementById('cardpanel1'));
+        Bubbly.showCard(paraPanelCard2,null, document.getElementById('cardpanel2'));
+        Bubbly.showCard(paraPanelCard3,null, document.getElementById('cardpanel3'));
+        Bubbly.showCard(paraPanelCard4,null, document.getElementById('cardpanel4'));
+        Bubbly.showCard(paraPanelCard5,null, document.getElementById('cardpanel5'));
+        Bubbly.showCard(paraPanelCard6,null, document.getElementById('cardpanel6'));
+        Bubbly.showCard(paraPanelCard7,null, document.getElementById('cardpanel7'));
+        Bubbly.showCard(paraPanelCard8,null, document.getElementById('cardpanel8'));
+        Bubbly.showCard(paraPanelCard9,null, document.getElementById('cardpanel9'));
+        Bubbly.showCard(paraPanelCard10,null, document.getElementById('cardpanel10'));
+        Bubbly.showCard(paraPanelCard11,null, document.getElementById('cardpanel11'));
+        Bubbly.showCard(paraPanelCard12,null, document.getElementById('cardpanel12'));
+        Bubbly.showCard(paraPanelCard13,null, document.getElementById('cardpanel13'));
+        Bubbly.showCard(paraPanelCard14,null, document.getElementById('cardpanel14'));
+        Bubbly.showCard(paraPanelCard15,null, document.getElementById('cardpanel15'));
+        Bubbly.showCard(paraPanelCard16,null, document.getElementById('cardpanel16'));
+
+        var paraVCardM ={
+            "campaignId" : "bolly_data3621",
+            "cardType" : "VCARDAUTO",
+           "returnUrl": returnUrl+"?id=bolly_data3621",
+            "styles" :{panelStyle:{'padding':'0px;','height':'247px !important;'},
+            titleStyle:{
+            'background-color': 'rgba(40, 180, 220, 0.85)!important;',
+            'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
+            subTitleStyle: {
+                'background-color': 'rgba(255, 255, 255, 0.65);',
+            'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
+            pictureStyle:{'width' : '100%;','height':'247px !important;','border' : 'none !important;',},
+            iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}},
+            "clientId" : "100"
+        };
+
+
+        var paraVCardM1 ={
+            "campaignId" : "bolly_data3570",
+            "cardType" : "VCARDAUTO",
+           "returnUrl": returnUrl+"?id=bolly_data3570",
+            "styles" :{panelStyle:{'padding':'0px;','height':'502px;', 'margin': '0px;'},
+            titleStyle:{
+            'background-color':'rgba(145, 205, 40, 0.85)!important;',
+            'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);',
+            'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
+            pictureStyle:{'width' : '100%;','height':'502px !important;','border' : 'none !important;',},
+            iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}},
+            "clientId" : "100"
+        };
+
+        Bubbly.showCard(paraVCardM,null,document.getElementById('vcardm'));
+        Bubbly.showCard(paraVCardM1,null,document.getElementById('vcardm1'));
+
+
+        var paraMediumM1 ={
+            "campaignId" : "bolly_data3596",
+            "cardType" : "MEDIUM",
+           "returnUrl": returnUrl+"?id=bolly_data3596",
+            "returnUrl3": returnUrl3,
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraMediumM2 ={
+            "campaignId" : "bolly_data3393",
+            "cardType" : "MEDIUM",
+           "returnUrl": returnUrl+"?id=bolly_data3393",
+            "returnUrl3": returnUrl3,
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraMediumM3 ={
+            "campaignId" : "bolly_data3598",
+            "cardType" : "MEDIUM",
+           "returnUrl": returnUrl+"?id=bolly_data3598",
+            "returnUrl3": returnUrl3+"/comments",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraMediumM4 ={
+            "campaignId" : "bolly_data310",
+            "cardType" : "MEDIUM",
+           "returnUrl": returnUrl+"?id=bolly_data310",
+            "returnUrl3": returnUrl3+"/comments",
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+        Bubbly.showCard(paraMediumM1,null,document.getElementById('mediumM1'));
+        Bubbly.showCard(paraMediumM2,null,document.getElementById('mediumM2'));
+        Bubbly.showCard(paraMediumM3,null,document.getElementById('mediumM3'));
+        Bubbly.showCard(paraMediumM4,null,document.getElementById('mediumM4'));
+
+        var paraLargeL1 ={
+            "campaignId" : "bolly_data3628",
+            "cardType" : "LARGE",
+           "returnUrl": returnUrl+"?id=bolly_data3628",
+            "returnUrl3": returnUrl3comments,
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraLargeL2 ={
+            "campaignId" : "bolly_data3648",
+            "cardType" : "LARGE",
+           "returnUrl": returnUrl+"?id=bolly_data3648",
+            "returnUrl3": returnUrl3,
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraLargeL3 ={
+            "campaignId" : "bolly_data3627",
+            "cardType" : "LARGE",
+           "returnUrl": returnUrl+"?id=bolly_data3627",
+            "returnUrl3": returnUrl3,
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+
+        var paraLargeL4 ={
+            "campaignId" : "bolly_data3570",
+            "cardType" : "LARGE",
+           "returnUrl": returnUrl+"?id=bolly_data3570",
+            "returnUrl3": returnUrl3,
+            "styles" : {} ,
+            "clientId" : "100"
+        };
+        Bubbly.showCard(paraLargeL1,null,document.getElementById('largeL1'));
+        Bubbly.showCard(paraLargeL2,null,document.getElementById('largeL2'));
+        Bubbly.showCard(paraLargeL3,null,document.getElementById('largeL3'));
+        Bubbly.showCard(paraLargeL4,null,document.getElementById('largeL4'));
+
+    </script>*@
+

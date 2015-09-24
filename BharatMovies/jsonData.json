@@ -1,0 +1,328 @@
+{
+  "_id": "bolly_default",
+  "_rev": "1-93d09467a70793923a24bcd3bf25d2a3",
+  "layout": [
+    {
+      "title": "",
+      "id": "missionary",
+      "content": "",
+      "collection": [
+        {
+          "id": "1",
+          "cardType": "PCARD",
+          "campaignId": "bolly_data3703"
+        },
+        {
+          "id": "2",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3733"
+        },
+        {
+          "id": "3",
+          "cardType": "VCARD",
+          "campaignId": "bolly_data3706"
+        },
+        {
+          "id": "4",
+          "cardType": "PCARD",
+          "campaignId": "bolly_data3707"
+        },
+        {
+          "id": "5",
+          "cardType": "PCARD",
+          "campaignId": "bolly_data3704"
+        },
+        {
+          "id": "6",
+          "cardType": "VCARD",
+          "campaignId": "bolly_data3705"
+        }
+      ]
+    },
+    {
+      "title": "What's Trending in Social Media",
+      "id": "mixnmatch",
+      "content": "",
+      "collection": [
+        {
+          "id": "1",
+          "cardType": "IMGGALLERY",
+          "campaignId": "bolly_data3736"
+        },
+        {
+          "id": "2",
+          "cardType": "PCARD",
+          "campaignId": "bolly_data3737"
+        },
+        {
+          "id": "3",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3732"
+        },
+        {
+          "id": "4",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3552"
+        },
+        {
+          "id": "5",
+          "cardType": "PCARD",
+          "campaignId": "bolly_data3579"
+        }
+      ]
+    },
+    {
+      "title": "",
+      "id": "smallcard",
+      "content": "",
+      "collection": [
+        {
+          "id": "1",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3735"
+        },
+        {
+          "id": "2",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3619"
+        },
+        {
+          "id": "3",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3705"
+        },
+        {
+          "id": "4",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3624"
+        },
+        {
+          "id": "5",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3625"
+        },
+        {
+          "id": "6",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3708"
+        },
+        {
+          "id": "7",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data231"
+        },
+        {
+          "id": "8",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data167"
+        }
+      ]
+    }
+ ,
+    {
+      "title": "",
+      "id": "newspanel",
+      "content": "",
+      "collection": [
+        {
+          "id": "1",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3639"
+        },
+        {
+          "id": "2",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3651"
+        },
+        {
+          "id": "3",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3652"
+        },
+        {
+          "id": "4",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3653"
+        },
+        {
+          "id": "5",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3649"
+        },
+        {
+          "id": "6",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3654"
+        },
+        {
+          "id": "7",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3655"
+        },
+        {
+          "id": "8",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3656"
+        },
+        {
+          "id": "9",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3640"
+        },
+        {
+          "id": "10",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3641"
+        },
+        {
+          "id": "11",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3642"
+        },
+        {
+          "id": "12",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3647"
+        },
+        {
+          "id": "13",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3633"
+        },
+        {
+          "id": "14",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3635"
+        },
+        {
+          "id": "15",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3637"
+        },
+        {
+          "id": "16",
+          "cardType": "CARDPANEL",
+          "campaignId": "bolly_data3631"
+        }
+      ]
+    },
+    {
+      "title": "Parties and Gossip",
+      "id": "smallverticals",
+      "content": "",
+      "collection": [
+        {
+          "id": "1",
+          "cardType": "SMALLVERTICAL",
+          "campaignId": "bolly_data3630"
+        },
+        {
+          "id": "2",
+          "cardType": "SMALLVERTICAL",
+          "campaignId": "bolly_data3632"
+        },
+        {
+          "id": "3",
+          "cardType": "SMALLVERTICAL",
+          "campaignId": "bolly_data3634"
+        },
+        {
+          "id": "4",
+          "cardType": "SMALLVERTICAL",
+          "campaignId": "bolly_data3636"
+        }
+      ]
+    },
+    {
+      "title": "Bollywood Events",
+      "id": "eventCollection",
+      "content": "",
+      "collection": [
+        {
+          "id": "1",
+          "cardType": "PCARD",
+          "campaignId": "bolly_data3638"
+        },
+        {
+          "id": "2",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3643"
+        },
+        {
+          "id": "3",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3645"
+        },
+        {
+          "id": "4",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3646"
+        },
+        {
+          "id": "5",
+          "cardType": "SMALL",
+          "campaignId": "bolly_data3650"
+        },
+        {
+          "id": "6",
+          "cardType": "PCARD",
+          "campaignId": "bolly_data3644"
+        }
+      ]
+    },
+    {
+      "title": "Television ",
+      "id": "mediumCollection",
+      "content": "",
+      "collection": [
+        {
+          "id": "1",
+          "cardType": "MEDIUM",
+          "campaignId": "bolly_data3596"
+        },
+        {
+          "id": "2",
+          "cardType": "MEDIUM",
+          "campaignId": "bolly_data3393"
+        },
+        {
+          "id": "3",
+          "cardType": "MEDIUM",
+          "campaignId": "bolly_data3598"
+        },
+        {
+          "id": "4",
+          "cardType": "MEDIUM",
+          "campaignId": "bolly_data310"
+        }
+      ]
+    },
+    {
+      "title": "Releases This Month",
+      "id": "largeCollection",
+      "content": "",
+      "collection": [
+        {
+          "id": "1",
+          "cardType": "LARGE",
+          "campaignId": "bolly_data3628"
+        },
+        {
+          "id": "2",
+          "cardType": "LARGE",
+          "campaignId": "bolly_data3648"
+        },
+        {
+          "id": "3",
+          "cardType": "LARGE",
+          "campaignId": "bolly_data3627"
+        },
+        {
+          "id": "4",
+          "cardType": "LARGE",
+          "campaignId": "bolly_data3570"
+        }
+      ]
+    }
+  ]
+}

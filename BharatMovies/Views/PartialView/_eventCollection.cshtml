@@ -1,0 +1,39 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="divider social-divider" style="background-color:blue;"></div>
+        <h5 style="color:blue;">@ViewBag.Item["title"]   <i class="fa fa-angle-right fa-lg"></i></h5>
+        <div class="col s12 m12 l3">
+            @if (ViewBag.Item["collection"][0]["id"] == "1")
+            {
+                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], did = "pcardm3" })
+            }
+        </div>
+        <div class="col s12 m6 l3">
+            @if (ViewBag.Item["collection"][1]["id"] == "2")
+            {
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "small15" })
+            }<br />
+            @if (ViewBag.Item["collection"][2]["id"] == "3")
+            {
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], did = "small16" })
+            }
+        </div>
+        <div class="col s12 m6 l3">
+            @if (ViewBag.Item["collection"][3]["id"] == "4")
+            {
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], did = "small17" })
+            }<br />
+            @if (ViewBag.Item["collection"][4]["id"] == "5")
+            {
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "small18" })
+            }
+        </div>
+        <div class="col s12 m12 l3">
+            @if (ViewBag.Item["collection"][5]["id"] == "6")
+            {
+                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "pcardm4" })
+            }
+        </div>
+    </div>
+</div>
+

@@ -5,6 +5,7 @@ using System.Web.Mvc;
 using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
+using System.IO;
 
 namespace BharatMovies.Controllers
 {
@@ -45,6 +46,10 @@ namespace BharatMovies.Controllers
                     ViewBag.ReturnUrl3 = returnUrl3;
 
                 }
+            }
+            using (StreamReader sr = new StreamReader("C:\\Users\\Arun\\Source\\Repos\\BharatMovies\\BharatMovies\\jsonData.json"))
+            {
+                ViewBag.data = sr.ReadToEnd();
             }
             return View();
         }
@@ -147,6 +152,7 @@ namespace BharatMovies.Controllers
 
             return View();
         }
+       
     }
 
     public class RootObject

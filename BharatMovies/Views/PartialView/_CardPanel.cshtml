@@ -1,0 +1,326 @@
+﻿@{
+    var divID = ViewBag.Did;
+}
+<div id=@divID></div>
+<script type="text/javascript">
+    var Bubbly = new BubblyCard();
+
+    var data =@(Html.Raw(ViewBag.Summary));
+    var ID ="@(Html.Raw(ViewBag.ID))";
+    var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
+    var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+    var Did = "@(Html.Raw(ViewBag.Did))";
+    var paraPanelCardM1 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {cardStyle:{'background-color': '#017ede;','min-height': '247px;',
+            'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+            'vertical-align': 'middle;','height': '247px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','font-weight':'bold'}
+	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+        "clientId" : "100"
+    };
+
+
+    var paraPanelCard1 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+	                , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+	            	, cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+
+    var paraPanelCard2 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+	                , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+	            	, cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+
+
+    var paraPanelCard3 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                     , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                     , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+    var paraPanelCard4 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                        , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                        , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+
+
+    var paraPanelCard5 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                      , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                      , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+
+    var paraPanelCard6 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                      , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                      , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+    var paraPanelCard7 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                     , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                     , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+    var paraPanelCard8 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                      , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                      , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+
+
+    var paraPanelCard9 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                     , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                     , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+
+    var paraPanelCard10 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                      , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                      , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+    var paraPanelCard11 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                      , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                      , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+    var paraPanelCard12 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                     , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                     , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+
+    var paraPanelCard13 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                       , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                       , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+
+    var paraPanelCard14 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                     , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                     , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+    var paraPanelCard15 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles": {
+            cardStyle: {
+                'background-color': '#fff', 'max-height': '58px', 'width': '33% !important;',
+                'text-align': 'center;', 'padding': '10px;', 'color': '#ffffff;', 'line-height': '20px;',
+                'vertical-align': 'middle;', 'height': '58px !important;', 'display': 'table-cell;'
+            }
+                     , cardTitleStyle: { 'color': '#606060 !important', 'text-align': 'left;', 'font-size': '18px;', 'font-weight': 'bold', }
+                     , cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+    var paraPanelCard16 ={
+        "campaignId" : ID,
+        "cardType" : "CARDPANEL",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {cardStyle:{'background-color': '#fff','max-height': '58px', 'width' : '33% !important;',
+            'text-align':'center;','padding':'10px;','color':'#ffffff;','line-height':'20px;',
+            'vertical-align': 'middle;','height': '58px !important;','display': 'table-cell;'}
+	                ,cardTitleStyle:{'color': '#606060 !important','text-align':'left;','font-size':'18px;','font-weight':'bold',}
+	            	, cardDiscriptionStyle: { 'color': '#606060 !important' }
+        },
+        "clientId" : "100"
+    };
+
+    
+    if(Did=="cardpanelm1"){
+        Bubbly.showCard(paraPanelCardM1, data, document.getElementById('cardpanelm1'));
+    }
+    else if(Did=="cardpanel1"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel1'));
+    }
+    else if(Did=="cardpanel2"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel2'));
+    }
+    else if(Did=="cardpanel3"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel3'));
+    }
+    else if(Did=="cardpanel4"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel4'));
+    }
+    else if(Did=="cardpanel5"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel5'));
+    }
+    else if(Did=="cardpanel6"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel6'));
+    }
+    else if(Did=="cardpanel7"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel7'));
+    }
+    else if(Did=="cardpanel8"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel8'));
+    }
+    else if(Did=="cardpanel9"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel9'));
+    }
+    else if(Did=="cardpanel10"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel10'));
+    }
+    else if(Did=="cardpanel11"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel11'));
+    }
+    else if(Did=="cardpanel12"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel12'));
+    }
+    else if(Did=="cardpanel13"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel13'));
+    }
+    else if(Did=="cardpanel14"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel14'));
+    }
+    else if(Did=="cardpanel15"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel15'));
+    }
+    else if(Did=="cardpanel16"){
+        Bubbly.showCard(paraPanelCard1, data, document.getElementById('cardpanel16'));
+    }
+</script>

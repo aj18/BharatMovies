@@ -1,0 +1,84 @@
+﻿@{
+    var divID = ViewBag.Did;
+}
+<div id=@divID></div>
+<script type="text/javascript">
+    var Bubbly = new BubblyCard();
+
+    var data =@(Html.Raw(ViewBag.Summary));
+    var ID ="@(Html.Raw(ViewBag.ID))";
+    var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
+    var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+    var Did = "@(Html.Raw(ViewBag.Did))";
+
+    var paraMediumM1 ={
+        "campaignId" : ID,
+        "cardType" : "MEDIUM",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+            cardImageStyle : {},
+            cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+            cardTitleAnchoStyle :{'color':'#ffffff'},
+            descriptionStyle : {'color': '#000000 !important'},
+            actionStyle : {}
+        } ,
+        "clientId" : "100"
+    };
+
+    var paraMediumM2 ={
+        "campaignId" : ID,
+        "cardType" : "MEDIUM",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+            cardImageStyle : {},
+            cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+            cardTitleAnchoStyle :{'color':'#ffffff'},
+            descriptionStyle : {'color': '#000000 !important'},
+            actionStyle : {}
+        } ,
+        "clientId" : "100"
+    };
+
+    var paraMediumM3 ={
+        "campaignId" : ID,
+        "cardType" : "MEDIUM",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+            cardImageStyle : {},
+            cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+            cardTitleAnchoStyle :{'color':'#ffffff'},
+            descriptionStyle : {'color': '#000000 !important'},
+            actionStyle : {}
+        } ,
+        "clientId" : "100"
+    };
+
+    var paraMediumM4 ={
+        "campaignId" :ID,
+        "cardType" : "MEDIUM",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+            cardImageStyle : {},
+            cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+            cardTitleAnchoStyle :{'color':'#ffffff'},
+            descriptionStyle : {'color': '#000000 !important'},
+            actionStyle : {}
+        } ,
+        "clientId" : "100"
+    };
+    if(Did=="mediumM1"){
+        Bubbly.showCard(paraMediumM1,null,document.getElementById('mediumM1'));
+    }
+    else if(Did=="mediumM2"){
+        Bubbly.showCard(paraMediumM2,null,document.getElementById('mediumM2'));
+    }
+    else if(Did=="mediumM3"){
+        Bubbly.showCard(paraMediumM3,null,document.getElementById('mediumM3'));
+    }
+    else if(Did=="mediumM4"){
+        Bubbly.showCard(paraMediumM4,null,document.getElementById('mediumM4'));
+    }
+
+
+
+</script>

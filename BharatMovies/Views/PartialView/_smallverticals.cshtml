@@ -1,0 +1,31 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="divider social-divider" style="background-color:#624F87;"></div>
+        <h5 style="color:#624F87;">@ViewBag.Item["title"]   <i class="fa fa-angle-right fa-lg"></i></h5>
+        <div class="col s12 m6 l3">
+            @if (ViewBag.Item["collection"][0]["id"] == "1")
+            {
+                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], did = "smallvertical1" })
+            }
+        </div>
+        <div class="col s12 m6 l3">
+            @if (ViewBag.Item["collection"][1]["id"] == "2")
+            {
+                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "smallvertical2" })
+            }
+        </div>
+        <div class="col s12 m6 l3">
+            @if (ViewBag.Item["collection"][2]["id"] == "3")
+            {
+                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], did = "smallvertical3" })
+            }
+        </div>
+        <div class="col s12 m6 l3">
+            @if (ViewBag.Item["collection"][3]["id"] == "4")
+            {
+                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], did = "smallvertical4" })
+            }
+        </div>
+    </div>
+</div>
+

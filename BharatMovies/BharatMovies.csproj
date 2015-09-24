@@ -115,6 +115,7 @@
     <Content Include="Content\materialize.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
+    <None Include="jsonData.json" />
     <None Include="Properties\PublishProfiles\BharatMovies.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Images\logo.png" />
@@ -138,6 +139,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\PartialViewController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -150,6 +152,23 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-2.1.1.min.map" />
+    <Content Include="Views\PartialView\_ImgGallary.cshtml" />
+    <Content Include="Views\PartialView\_PCard.cshtml" />
+    <Content Include="Views\PartialView\_Small.cshtml" />
+    <Content Include="Views\PartialView\_SmallVertical.cshtml" />
+    <Content Include="Views\PartialView\_CardPanel.cshtml" />
+    <Content Include="Views\PartialView\_VCardAuto.cshtml" />
+    <Content Include="Views\PartialView\_Medium.cshtml" />
+    <Content Include="Views\PartialView\_Large.cshtml" />
+    <Content Include="Views\PartialView\_VCard.cshtml" />
+    <Content Include="Views\PartialView\_missionary.cshtml" />
+    <Content Include="Views\PartialView\_mixnmatch.cshtml" />
+    <Content Include="Views\PartialView\_smallcard.cshtml" />
+    <Content Include="Views\PartialView\_newspanel.cshtml" />
+    <Content Include="Views\PartialView\_smallverticals.cshtml" />
+    <Content Include="Views\PartialView\_eventCollection.cshtml" />
+    <Content Include="Views\PartialView\_mediumCollection.cshtml" />
+    <Content Include="Views\PartialView\_largeCollection.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

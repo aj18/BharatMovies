@@ -1,0 +1,155 @@
+﻿@{
+    var divID = ViewBag.Did;
+ }
+<div id=@divID></div>
+@*<div id="pcardm"></div>
+<div id="pcardm1"></div>
+<div id="pcardm2"></div>
+<div id="PCARD"></div>
+<div id="PCARD2"></div>*@
+@*@if((Html.Raw(ViewBag.Did))=="pcardm"){
+  <div id="pcardm"></div>
+}
+@if((Html.Raw(ViewBag.Did))=="pcardm1"){
+<div id="pcardm1"></div>
+}
+@if((Html.Raw(ViewBag.Did))=="pcardm2"){
+<div id="pcardm2"></div>
+}
+@if((Html.Raw(ViewBag.Did))=="PCARD"){
+<div id="PCARD"></div>
+}
+@if((Html.Raw(ViewBag.Did))=="PCARD2"){
+<div id="PCARD2"></div>
+}*@
+<script type="text/javascript">
+
+    var Bubbly = new BubblyCard();
+    
+    var data =@(Html.Raw(ViewBag.Summary));
+    var ID ="@(Html.Raw(ViewBag.ID))";
+    var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
+    var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+    var Did = "@(Html.Raw(ViewBag.Did))";
+
+    var paraPCardM ={
+        "campaignId" : ID,
+        "cardType" : "PCARD",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {panelStyle:{'padding':'0px;','height':'503px;', 'border-radius':'5px !important;'},
+            titleStyle:{
+                "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color':'rgba(255, 80, 10, 0.85);', 'font-size': '16px;','color':'#fff;',
+                'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'503px !important;', 'border-radius':'5px !important;'}} ,
+        "clientId" : "100"
+    };
+
+    var paraPCardM1 ={
+        "campaignId" : ID,
+        "cardType" : "PCARD",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+            titleStyle:{
+                "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px !important;','color':'#fff;', 'bottom':'90px;', 'font-weight': 'normal !important;'},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;",},
+            pictureStyle:{'height':'247px !important;'}} ,
+        "clientId" : "100"
+    };
+
+
+    var paraPCardM2 ={
+        "campaignId" : ID,
+        "cardType" : "PCARD",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+            titleStyle:{
+                "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+                'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'247px !important'}} ,
+        "clientId" : "100"
+    };
+    var paraPCardM3 ={
+        "campaignId" : ID,
+        "cardType" : "PCARD",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+            titleStyle:{
+                "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+                'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'247px !important;'}} ,
+        "clientId" : "100"
+    };
+
+
+    var paraPCardM4 ={
+        "campaignId" : ID,
+        "cardType" : "PCARD",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {panelStyle:{'padding':'0px;','height':'247px;'},
+            titleStyle:{
+                "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(175, 30, 210, 0.85);', 'font-size': '16px;','color':'#fff;',
+                'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'247px !important;'}} ,
+        "clientId" : "100"
+    };
+    var paraPCard ={
+        "campaignId" : ID,
+        "cardType" : "PCARD",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {panelStyle:{'padding':'0px;','height':'346px;'},
+            titleStyle:{
+                "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;',
+                'bottom':'90px;',},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "90px", "position":"relative;", "padding":"5px;"},
+            pictureStyle:{'height':'346px !important'}} ,
+        "clientId" : "100"
+    };
+
+    var paraPCard1 ={
+        "campaignId" : ID,
+        "cardType" : "PCARD",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {panelStyle:{'padding':'0px;','height':'280px;'},
+            titleStyle:{
+                "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;'},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "25%"},
+            pictureStyle:{'height':'280px !important'}} ,
+        "clientId" : "100"
+    };
+
+    var paraPCard2 ={
+        "campaignId" : ID,
+        "cardType" : "PCARD",
+        "returnUrl": returnUrl+"?id=" + ID,
+        "styles" : {panelStyle:{'padding':'0px;','height':'354px;'},
+            titleStyle:{
+                "position" : "relative;", "height": "35px;", "left" : "0px;", "padding" : "5px;", "display" : "inline-block;", "max-width" : "65%;", "text-overflow" : "ellipsis;", "white-space" : "nowrap;", "overflow" : "hidden;", 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;','bottom':'88px;'},
+            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;',"text-overflow" : "ellipsis;", "white-space" : "nowrap;",  "overflow" : "hidden;","bottom" : "88px;"},
+            pictureStyle:{'height':'354px !important'}} ,
+        "clientId" : "100"
+    };
+
+    if(Did=="pcardm"){
+        Bubbly.showCard(paraPCardM, data, document.getElementById('pcardm'));
+    }
+    else if(Did=="pcardm1"){
+        Bubbly.showCard(paraPCardM1, data, document.getElementById('pcardm1'));
+    }
+    else if(Did=="pcardm2"){
+        Bubbly.showCard(paraPCardM2, data, document.getElementById('pcardm2'));
+    }
+    else if(Did=="PCARD"){
+        Bubbly.showCard(paraPCard, data, document.getElementById('PCARD'));
+    }
+    else if(Did=="PCARD2"){
+        Bubbly.showCard(paraPCard2, data, document.getElementById('PCARD2'));
+    }else if(Did=="pcardm3"){
+        Bubbly.showCard(paraPCardM3,null,document.getElementById('pcardm3'));
+    }else if(Did=="pcardm4"){
+        Bubbly.showCard(paraPCardM4,null,document.getElementById('pcardm4'));
+    }
+</script>
