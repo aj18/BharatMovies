@@ -9,7 +9,7 @@ using System.Web.Script.Serialization;
 
 namespace BharatMovies.Controllers
 {
-    public class PartialViewController : Controller
+    public class PartialViewController : Controller 
     {
         
         // GET: PartialView
