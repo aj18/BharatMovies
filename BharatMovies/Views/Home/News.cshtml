@@ -61,13 +61,33 @@
             var ReturnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
             var SearchQuery ="@(Html.Raw(ViewBag.SearchQuery))";
 
+            var containerRSSImg = document.getElementById('pc') ;
+            var paraImgGallery ={
+                "campaignId" : ID,
+                "cardType" : "IMGGALLERY",
+                "returnUrl" : returnUrl+"?id="+ID,
+                "styles": {
+                    cardStyle: { 'padding': '0px;', 'height': '475px;' },
+                    sliderStyle: { 'padding': '0px;', 'height': '475px !important;' },
+                    slidesStyle: { 'padding': '0px;', 'height': '475px !important;' },
+                    cardTitleStyle: { 'z-index': '10 !important', 'bottom': '80px !important;' },
+                    cardSubTitleStyle: { 'z-index': '9999 !important', 'bottom': '70px !important;' },
+                },
+                "clientId" : "100"
+            };
+
+
+	
+
+   
 
 
             Bubbly.showComments({ "campaignId": ID, "cardType": "COMMENTS", "returnUrl": returnUrl3, "styles": {}, "clientId": 100, "commentsType": "popular", "commentsTitle": "", "commentsQ": "", "commentsSkipBy": "1", "commentsLimit": "20" }, null, document.getElementById("wall"));
 
             Bubbly.showRSSCard({ "campaignId": ID, "cardType": "RSSDESC", "returnUrl": ReturnUrl, "styles": {}, "clientId": 100, "rssCriteria": SearchQuery}, null, document.getElementById("rss"));
             Bubbly.showCard({ "campaignId": ID, "cardType": "VC", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 }, data, document.getElementById("vc"));
-            Bubbly.showCard({ "campaignId":ID, "cardType": "IMGGALLERY", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 }, data, document.getElementById("pc"));
+            //Bubbly.showCard({ "campaignId":ID, "cardType": "IMGGALLERY", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 }, data, document.getElementById("pc"));
+            Bubbly.showCard(paraImgGallery,null,containerRSSImg);
             Bubbly.showCard({ "campaignId": ID, "cardType": "SIM", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 },data, document.getElementById("si"));
            
             //var paraStory ={
