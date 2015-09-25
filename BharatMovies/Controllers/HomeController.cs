@@ -22,35 +22,35 @@ namespace BharatMovies.Controllers
                 string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
                 string id = ConfigurationManager.AppSettings.Get("Template");
 
-                //string uri = baseUri + "api/summary/template/?id=" + id;
+                string uri = baseUri + "api/summary/template/?id=" + id;
 
-                //var response = client.GetAsync(uri).Result;
+                var response = client.GetAsync(uri).Result;
 
-                //if (response.IsSuccessStatusCode)
-                //{
-                //    var responseContent = response.Content;
-                //    string responseString = responseContent.ReadAsStringAsync().Result;
-                //    dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = response.Content;
+                    string responseString = responseContent.ReadAsStringAsync().Result;
+                    dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
 
-                //    JavaScriptSerializer serializer = new JavaScriptSerializer();
-                //    dynamic item = serializer.Deserialize<object>(responseString);
-                //    string test = item["_id"];
+                    JavaScriptSerializer serializer = new JavaScriptSerializer();
+                    dynamic item = serializer.Deserialize<object>(responseString);
+                    string test = item["_id"];
 
-                //    ViewBag.Summary = responseString;
+                    ViewBag.data = responseString;
 
-                //    ViewBag.ID = deserializedObj.ID;
-                //    ViewBag.Name = deserializedObj.Name;
-                //    ViewBag.Description = deserializedObj.Description;
-                //    ViewBag.SearchQuery = deserializedObj.SearchQuery;
-                //    ViewBag.ReturnUrl = returnUrl;
-                //    ViewBag.ReturnUrl3 = returnUrl3;
+                    ViewBag.ID = deserializedObj.ID;
+                    ViewBag.Name = deserializedObj.Name;
+                    ViewBag.Description = deserializedObj.Description;
+                    ViewBag.SearchQuery = deserializedObj.SearchQuery;
+                    ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl3 = returnUrl3;
 
-                //}
+                }
             }
-            using (StreamReader sr = new StreamReader("C:\\Users\\Arun\\Source\\Repos\\BharatMovies\\BharatMovies\\jsonData.json"))
-            {
-                ViewBag.data = sr.ReadToEnd();
-            }
+            //using (StreamReader sr = new StreamReader("C:\\Users\\Arun\\Source\\Repos\\BharatMovies\\BharatMovies\\jsonData.json"))
+            //{
+            //    ViewBag.data = sr.ReadToEnd();
+            //}
             return View();
         }
 
