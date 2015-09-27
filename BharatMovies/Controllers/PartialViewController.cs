@@ -232,7 +232,7 @@ namespace BharatMovies.Controllers
             }
             return PartialView("_Medium");
         }
-        public ActionResult PCard(string cardType, string cNo,string did)
+        public ActionResult PCard(string cardType, string cNo,string did,string style)
         {
             using (var client = new HttpClient())
             {
@@ -242,6 +242,44 @@ namespace BharatMovies.Controllers
                 string id = ConfigurationManager.AppSettings.Get("Template");
                 string campainID = cNo != "" ? cNo : id;
                 string uri = baseUri + "api/summary/?id=" + campainID;
+
+                string styleSmall = @"{
+	panelStyle: {
+		'padding': '0px;',
+		'height': '247px;',
+		'border-radius': '5px !important;'
+	},
+	titleStyle: {
+		'position': 'relative;',
+		'height': '35px;',
+		'left': '0px;',
+		'padding': '5px;',
+		'display': 'inline-block;',
+		'max-width': '65%;',
+		'text-overflow': 'ellipsis;',
+		'white-space': 'nowrap;',
+		'overflow': 'hidden;',
+		'background-color': 'rgba(255, 80, 10, 0.85);',
+		'font-size': '16px;',
+		'color': '#fff;',
+		'bottom': '90px;',
+	},
+	subTitleStyle: {
+		'background-color': 'rgba(255, 255, 255, 0.65);',
+		'font-size': '14px;',
+		'color': '#000;',
+		'text-overflow': 'ellipsis;',
+		'white-space': 'nowrap;',
+		'overflow': 'hidden;',
+		'bottom': '90px',
+		'position': 'relative;',
+		'padding': '5px;'
+	},
+	pictureStyle: {
+		'height': '247px !important;',
+		'border-radius': '5px !important;'
+	}
+}";
 
                 var response = client.GetAsync(uri).Result;
 
@@ -264,6 +302,10 @@ namespace BharatMovies.Controllers
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.ReturnUrl3 = returnUrl3;
                     ViewBag.Did = did;
+                    if (style!=null)
+                    ViewBag.Style = style;
+                    else
+                        ViewBag.Style = styleSmall;
 
                 }
                 else
