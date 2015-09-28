@@ -9,7 +9,7 @@
 }
 @foreach (var item in templatedata["layout"])
 {
-    if (item["id"] == "missionary")
+    if (item["id"] == "missionary" || item["id"] == "masonry")
     {
         @Html.Action("Masonry", "PartialView", new { item = item })
     }
