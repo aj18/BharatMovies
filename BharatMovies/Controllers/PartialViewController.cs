@@ -17,10 +17,10 @@ namespace BharatMovies.Controllers
         {
             return View();
         }
-        public ActionResult Missionary(object item)
+        public ActionResult Masonry(object item)
         {
             ViewBag.Item = item;
-            return PartialView("_missionary");
+            return PartialView("_masonry");
         }
         public ActionResult Mixnmatch(object item)
         {

@@ -161,7 +161,7 @@
     <Content Include="Views\PartialView\_Medium.cshtml" />
     <Content Include="Views\PartialView\_Large.cshtml" />
     <Content Include="Views\PartialView\_VCard.cshtml" />
-    <Content Include="Views\PartialView\_missionary.cshtml" />
+    <Content Include="Views\PartialView\_masonry.cshtml" />
     <Content Include="Views\PartialView\_mixnmatch.cshtml" />
     <Content Include="Views\PartialView\_smallcard.cshtml" />
     <Content Include="Views\PartialView\_newspanel.cshtml" />
