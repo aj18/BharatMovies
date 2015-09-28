@@ -12,78 +12,16 @@
     var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
     var Did = "@(Html.Raw(ViewBag.Did))";
 
-    var paraLargeL1 ={
+    var paraLargeL ={
         "campaignId" : ID,
         "cardType" : "LARGE",
         "returnUrl": returnUrl+"?id=" + ID,
         "returnUrl3": returnUrl3,
-        "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
-            cardImageStyle : {},
-            cardTitleStyle : {'color': '#AB1142 !important','text-align':'center;','font-size':'18px;'},
-            cardTitleAnchoStyle :{'color':'#AB1142'},
-            descriptionStyle : {'color': '#000000 !important'},
-            actionStyle : {}
-        } ,
+        "styles" :  @(Html.Raw(ViewBag.Style)) ,
         "clientId" : "100"
     };
 
-    var paraLargeL2 ={
-        "campaignId" : ID,
-        "cardType" : "LARGE",
-        "returnUrl": returnUrl+"?id=" + ID,
-        "returnUrl3": returnUrl3,
-        "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
-            cardImageStyle : {},
-            cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
-            cardTitleAnchoStyle :{'color':'#AB1142'},
-            descriptionStyle : {'color': '#000000 !important'},
-            actionStyle : {}
-        } ,
-        "clientId" : "100"
-    };
 
-    var paraLargeL3 ={
-        "campaignId" : ID,
-        "cardType" : "LARGE",
-        "returnUrl": returnUrl+"?id=" + ID,
-        "returnUrl3": returnUrl3,
-        "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
-            cardImageStyle : {},
-            cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
-            cardTitleAnchoStyle :{'color':'#AB1142'},
-            descriptionStyle : {'color': '#000000 !important'},
-            actionStyle : {}
-        } ,
-        "clientId" : "100"
-    };
-
-    var paraLargeL4 ={
-        "campaignId" : ID,
-        "cardType" : "LARGE",
-        "returnUrl": returnUrl+"?id=" + ID,
-        "returnUrl3": returnUrl3,
-        "styles" : {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
-            cardImageStyle : {},
-            cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
-            cardTitleAnchoStyle :{'color':'#AB1142'},
-            descriptionStyle : {'color': '#000000 !important'},
-            actionStyle : {}
-        } ,
-        "clientId" : "100"
-    };
-
-    if(Did=="largeL1"){
-    Bubbly.showCard(paraLargeL1,null,document.getElementById('largeL1'));
-    }
-    else if(Did=="largeL2"){
-        Bubbly.showCard(paraLargeL2,null,document.getElementById('largeL2'));
-    }
-    else if(Did=="largeL3"){
-        Bubbly.showCard(paraLargeL3,null,document.getElementById('largeL3'));
-    }
-    else if(Did=="largeL4"){
-        Bubbly.showCard(paraLargeL4,null,document.getElementById('largeL4'));
-    }
-
+        Bubbly.showCard(paraLargeL,null,document.getElementById(Did));
 
 </script>

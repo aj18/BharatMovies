@@ -10,15 +10,15 @@
     var ID ="@(Html.Raw(ViewBag.ID))";
     var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
     var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
-
-	var containerRSSImg = document.getElementById('imagegallery') ;
+    var Did = "@(Html.Raw(ViewBag.Did))";
+	var containerRSSImg = document.getElementById(Did) ;
 	var paraImgGallery ={
 	    "campaignId": ID    ,
 		  "cardType" : "IMGGALLERY",
 		  "returnUrl": returnUrl ,
-		  "styles" : {} ,
-		  "clientId" : "100"
- };
+		  "styles" : @(Html.Raw(ViewBag.Style)) ,
+        "clientId" : "100"
+    };
 
-	Bubbly.showCard(paraImgGallery, data, containerRSSImg);
+    Bubbly.showCard(paraImgGallery, data, containerRSSImg);
 </script>

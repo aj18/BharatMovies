@@ -1,29 +1,39 @@
-﻿<div class="container">
+﻿@{
+    var StaylesmallVer = @"{cardStyle : {'background-color': '#624f87;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);' ,'height': '260px !important;'},
+            cardImageStyle : {'height':'200px;'},
+            cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','bottom':'0px','padding':'5px;', 'background-color': '#909542;'},
+            cardTitleAnchoStyle :{'color':'#ffffff'},
+            descriptionStyle : {'color': '#ffffff !important'},
+            actionStyle : {}
+        }";
+
+ };
+<div class="container">
     <div class="row">
         <div class="divider social-divider" style="background-color:#624F87;"></div>
         <h5 style="color:#624F87;">@ViewBag.Item["title"]   <i class="fa fa-angle-right fa-lg"></i></h5>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][0]["id"] == "1")
             {
-                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], did = "smallvertical1" })
+                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], style= StaylesmallVer })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][1]["id"] == "2")
             {
-                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "smallvertical2" })
+                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = StaylesmallVer })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][2]["id"] == "3")
             {
-                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], did = "smallvertical3" })
+                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], style = StaylesmallVer })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][3]["id"] == "4")
             {
-                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], did = "smallvertical4" })
+                @Html.Action("SmallVertical", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], style = StaylesmallVer })
             }
         </div>
     </div>

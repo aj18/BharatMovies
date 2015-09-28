@@ -6,7 +6,7 @@
 <div id="vcardm1"></div>*@
 <script type="text/javascript">
     var Bubbly = new BubblyCard();
-    debugger;
+    
     var data =@(Html.Raw(ViewBag.Summary));
     var ID ="@(Html.Raw(ViewBag.ID))";
     var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
@@ -17,35 +17,10 @@
         "campaignId" : ID,
         "cardType" : "VCARDAUTO",
         "returnUrl": returnUrl+"?id=" + ID,
-        "styles" :{panelStyle:{'padding':'0px;','height':'247px !important;'},
-            titleStyle:{
-                'background-color': 'rgba(40, 180, 220, 0.85)!important;',
-                'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
-            subTitleStyle: {
-                'background-color': 'rgba(255, 255, 255, 0.65);',
-                'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
-            pictureStyle:{'width' : '100%;','height':'247px !important;','border' : 'none !important;',},
-            iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}},
+        "styles" :@(Html.Raw(ViewBag.Style)) ,
         "clientId" : "100"
     };
-    var paraVCardM1 ={
-        "campaignId" : ID,
-        "cardType" : "VCARDAUTO",
-        "returnUrl": returnUrl+"?id=" + ID,
-        "styles" :{panelStyle:{'padding':'0px;','height':'502px;', 'margin': '0px;'},
-            titleStyle:{
-                'background-color':'rgba(145, 205, 40, 0.85)!important;',
-                'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
-            subTitleStyle:{'background-color': 'rgba(255, 255, 255, 0.65);',
-                'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
-            pictureStyle:{'width' : '100%;','height':'502px !important;','border' : 'none !important;',},
-            iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}},
-        "clientId" : "100"
-    };
-    if(Did=="vcardm"){
-        Bubbly.showCard(paraVCardM, data, document.getElementById('vcardm'));
-    }
-    else if(Did=="vcardm1"){
-        Bubbly.showCard(paraVCardM1, data, document.getElementById('vcardm1'));
-    }
+    
+    Bubbly.showCard(paraVCardM, data, document.getElementById(Did));
+    
 </script>

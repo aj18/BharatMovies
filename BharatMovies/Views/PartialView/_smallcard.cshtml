@@ -1,28 +1,32 @@
-﻿<!---------------row finish-------------------->
+﻿@{ 
+    var styleSmall1 = @"{}";
+
+};
+<!---------------row finish-------------------->
 <div class="container">
     <div class="row ">
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][0]["id"] == "1")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], did = "small3" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"],  style ="{}" })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][1]["id"] == "2")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "small4" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = styleSmall1 })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][2]["id"] == "3")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], did = "small5" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"],  style= styleSmall1 })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][3]["id"] == "4")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], did = "small6" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"],style= styleSmall1 })
             }
         </div>
     </div>
@@ -34,25 +38,25 @@
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][4]["id"] == "5")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], did = "small7" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], style = styleSmall1 })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][5]["id"] == "6")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][5]["cardType"], cNo = ViewBag.Item["collection"][5]["campaignId"], did = "small8" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][5]["cardType"], cNo = ViewBag.Item["collection"][5]["campaignId"],  style="{}"})
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][6]["id"] == "7")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][6]["cardType"], cNo = ViewBag.Item["collection"][6]["campaignId"], did = "small9" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][6]["cardType"], cNo = ViewBag.Item["collection"][6]["campaignId"],  style = "{}" })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][7]["id"] == "8")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][7]["cardType"], cNo = ViewBag.Item["collection"][7]["campaignId"], did = "small10" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][7]["cardType"], cNo = ViewBag.Item["collection"][7]["campaignId"], style = "{}" })
             }
         </div>
     </div>

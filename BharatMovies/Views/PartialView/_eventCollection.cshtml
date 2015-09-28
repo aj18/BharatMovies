@@ -1,37 +1,84 @@
-﻿<div class="container">
+﻿@{ 
+    string stylePCardSmall = @"{
+	panelStyle: {
+		'padding': '0px;',
+		'height': '247px;',
+		'border-radius': '5px !important;'
+	},
+	titleStyle: {
+		'position': 'relative;',
+		'height': '35px;',
+		'left': '0px;',
+		'padding': '5px;',
+		'display': 'inline-block;',
+		'max-width': '65%;',
+		'text-overflow': 'ellipsis;',
+		'white-space': 'nowrap;',
+		'overflow': 'hidden;',
+		'background-color': 'rgba(255, 80, 10, 0.85);',
+		'font-size': '16px;',
+		'color': '#fff;',
+		'bottom': '90px;',
+	},
+	subTitleStyle: {
+		'background-color': 'rgba(255, 255, 255, 0.65);',
+		'font-size': '14px;',
+		'color': '#000;',
+		'text-overflow': 'ellipsis;',
+		'white-space': 'nowrap;',
+		'overflow': 'hidden;',
+		'bottom': '90px',
+		'position': 'relative;',
+		'padding': '5px;'
+	},
+	pictureStyle: {
+		'height': '247px !important;',
+		'border-radius': '5px !important;'
+	}
+}";
+
+    var StyleSmall = @"{cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+            mainBoxStyle : {'background-color': '#ffffff;','height':'100px;','font-family':'Segoe UI;','margin-bottom':'5px;','background': '#fff;','margin':'0;','padding':'5px;'},
+            smallBoxStyle :{'background-color': '#ffffff;'} ,
+            cardTitleAnchoStyle :{'color':'#FFAB40'},
+            descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'},
+            actionStyle : {}
+        }";
+};
+<div class="container">
     <div class="row">
         <div class="divider social-divider" style="background-color:blue;"></div>
         <h5 style="color:blue;">@ViewBag.Item["title"]   <i class="fa fa-angle-right fa-lg"></i></h5>
         <div class="col s12 m12 l3">
             @if (ViewBag.Item["collection"][0]["id"] == "1")
             {
-                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], did = "pcardm3" })
+                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], style = stylePCardSmall })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][1]["id"] == "2")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "small15" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style= StyleSmall })
             }<br />
             @if (ViewBag.Item["collection"][2]["id"] == "3")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], did = "small16" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], style = StyleSmall })
             }
         </div>
         <div class="col s12 m6 l3">
             @if (ViewBag.Item["collection"][3]["id"] == "4")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], did = "small17" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], style = StyleSmall })
             }<br />
             @if (ViewBag.Item["collection"][4]["id"] == "5")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "small18" })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = StyleSmall })
             }
         </div>
         <div class="col s12 m12 l3">
             @if (ViewBag.Item["collection"][5]["id"] == "6")
             {
-                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], did = "pcardm4" })
+                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = stylePCardSmall })
             }
         </div>
     </div>
