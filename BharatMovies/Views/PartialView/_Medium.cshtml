@@ -14,7 +14,7 @@
     var paraMedium ={
         "campaignId" : ID,
         "cardType" : "MEDIUM",
-        "returnUrl": returnUrl,
+        "returnUrl": returnUrl+ "?id="+ID,
         "styles" :@(Html.Raw(ViewBag.Style))  ,
         "clientId" : "100"
     };

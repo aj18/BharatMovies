@@ -15,7 +15,7 @@
     paraSmall ={
         "campaignId" : ID,
         "cardType" : "SMALL",
-        "returnUrl": returnUrl,
+        "returnUrl": returnUrl + "?id="+ID,
         "styles" :  @(Html.Raw(ViewBag.Style)) ,
         "clientId" : "100"
     };

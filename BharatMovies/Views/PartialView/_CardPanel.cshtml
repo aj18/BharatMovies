@@ -14,7 +14,7 @@
     var paraPanelCardM ={
         "campaignId" : ID,
         "cardType" : "CARDPANEL",
-        "returnUrl": returnUrl,
+        "returnUrl": returnUrl+ "?id="+ID,
         "styles" : @(Html.Raw(ViewBag.Style)) ,
         "clientId" : "100"
     };

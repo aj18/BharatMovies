@@ -12,7 +12,7 @@ namespace BharatMovies.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        //[OutputCache(Duration = 3600, VaryByParam = "none")]
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Index()
         {
             using (var client = new HttpClient())
@@ -47,10 +47,7 @@ namespace BharatMovies.Controllers
 
                 }
             }
-            //using (StreamReader sr = new StreamReader("C:\\Users\\Arun\\Source\\Repos\\BharatMovies\\BharatMovies\\jsonData.json"))
-            //{
-            //    ViewBag.data = sr.ReadToEnd();
-            //}
+            
             return View();
         }
 
@@ -90,7 +87,45 @@ namespace BharatMovies.Controllers
             
             return View();
         }
-       
+
+
+        [OutputCache(Duration = 3600, VaryByParam = "id")]
+        public ActionResult Story(string id , string storyid)
+        {
+            using (var client = new HttpClient())
+            {
+                string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
+                string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
+                string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
+
+                string uri = baseUri + "api/summary/?id=" + id;
+
+                var response = client.GetAsync(uri).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = response.Content;
+                    string responseString = responseContent.ReadAsStringAsync().Result;
+                    dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
+
+                    ViewBag.Summary = responseString;
+
+                    ViewBag.ID = deserializedObj.ID;
+                    ViewBag.Name = deserializedObj.Name;
+                    ViewBag.Description = deserializedObj.Description;
+                    ViewBag.SearchQuery = deserializedObj.SearchQuery;
+                    ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl3 = returnUrl3;
+
+                }
+            }
+
+
+
+
+            return View();
+        }
+
         public ActionResult Comments(string id, string q, string type)
         {
             string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");

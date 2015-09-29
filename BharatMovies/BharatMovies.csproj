@@ -169,6 +169,7 @@
     <Content Include="Views\PartialView\_eventCollection.cshtml" />
     <Content Include="Views\PartialView\_mediumCollection.cshtml" />
     <Content Include="Views\PartialView\_largeCollection.cshtml" />
+    <Content Include="Views\Home\Story.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
