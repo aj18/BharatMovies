@@ -72,13 +72,13 @@
             }<br />
             @if (ViewBag.Item["collection"][4]["id"] == "5")
             {
-                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = StyleSmall })
+                @Html.Action("Small", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], style = StyleSmall })
             }
         </div>
         <div class="col s12 m12 l3">
             @if (ViewBag.Item["collection"][5]["id"] == "6")
             {
-                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = stylePCardSmall })
+                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][5]["cardType"], cNo = ViewBag.Item["collection"][5]["campaignId"], style = stylePCardSmall })
             }
         </div>
     </div>
