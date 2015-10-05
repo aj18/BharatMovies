@@ -36,6 +36,31 @@
 		'border-radius': '5px !important;'
 	}
 }";
+
+string styleGallery = @"{
+    cardStyle: {
+        'padding': '0px;', 'height': '475px;'
+    }
+    ,
+    sliderStyle: {
+        'padding': '0px;', 'height': '475px !important;'
+    }
+    ,
+    slidesStyle: {
+        'padding': '0px;', 'height': '475px !important;'
+    }
+    ,
+    cardTitleStyle: {
+        'z-index': '10 !important'
+    }
+    ,
+    cardSubTitleStyle: {
+        'z-index': '10 !important'
+    }
+    ,
+}";
+
+
 }
 
 <div class="container">
@@ -45,7 +70,7 @@
         <div class="col s12 m12 l6">
             @if (ViewBag.Item["collection"][0]["id"] == "1")
             {
-                @Html.Action("ImgGallary", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"],  style = "{}" })
+                @Html.Action("ImgGallary", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"],  style = styleGallery })
             }
         </div>
         <div class="col s12 m6 l3">
