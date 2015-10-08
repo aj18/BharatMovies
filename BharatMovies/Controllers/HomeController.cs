@@ -6,13 +6,14 @@ using System.Net.Http;
 using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
 using System.IO;
+using System.Collections.Generic;
 
 namespace BharatMovies.Controllers
 {
     public class HomeController : Controller
     {
         // GET: Home
-        [OutputCache(Duration = 3600, VaryByParam = "none")]
+        //[OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Index()
         {
             using (var client = new HttpClient())
@@ -74,6 +75,9 @@ namespace BharatMovies.Controllers
 
                     ViewBag.ID = deserializedObj.ID;
                     ViewBag.Name = deserializedObj.Name;
+                    ViewBag.StoryId = deserializedObj.StoryId;
+                    ViewBag.Name = deserializedObj.Name;
+                    ViewBag.Stories = deserializedObj.Stories;
                     ViewBag.Description = deserializedObj.Description;
                     ViewBag.SearchQuery = deserializedObj.SearchQuery;
                     ViewBag.ReturnUrl = returnUrl;
@@ -89,7 +93,7 @@ namespace BharatMovies.Controllers
         }
 
 
-        [OutputCache(Duration = 3600, VaryByParam = "id")]
+        //[OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult Story(string id , string storyid)
         {
             using (var client = new HttpClient())
@@ -112,6 +116,7 @@ namespace BharatMovies.Controllers
 
                     ViewBag.ID = deserializedObj.ID;
                     ViewBag.Name = deserializedObj.Name;
+
                     ViewBag.Description = deserializedObj.Description;
                     ViewBag.SearchQuery = deserializedObj.SearchQuery;
                     ViewBag.ReturnUrl = returnUrl;
@@ -205,6 +210,12 @@ namespace BharatMovies.Controllers
         public string Photo { get; set; }
         public object Video { get; set; }
         public int Total { get; set; }
+
+        public string StoryId { get; set; }
+        public string StoryTitle { get; set; }
+        public IList<object> Stories { get; set; }
+
+
 
         public object Comments { get; set; }
 

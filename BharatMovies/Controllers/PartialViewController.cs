@@ -287,6 +287,53 @@ namespace BharatMovies.Controllers
             }
             return PartialView("_PCard");
         }
+        public ActionResult PCardStory(string cardType, string cNo, string style,string Storyid)
+        {
+            using (var client = new HttpClient())
+            {
+                string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
+                string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
+                string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
+                string id = ConfigurationManager.AppSettings.Get("Template");
+                string campainID = cNo != "" ? cNo : id;
+                string uri = baseUri + "api/summary/?id=" + campainID;
+
+                var response = client.GetAsync(uri).Result;
+                ViewBag.Did = campainID + "-PCard-" + System.Guid.NewGuid().ToString();
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = response.Content;
+                    string responseString = responseContent.ReadAsStringAsync().Result;
+                    dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
+
+                    JavaScriptSerializer serializer = new JavaScriptSerializer();
+                    dynamic item = serializer.Deserialize<object>(responseString);
+
+
+                    ViewBag.Summary = responseString;
+
+                    ViewBag.ID = deserializedObj.ID;
+                    ViewBag.Name = deserializedObj.Name;
+                    ViewBag.Description = deserializedObj.Description;
+                    ViewBag.SearchQuery = deserializedObj.SearchQuery;
+                    ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl3 = returnUrl3;
+                    //ViewBag.Did = did;
+                    ViewBag.Style = style;
+
+                }
+                else
+                {
+                    ViewBag.ID = campainID;
+                    ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl3 = returnUrl3;
+                    ViewBag.Summary = null;
+                    //ViewBag.Did = did;
+                    ViewBag.Style = style;
+                }
+            }
+            return PartialView("_PCard");
+        }
         public ActionResult VCard(string cardType, string cNo,string style)
         {
             using (var client = new HttpClient())
