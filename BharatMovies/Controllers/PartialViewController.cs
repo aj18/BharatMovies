@@ -467,5 +467,60 @@ namespace BharatMovies.Controllers
             }
             return PartialView("_VCardAuto");
         }
+
+        public ActionResult StoryCard(string cardType, string cNo, string storyID)
+        {
+            using (var client = new HttpClient())
+            {
+                string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
+                string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
+                string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
+                string id = ConfigurationManager.AppSettings.Get("Template");
+                string campainID = cNo != "" ? cNo : id;
+                string uri = baseUri + "/news/?id=" + cNo != "" ? cNo : id;
+                ViewBag.Did = campainID + "-" + cardType +"-" + System.Guid.NewGuid().ToString();
+                var response = client.GetAsync(uri).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = response.Content;
+                    string responseString = responseContent.ReadAsStringAsync().Result;
+                    dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
+
+                    JavaScriptSerializer serializer = new JavaScriptSerializer();
+                    dynamic item = serializer.Deserialize<object>(responseString);
+
+
+                    ViewBag.Summary = responseString;
+
+                    ViewBag.ID = deserializedObj.ID;
+                    ViewBag.Name = deserializedObj.Name;
+                    ViewBag.Description = deserializedObj.Description;
+                    ViewBag.SearchQuery = deserializedObj.SearchQuery;
+                    ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl3 = returnUrl3;
+                    ViewBag.storyID = storyID;
+                }
+                else
+                {
+                    ViewBag.ID = campainID;
+                    ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl3 = returnUrl3;
+                    ViewBag.Summary = null;
+                    ViewBag.storyID = storyID;
+                }
+            }
+            if (cardType == "STORYPCARD")
+                return PartialView("_StoryPCard");
+            else if (cardType == "STORYVCARDAUTO")
+                return PartialView("_StoryVCardAuto");
+            else if (cardType == "STORYCARDPANEL")
+                return PartialView("_StoryCardPanel");
+            else if (cardType == "STORYSMALL")
+                return PartialView("_StorySmall");
+            else
+                return PartialView("");
+        }
+
     }
 }

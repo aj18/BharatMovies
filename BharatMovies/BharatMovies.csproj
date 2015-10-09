@@ -169,6 +169,11 @@
     <Content Include="Views\PartialView\_eventCollection.cshtml" />
     <Content Include="Views\PartialView\_mediumCollection.cshtml" />
     <Content Include="Views\PartialView\_largeCollection.cshtml" />
+    <Content Include="Views\Home\Story.cshtml" />
+    <Content Include="Views\PartialView\_StoryPCard.cshtml" />
+    <Content Include="Views\PartialView\_StoryVCardAuto.cshtml" />
+    <Content Include="Views\PartialView\_StoryCardPanel.cshtml" />
+    <Content Include="Views\PartialView\_StorySmall.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

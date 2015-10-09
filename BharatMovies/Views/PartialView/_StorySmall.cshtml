@@ -1,0 +1,29 @@
+﻿@{
+    var divID = ViewBag.Did;
+}
+<div id=@divID></div>
+<script type="text/javascript">
+
+    var Bubbly = new BubblyCard();
+
+    var data =@(Html.Raw(ViewBag.Summary));
+    var ID ="@(Html.Raw(ViewBag.ID))";
+    var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
+    var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+    var Did = "@(Html.Raw(ViewBag.Did))";
+    var storyID = "@(Html.Raw(ViewBag.storyID))";
+
+    var paraPanelCardSmall ={
+        "campaignId" : ID,
+        "cardType" : "STORYSMALL",
+        "returnUrl" : returnUrl,
+        "styles" : {},
+        "clientId" : "100",
+        "title" : "",
+        "description" : "",
+        "storyId" : storyID
+    };
+
+
+    Bubbly.showStoryCards(paraPanelCardSmall,data, document.getElementById(Did));
+</script>

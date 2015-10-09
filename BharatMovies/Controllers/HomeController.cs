@@ -152,7 +152,11 @@ namespace BharatMovies.Controllers
 
             return View();
         }
-       
+        public ActionResult Story()
+        {
+
+            return View("Story");
+        }
     }
 
     public class RootObject
