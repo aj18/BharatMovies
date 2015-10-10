@@ -9,6 +9,7 @@
     var data =@(Html.Raw(ViewBag.Summary));
     var ID ="@(Html.Raw(ViewBag.ID))";
     var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
+    var returnUrl2="@(Html.Raw(ViewBag.ReturnUrl2))"
     var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
     var Did = "@(Html.Raw(ViewBag.Did))";
     var storyID = "@(Html.Raw(ViewBag.storyID))";
@@ -16,7 +17,7 @@
    var paraPanelCardM2 = {
         "campaignId" : ID,
         "cardType" : "STORYCARDPANEL",
-        "returnUrl" : returnUrl,
+        "returnUrl" : returnUrl2,
         "styles" : {cardStyle:{'background-color': '#017ede;','min-height': '247px;',
             'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
             'vertical-align': 'middle;','height': '247px !important;','display': 'table-cell;'}

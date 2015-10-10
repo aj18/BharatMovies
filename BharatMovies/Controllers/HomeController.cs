@@ -52,13 +52,14 @@ namespace BharatMovies.Controllers
             return View();
         }
 
-        [OutputCache(Duration = 3600, VaryByParam = "id")]
+        ////[OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult News(string id)
         {
             using (var client = new HttpClient())
             {
                 string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
                 string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
+                string returnUrl2 = ConfigurationManager.AppSettings.Get("ReturnUrl2");
                 string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
 
                 string uri = baseUri + "api/summary/?id=" + id;
@@ -81,6 +82,7 @@ namespace BharatMovies.Controllers
                     ViewBag.Description = deserializedObj.Description;
                     ViewBag.SearchQuery = deserializedObj.SearchQuery;
                     ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl2 = returnUrl2;
                     ViewBag.ReturnUrl3 = returnUrl3;
 
                 }
@@ -100,6 +102,7 @@ namespace BharatMovies.Controllers
             {
                 string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
                 string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
+                string returnUrl2 = ConfigurationManager.AppSettings.Get("ReturnUrl2");
                 string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
 
                 string uri = baseUri + "api/summary/?id=" + id;
@@ -115,11 +118,14 @@ namespace BharatMovies.Controllers
                     ViewBag.Summary = responseString;
 
                     ViewBag.ID = deserializedObj.ID;
+                    ViewBag.StoryId = storyid;
                     ViewBag.Name = deserializedObj.Name;
+                    ViewBag.Stories = deserializedObj.Stories;
 
                     ViewBag.Description = deserializedObj.Description;
                     ViewBag.SearchQuery = deserializedObj.SearchQuery;
                     ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl2 = returnUrl2;
                     ViewBag.ReturnUrl3 = returnUrl3;
 
                 }
@@ -135,6 +141,7 @@ namespace BharatMovies.Controllers
         {
             string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
             string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
+            string returnUrl2 = ConfigurationManager.AppSettings.Get("ReturnUrl2");
             string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
          
 
@@ -167,6 +174,7 @@ namespace BharatMovies.Controllers
             ViewBag.q = q;
             ViewBag.type = type;
             ViewBag.ReturnUrl = returnUrl;
+            ViewBag.ReturnUrl2 = returnUrl2;
             ViewBag.ReturnUrl3 = returnUrl3;
             return View();
         }
@@ -192,11 +200,11 @@ namespace BharatMovies.Controllers
 
             return View();
         }
-        public ActionResult Story()
-        {
+        //public ActionResult Story()
+        //{
 
-            return View("Story");
-        }
+        //    return View("Story");
+        //}
     }
 
     public class RootObject

@@ -3,15 +3,53 @@
 @using System.Configuration;
 @{
     string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    string returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
     string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
     JavaScriptSerializer serializer = new JavaScriptSerializer();
     //dynamic templatedata = serializer.Deserialize<object>(ViewBag.Stories);
-
+    string styleSmall = @"{
+	panelStyle: {
+		'padding': '0px;',
+		'height': '247px;',
+		'border-radius': '5px !important;'
+	},
+	titleStyle: {
+		'position': 'relative;',
+		'height': '35px;',
+		'left': '0px;',
+		'padding': '5px;',
+		'display': 'inline-block;',
+		'max-width': '65%;',
+		'text-overflow': 'ellipsis;',
+		'white-space': 'nowrap;',
+		'overflow': 'hidden;',
+		'background-color': 'rgba(255, 80, 10, 0.85);',
+		'font-size': '16px;',
+		'color': '#fff;',
+		'bottom': '90px;',
+	},
+	subTitleStyle: {
+		'background-color': 'rgba(255, 255, 255, 0.65);',
+		'font-size': '14px;',
+		'color': '#000;',
+		'text-overflow': 'ellipsis;',
+		'white-space': 'nowrap;',
+		'overflow': 'hidden;',
+		'bottom': '90px',
+		'position': 'relative;',
+		'padding': '5px;'
+	},
+	pictureStyle: {
+		'height': '247px !important;',
+		'border-radius': '5px !important;'
+	}
+}";
 }
 
 <script type="text/javascript">
 
     var returnUrl ="@(Html.Raw(returnUrl))";
+    var returnUrl2 ="@(Html.Raw(returnUrl2))";
     var returnUrl3 ="@(Html.Raw(returnUrl3))";
 
 
@@ -28,6 +66,8 @@
             </div>
             <div class="row">
                 @*<div class="col s12 l12 m12"><h3>Popular Comments</h3></div>*@
+                <div class="col s12" id="story1">
+                </div>
                 <div class="col s12" id="story">
                 </div>
                 <div class="col s12" id="wall">
@@ -47,9 +87,10 @@
                 <div class="col s12">
                     @foreach (var item in ViewBag.Stories)
                     {
-                       
-                           
-                        
+
+                        @Html.Action("StoryCard", "PartialView", new { cardType = "STORYSMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall})
+
+
                     }
                 </div>
             </div>
@@ -68,6 +109,7 @@
             var data =@(Html.Raw(ViewBag.Summary));
             var ID ="@(Html.Raw(ViewBag.ID))";
             var ReturnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
+            var ReturnUrl2="@(Html.Raw(ViewBag.ReturnUrl2))"
             var ReturnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
             var SearchQuery ="@(Html.Raw(ViewBag.SearchQuery))";
             var StoryId ="@(Html.Raw(ViewBag.StoryId))";
@@ -105,15 +147,17 @@
                 var paraStory ={
                     "campaignId" : ID,
                     "cardType" : "STORY",
-                    "returnUrl" : "http://bharatmovies.social",
+                    "returnUrl" : "",
                     "styles" : { },
                     "title" : "",
                     "description" : "",
                     "clientId" : "100" ,
                     "storyId" : StoryId
                 };
+               
 
                 Bubbly.showStoryCards(paraStory,null,document.getElementById("story"));
+               
             }
             else
             {

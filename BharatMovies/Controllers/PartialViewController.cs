@@ -296,7 +296,7 @@ namespace BharatMovies.Controllers
                 string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
                 string id = ConfigurationManager.AppSettings.Get("Template");
                 string campainID = cNo != "" ? cNo : id;
-                string uri = baseUri + "api/summary/?id=" + campainID;
+                string uri = baseUri + "api/summary/story/?id=" + campainID+"&storyid="+Storyid;
 
                 var response = client.GetAsync(uri).Result;
                 ViewBag.Did = campainID + "-PCard-" + System.Guid.NewGuid().ToString();
@@ -318,7 +318,7 @@ namespace BharatMovies.Controllers
                     ViewBag.SearchQuery = deserializedObj.SearchQuery;
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.ReturnUrl3 = returnUrl3;
-                    //ViewBag.Did = did;
+                    ViewBag.storyID = Storyid;
                     ViewBag.Style = style;
 
                 }
@@ -328,11 +328,11 @@ namespace BharatMovies.Controllers
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.ReturnUrl3 = returnUrl3;
                     ViewBag.Summary = null;
-                    //ViewBag.Did = did;
+                    ViewBag.storyID = Storyid;
                     ViewBag.Style = style;
                 }
             }
-            return PartialView("_PCard");
+            return PartialView("_StoryPCard");
         }
         public ActionResult VCard(string cardType, string cNo,string style)
         {
@@ -521,10 +521,12 @@ namespace BharatMovies.Controllers
             {
                 string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
                 string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
+                string returnUrl2 = ConfigurationManager.AppSettings.Get("ReturnUrl2");
                 string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
                 string id = ConfigurationManager.AppSettings.Get("Template");
                 string campainID = cNo != "" ? cNo : id;
-                string uri = baseUri + "/news/?id=" + cNo != "" ? cNo : id;
+                string uri = baseUri + "api/summary/story/?id=" + campainID + "&storyid=" + storyID;
+
                 ViewBag.Did = campainID + "-" + cardType +"-" + System.Guid.NewGuid().ToString();
                 var response = client.GetAsync(uri).Result;
 
@@ -540,11 +542,12 @@ namespace BharatMovies.Controllers
 
                     ViewBag.Summary = responseString;
 
-                    ViewBag.ID = deserializedObj.ID;
+                    ViewBag.ID = campainID;
                     ViewBag.Name = deserializedObj.Name;
                     ViewBag.Description = deserializedObj.Description;
                     ViewBag.SearchQuery = deserializedObj.SearchQuery;
                     ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl2 = returnUrl2;
                     ViewBag.ReturnUrl3 = returnUrl3;
                     ViewBag.storyID = storyID;
                 }
@@ -552,6 +555,7 @@ namespace BharatMovies.Controllers
                 {
                     ViewBag.ID = campainID;
                     ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl2 = returnUrl2;
                     ViewBag.ReturnUrl3 = returnUrl3;
                     ViewBag.Summary = null;
                     ViewBag.storyID = storyID;
