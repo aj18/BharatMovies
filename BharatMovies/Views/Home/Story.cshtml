@@ -72,12 +72,15 @@
             <div class="col s12" id="si">
             </div>
             <div class="col s12">
-                @foreach (var item in ViewBag.Stories)
+                @if (ViewBag.Stories != null)
                 {
+                    foreach (var item in ViewBag.Stories)
+                    {
 
-                    @Html.Action("StoryCard", "PartialView", new { cardType = "STORYSMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall })
+                        @Html.Action("StoryCard", "PartialView", new { cardType = "STORYSMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall })
 
 
+                    }
                 }
             </div>
         </div>

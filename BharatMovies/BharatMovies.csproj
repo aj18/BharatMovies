@@ -117,6 +117,8 @@
     <Content Include="Global.asax" />
     <None Include="jsonData.json" />
     <None Include="Properties\PublishProfiles\BharatMovies.pubxml" />
+    <None Include="Properties\PublishProfiles\golf24x7 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Images\logo.png" />
     <Content Include="Scripts\bubbly.min.js" />
