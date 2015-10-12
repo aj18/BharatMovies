@@ -176,6 +176,7 @@
     <Content Include="Views\PartialView\_StoryVCardAuto.cshtml" />
     <Content Include="Views\PartialView\_StoryCardPanel.cshtml" />
     <Content Include="Views\PartialView\_StorySmall.cshtml" />
+    <Content Include="Views\Shared\_LayoutGolf.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

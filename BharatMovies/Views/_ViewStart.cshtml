@@ -1,3 +1,6 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
+﻿@using System.Configuration;
+@{
+    string template = ConfigurationManager.AppSettings.Get("layout");
+
+    Layout = template;
 }
