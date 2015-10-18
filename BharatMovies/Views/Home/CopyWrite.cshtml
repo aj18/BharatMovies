@@ -1,13 +1,14 @@
-﻿
+﻿@using System.Configuration;
 @{
     ViewBag.Title = "CopyWrite";
+    string template = ConfigurationManager.AppSettings.Get("Template").Contains("golf") ? "golf24x7.social" : "bharatmovies.social";
 }
 
 <div class="starter-template">
+            <h2 style="text-align:center;">DMCA (Copyright) Notifications and Counter-Notifications Process</h2>
     <div class="row">
         <div class="container privacy-policy">
-            <h2 style="text-align:center;">DMCA (Copyright) Notifications and Counter-Notifications Process</h2>
-            <p>At bharatmovies.social, we are committed to respecting and abiding by Copyright and IP laws for the internet.We will promptly remove materials from the Vimeo Site in accordance with the Digital Millennium Copyright Act ("DMCA") if properly notified that the materials infringe a third party's copyright.</p>
+            <p>At @template, we are committed to respecting and abiding by Copyright and IP laws for the internet.We will promptly remove materials from the Vimeo Site in accordance with the Digital Millennium Copyright Act ("DMCA") if properly notified that the materials infringe a third party's copyright.</p>
 
             <p>We try our best to make sure that we only provide links to content made publicly available by the content owner. At the same time we know that considering the dynamic and ever changing nature of the content on the internet, sometimes we may get a link on our website that is not fully compliant. It is extremely important to understand that all the video/audio links on our website are just that LINKS, we do not host or store any of these videos/audios on our website. We are just linking the content that appears to be made public by the content owner on sites like Youtube etc. </p>
 
@@ -15,7 +16,7 @@
             <h3>
                 <b>
                     Filing a DMCA Notice to Remove Copyrighted Content-for Copyright Holders
-                    If you think that there is/are any link(s) on our website that infringe upon or violate any Copyright, then please email us at bharatmovies.social
+                    If you think that there is/are any link(s) on our website that infringe upon or violate any Copyright, then please email us at @template
                 </b>
             </h3>
 
