@@ -7,13 +7,19 @@ using Newtonsoft.Json.Linq;
 using System.Web.Script.Serialization;
 using System.IO;
 using System.Collections.Generic;
+using BharatMovies.Models;
+using System.Web;
+using System.Net;
+using System.Net.Mail;
+
 
 namespace BharatMovies.Controllers
 {
+    
     public class HomeController : Controller
     {
         // GET: Home
-        //[OutputCache(Duration = 3600, VaryByParam = "none")]
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Index()
         {
             using (var client = new HttpClient())
@@ -51,8 +57,8 @@ namespace BharatMovies.Controllers
             
             return View();
         }
-
-        ////[OutputCache(Duration = 3600, VaryByParam = "id")]
+        
+        [OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult News(string id)
         {
             using (var client = new HttpClient())
@@ -95,7 +101,7 @@ namespace BharatMovies.Controllers
         }
 
 
-        //[OutputCache(Duration = 3600, VaryByParam = "id")]
+        [OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult Story(string id , string storyid)
         {
             using (var client = new HttpClient())
@@ -189,6 +195,62 @@ namespace BharatMovies.Controllers
         {
 
             return View();
+        }
+        [HttpPost]
+        public ActionResult Contact(MyMailModel objModelMail, HttpPostedFileBase fileUploader)
+        {
+            if (ModelState.IsValid)
+            {
+                string from = ConfigurationManager.AppSettings.Get("GEmail"); //any valid GMail ID  
+                using (MailMessage mail = new MailMessage(from, ConfigurationManager.AppSettings.Get("MailTo")))
+                {
+                    var password = ConfigurationManager.AppSettings.Get("GmailPassword");
+                    //password = BharatMovies.Models.MyMailModel.Decrypt(password);
+                    mail.Subject = "Support - Bharat Movies";
+                    mail.Body = "Email : " + objModelMail.Email + " Message : " + objModelMail.Body;
+                    mail.IsBodyHtml = false;
+                    mail.Subject = objModelMail.Subject;
+                    SmtpClient smtp = new SmtpClient();
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.EnableSsl = true;
+                    smtp.DeliveryMethod = SmtpDeliveryMethod.Network;
+                    NetworkCredential networkCredential = new NetworkCredential(from, password);
+                    smtp.UseDefaultCredentials = false;
+                    smtp.Credentials = networkCredential;
+                    smtp.Port = 587;
+                    try {
+                        smtp.Send(mail);
+                        ViewBag.Message = "Sent";
+                    } catch(Exception e)
+                    {
+                        ViewBag.Message = e.Message;
+                    }
+                    //return View("Contact", objModelMail);
+                    return View();
+                }
+                //string pGmailEmail = ConfigurationManager.AppSettings.Get("MailTo");
+                //string pGmailPassword = BharatMovies.Models.MyMailModel.Decrypt(ConfigurationManager.AppSettings.Get("GmailPassword"));
+                //string pSubject = "Support - Bharat Movies";
+                //string pBody = "Email : " + objModelMail + " Message : " + objModelMail.Body; ; //Body
+                //MailFormat pFormat = MailFormat.Text; //Text Message
+
+                //MailMessage myMail = new MailMessage();
+
+                //myMail.From = pGmailEmail;
+                //myMail.To = pGmailEmail;
+                //myMail.Subject = pSubject;
+                //myMail.BodyFormat = pFormat;
+                //myMail.Body = pBody;
+
+                //SmtpMail.SmtpServer = "smtp.gmail.com:465";
+                //SmtpMail.Send(myMail);
+                //ViewBag.Message = "Sent";
+                //return View("Contact", objModelMail);
+            }
+            else
+            {
+                return View();
+            }
         }
         public ActionResult Privacy()
         {

@@ -515,7 +515,7 @@ namespace BharatMovies.Controllers
             return PartialView("_VCardAuto");
         }
 
-        public ActionResult StoryCard(string cardType, string cNo, string storyID)
+        public ActionResult StoryCard(string cardType, string cNo, string style, string StoryId)
         {
             using (var client = new HttpClient())
             {
@@ -525,7 +525,7 @@ namespace BharatMovies.Controllers
                 string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
                 string id = ConfigurationManager.AppSettings.Get("Template");
                 string campainID = cNo != "" ? cNo : id;
-                string uri = baseUri + "api/summary/story/?id=" + campainID + "&storyid=" + storyID;
+                string uri = baseUri + "api/summary/story/?id=" + campainID + "&storyid=" + StoryId;
 
                 ViewBag.Did = campainID + "-" + cardType +"-" + System.Guid.NewGuid().ToString();
                 var response = client.GetAsync(uri).Result;
@@ -549,7 +549,8 @@ namespace BharatMovies.Controllers
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.ReturnUrl2 = returnUrl2;
                     ViewBag.ReturnUrl3 = returnUrl3;
-                    ViewBag.storyID = storyID;
+                    ViewBag.storyID = StoryId;
+                    ViewBag.Style = style;
                 }
                 else
                 {
@@ -558,19 +559,20 @@ namespace BharatMovies.Controllers
                     ViewBag.ReturnUrl2 = returnUrl2;
                     ViewBag.ReturnUrl3 = returnUrl3;
                     ViewBag.Summary = null;
-                    ViewBag.storyID = storyID;
+                    ViewBag.storyID = StoryId;
+                    ViewBag.Style = style;
                 }
             }
-            if (cardType == "STORYPCARD")
+            if (cardType == "PCARD")
                 return PartialView("_StoryPCard");
-            else if (cardType == "STORYVCARDAUTO")
+            else if (cardType == "VCARD")
                 return PartialView("_StoryVCardAuto");
-            else if (cardType == "STORYCARDPANEL")
+            else if (cardType == "CARDPANEL")
                 return PartialView("_StoryCardPanel");
-            else if (cardType == "STORYSMALL")
+            else if (cardType == "SMALL")
                 return PartialView("_StorySmall");
             else
-                return PartialView("");
+                return PartialView();
         }
 
     }

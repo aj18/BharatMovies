@@ -1,15 +1,63 @@
 ﻿
 @{
     ViewBag.Title = "Contact";
+    @model BharatMovies.Models.MyMailModel
 }
 
-
+<script type="text/javascript">
+    $(document).ready(function () {
+        if ('@ViewBag.Message' == 'Sent') {
+            alert('Mail has been sent successfully');
+        }
+    });
+</script>
 <div class="starter-template container">
     <div class="row">
         <h2>Contact Us</h2>
         <div class="col l2 m2 s2"></div>
             <div class="col  l8 m8 s8">
-                <iframe src="http://bharatmovies.com/sas/SendEmail.aspx" style="width:100%;height:500px"></iframe>
+                @*<iframe src="http://bharatmovies.com/sas/SendEmail.aspx" style="width:100%;height:500px"></iframe>*@
+                <fieldset>
+                    <legend>
+                        Send Email
+                    </legend>
+                    @using (@Html.BeginForm("Contact", "Home", FormMethod.Post, new { @id = "form1", @enctype = "multipart/form-data" }))
+                    {
+                        @Html.ValidationSummary()
+                        <table>
+                            <tr>
+                                <td>
+                                    E-Mail:
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.Email)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Subject:
+                                </td>
+                                <td>
+                                    @Html.TextBoxFor(m => m.Subject)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    Mail Body:
+                                </td>
+                                <td>
+                                    @Html.TextAreaFor(m => m.Body)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="submit" value="Send" style="width: 100px;" />
+                                </td>
+                            </tr>
+                        </table>
+                    }
+                </fieldset>
             </div>
         <div class="col  l2 m2 s2"></div>
     </div>

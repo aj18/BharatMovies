@@ -18,11 +18,7 @@
         "campaignId" : ID,
         "cardType" : "STORYCARDPANEL",
         "returnUrl" : returnUrl2,
-        "styles" : {cardStyle:{'background-color': '#017ede;','min-height': '247px;',
-            'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
-            'vertical-align': 'middle;','height': '247px !important;','display': 'table-cell;'}
-	                ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','font-weight':'bold'}
-	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}},
+        "styles" : @(Html.Raw(ViewBag.Style)),
         "clientId" : "100",
         "title" : "",
         "description" : "",

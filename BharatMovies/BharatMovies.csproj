@@ -117,9 +117,12 @@
     <Content Include="Global.asax" />
     <None Include="jsonData.json" />
     <None Include="Properties\PublishProfiles\BharatMovies.pubxml" />
+    <None Include="Properties\PublishProfiles\golf24x7 - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\golf24x7 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Images\golf_logo.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Scripts\bubbly.min.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
@@ -127,7 +130,9 @@
     <Content Include="Scripts\materialize.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\player_api.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Views\Shared\_Header.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_PartialPage1.cshtml" />
@@ -145,6 +150,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\MyMailModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -177,6 +183,7 @@
     <Content Include="Views\PartialView\_StoryCardPanel.cshtml" />
     <Content Include="Views\PartialView\_StorySmall.cshtml" />
     <Content Include="Views\Shared\_LayoutGolf.cshtml" />
+    <Content Include="Views\PartialView\StoryCard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -186,7 +193,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

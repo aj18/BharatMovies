@@ -52,72 +52,58 @@
         fjs.parentNode.insertBefore(js, fjs);
     } (document, 'script', 'facebook-jssdk'));</script>
 
-    <header class="starter-template">
-        <div class="row social-main-nav">
-            <nav class="social-nav">
-                <div class="container nav-wrapper" style="">
-                    <a href="@Url.Action("Index", "Home")" class="brand-logo">Golf24x7</a>
-                    <p>Your Unlimited Bollywood's Social Media Destination</p>
-                    <a href="@Url.Action("Index", "Home")"
-                        data-activates="mobile-demo" class="button-collapse">
-                        <i class="material-icons">menu</i>
-                    </a>
+    <div class="row social-main-nav">
+        <nav class="social-nav" style="position:fixed;top:0px;z-index:100;background-color:#0084C7;">
+            <div class="container nav-wrapper" style="width:1238px;">
+                <a href="@Url.Action("Index", "Home")" class="brand-logo"><img src="~/Images/golf_logo.png" /></a>
+                <p>Your Unlimited Golf's Social Media Destination</p>
+                <a href="@Url.Action("Index", "Home")" data-activates="mobile-demo" class="button-collapse">
+                    <i class="material-icons">menu</i>
+                </a>
 
-                    <ul class="socialmedia-nav">
-                        <li><a href="https://www.facebook.com/bharatmovies"><i class="fa fa-facebook-square"></i></a></li>
-                        <li><a href="https://twitter.com/bharatmovies"><i class="fa fa-twitter-square"></i></a></li>
-                        <li><a href="#"><i class="fa fa-envelope-square"></i></a></li>
-                        <li>
-                            <a href="https://www.pinterest.com/bharatmovies/"><i class="fa fa-pinterest-square"></a></i>
-                        </li>
-                    </ul>
+                <ul class="socialmedia-nav">
+                    <li><a href="https://www.facebook.com/Golf24x7Social-858807010834491" target="_blank" ><i class="fa fa-facebook-square"></i></a></li>
+                    <li><a href="https://twitter.com/Golf_24x7Social"  target="_blank"><i class="fa fa-twitter-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope-square"  target="_blank"></i></a></li>
+                    <li>
+                        <a href="#"  target="_blank"><i class="fa fa-pinterest-square"></i></a>
+</li>
+                </ul>
 
-                    <ul class="social-follower"  >
-                        <li>
-                            <a class="white-text" href="https://www.facebook.com/bharatmovies"></a>
-                            <div class="socialright col l6 s12 ">
-                                <div class="fb-like" data-href="https://www.facebook.com/bharatmovies" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                <!--<ul class="social-follower">
+                  <li> <a class="white-text" href="https://www.facebook.com/joash.c.pereira"></a>
+                    <div class="socialright col l6 s12 ">
+                      <div class="fb-follow" data-href="https://www.facebook.com/Golf24x7Social-858807010834491" data-layout="button_count" data-show-faces="true"></div>
+                    </div>
+                  </li>
+                  <li> <a class="white-text" href="https://twitter.com/Golf_24x7Social"></a>
+                    <div class="socialright col l6 s12 "> <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+                      <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                    </div>
+                  </li>
+                </ul>-->
 
-                            </div>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/bharatmovies" class="twitter-follow-button" data-show-count="vertical" data-width="100px"
-                               data-count="vertical" data-align="right" data-show-screen-name="false" data-lang="en"></a>
-                            <script>
-                        !function (d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id))
-                            { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); }
-                        } (document, "script", "twitter-wjs");
-                            </script>
-
-                        </li>
-                    </ul>
-
-                    <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <!--<li><a href="/">Bollywood</a></li>
+                <ul id="nav-mobile" class="hide-on-med-and-down">
+                    <!--<li><a href="/">Bollywood</a></li>
                     <li><a href="/sports">Sports</a></li>
                     <li><a href="/movies">Movies</a></li>-->
 
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <!--<li><a href="/">Bollywood</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <!--<li><a href="/">Bollywood</a></li>
                     <li><a href="/sports">Sports</a></li>
                     <li><a href="/movies">Movies</a></li>-->
-                        <li><a href="https://www.facebook.com/bharatmovies"><i class="fa fa-facebook-square"></i></a></li>
-                        <li><a href="https://twitter.com/bharatmovies"><i class="fa fa-twitter-square"></i></a></li>
-                        <li><a href="#"><i class="fa fa-envelope-square"></i></a></li>
-                        <li>
-                            <a href="https://www.pinterest.com/bharatmovies/"><i class="fa fa-pinterest-square"></a></i>
-                        </li>
+                    <li><a href="https://www.facebook.com/Golf24x7Social-858807010834491"><i class="fa fa-facebook-square"></i></a></li>
+                    <li><a href="https://twitter.com/Golf_24x7Social"><i class="fa fa-twitter-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-pinterest-square"></i></a></li>
 
-                    </ul>
-                </div>
-            </nav>
-        </div>
-       
+                </ul>
+            </div>
+        </nav>
+    </div>
 
 
-    </header>
     <script src="~/Scripts/jquery-2.1.1.min.js"></script>
     
     <script src="~/Scripts/materialize.min.js"></script>
@@ -140,36 +126,31 @@
         @RenderBody()
 
     </div>
-    <footer style="padding:0px !important; background-color:#cf1c2e; color:white;height:60px; line-height:60px; text-align: center;">
+    
 
-        <div class="footer">
-            <nav style="position:relative;bottom:0px;z-index:100;background-color:#cf1c2e;">
-                <div class="container">
-                    <p class="text-left" style="margin:0px !important;float:left;">&copy; Copyright 2015 Bharatmovies  and Powered by Social24x7</p>
-                    <a href="@Url.Action("Index", "Home")" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                      <ul class="right hide-on-med-and-down">
-                        <li><a href="@Url.Action("Index", "Home")">Home </a></li>
-                        <li><a href="@Url.Action("Advertise", "Home")">Advertise </a></li>
-                        <li><a href="@Url.Action("Privacy", "Home")">Privacy Policy</a></li>
-                        <li><a href="@Url.Action("CopyWrite", "Home")">Report Copyright violation</a></li>
-                        <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
-                    </ul>
-                   
-                </div>
-            </nav>
-        </div>
-        <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    <div class="footer" style="padding:0px !important; text-align: center;">
+        <nav style="position:relative;bottom:0px;z-index:100;background-color:#0084C7;">
+            <div class="container">
+                <p class="text-left" style="margin:0px !important;float:left;">&copy; Copyright 2015 The Awesome People of Social24x7</p>
+                <a href="@Url.Action("Index", "Home")" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="@Url.Action("Index", "Home")">Home </a></li>
+                    <li><a href="@Url.Action("Advertise", "Home")">Advertise </a></li>
+                    <li><a href="@Url.Action("Privacy", "Home")">Privacy Policy</a></li>
+                    <li><a href="@Url.Action("CopyWrite", "Home")">Report Copyright violation</a></li>
+                    <li><a href="@Url.Action("Contact", "Home")">Contact Us</a></li>
+                </ul>
+                <ul class="side-nav" id="mobile-demo">
+                    <li><a href="/">Bollywood</a></li>
+                    <li><a href="/sports">Sports</a></li>
+                    <li><a href="/movies">Movies</a></li>
 
-  ga('create', 'UA-41959938-2', 'auto');
-  ga('send', 'pageview');
-  
-        </script>
+                </ul>
+            </div>
+        </nav>
+    </div>
 
-    </footer>
+
     <script>
         $(document).ready(function (e) {
             $(".button-collapse").sideNav();
