@@ -189,7 +189,7 @@
                     <div class="col s12" style="height:502px;margin-bottom:5px;margin-top:25px;">
                         @if (ViewBag.Item["collection"][5]["id"] == "6")
                         {
-                            if (ViewBag.Item["collection"][4]["StoryId"] == "")
+                            if (ViewBag.Item["collection"][5]["StoryId"] == "")
                             {
                             @Html.Action("VCard", "PartialView", new { cardType = ViewBag.Item["collection"][5]["cardType"], cNo = ViewBag.Item["collection"][5]["campaignId"],style = styleVCardLarge })
                         }

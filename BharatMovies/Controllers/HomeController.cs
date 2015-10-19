@@ -187,13 +187,11 @@ namespace BharatMovies.Controllers
 
 
         public ActionResult Advertise()
-        {
-           
+        {  
             return View();
         }
         public ActionResult Contact()
         {
-
             return View();
         }
         [HttpPost]
@@ -262,11 +260,11 @@ namespace BharatMovies.Controllers
 
             return View();
         }
-        //public ActionResult Story()
-        //{
+        public ActionResult Test()
+        {
 
-        //    return View("Story");
-        //}
+            return View();
+        }
     }
 
     public class RootObject
