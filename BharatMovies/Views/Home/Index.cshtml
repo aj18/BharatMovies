@@ -1,9 +1,11 @@
 ﻿@using  System.Web.Script.Serialization;
 @using System.Configuration;
 @{
-        string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
-        string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
-        ViewBag.Title = "Index";
+    string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+    ViewBag.Title = ConfigurationManager.AppSettings.Get("title");
+    ViewBag.Description = ConfigurationManager.AppSettings.Get("description");
+    ViewBag.Keyword = ConfigurationManager.AppSettings.Get("keyword");
     JavaScriptSerializer serializer = new JavaScriptSerializer();
     dynamic templatedata = serializer.Deserialize<object>(ViewBag.data);
 }

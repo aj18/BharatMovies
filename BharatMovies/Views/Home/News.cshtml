@@ -5,6 +5,7 @@
     string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
     string returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
     string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+   
     JavaScriptSerializer serializer = new JavaScriptSerializer();
     //dynamic templatedata = serializer.Deserialize<object>(ViewBag.Stories);
     string styleSmall = @"{
@@ -56,7 +57,7 @@
 </script>
 
     <div class="row" >
-        <div class="col s12 l12 m12" ><h4>@(Html.Raw(ViewBag.Description))</h4></div>
+        <div class="col s12 l12 m12" ><h4>@(Html.Raw(ViewBag.Title))</h4></div>
         <div class="col s12 l9 m9" style="padding-right:50px">
             <div class="row">
                 <div class="col s12" id="rss">

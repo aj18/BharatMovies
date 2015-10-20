@@ -515,7 +515,7 @@ namespace BharatMovies.Controllers
             return PartialView("_VCardAuto");
         }
 
-        public ActionResult StoryCard(string cardType, string cNo, string style, string StoryId)
+        public ActionResult StoryCard(string cardType, string cNo, string style, string StoryId, Boolean Isslider)
         {
             using (var client = new HttpClient())
             {
@@ -526,7 +526,7 @@ namespace BharatMovies.Controllers
                 string id = ConfigurationManager.AppSettings.Get("Template");
                 string campainID = cNo != "" ? cNo : id;
                 string uri = baseUri + "api/summary/story/?id=" + campainID + "&storyid=" + StoryId;
-
+                ViewBag.Isslider = Isslider;
                 ViewBag.Did = campainID + "-" + cardType +"-" + System.Guid.NewGuid().ToString();
                 var response = client.GetAsync(uri).Result;
 

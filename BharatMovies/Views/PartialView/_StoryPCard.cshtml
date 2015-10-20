@@ -13,13 +13,13 @@
     var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
     var Did = "@(Html.Raw(ViewBag.Did))";
     var storyID = "@(Html.Raw(ViewBag.storyID))";
-
+    var Isslider=Isslider;
     var paraStoryNew ={
         "campaignId" : ID,
         "cardType" : "STORYPCARD",
         "returnUrl" : returnUrl2,
         "styles" :  @(Html.Raw(ViewBag.Style)),
-        "title" : "",
+        "storyLB" : true,        "title" : "",
         "description" : "",
         "clientId" : "100" ,
         "title" : "",

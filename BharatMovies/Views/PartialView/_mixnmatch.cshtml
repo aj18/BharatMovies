@@ -65,7 +65,7 @@
                         }
                         else
                         {
-                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = styleMedium, StoryId = ViewBag.Item["collection"][1]["StoryId"] })
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = styleMedium, StoryId = ViewBag.Item["collection"][1]["StoryId"], Isslider = ViewBag.Item["collection"][0]["Isslider"] })
                         }
                     }
                 </div>
@@ -78,7 +78,7 @@
                         }
                         else
                         {
-                        @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], style = "{}", StoryId = ViewBag.Item["collection"][2]["StoryId"] })
+                        @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], style = "{}", StoryId = ViewBag.Item["collection"][2]["StoryId"], Isslider = ViewBag.Item["collection"][0]["Isslider"] })
                         }
                     }
                 </div>
@@ -95,7 +95,7 @@
                         }
                         else
                         {
-                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], style = "{}", StoryId = ViewBag.Item["collection"][3]["StoryId"] })
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], style = "{}", StoryId = ViewBag.Item["collection"][3]["StoryId"], Isslider = ViewBag.Item["collection"][0]["Isslider"] })
                         }
                     }
                 </div>
@@ -108,7 +108,7 @@
                         }
                         else
                         {
-                        @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], style = "{}", StoryId = ViewBag.Item["collection"][4]["StoryId"] })
+                        @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], style = "{}", StoryId = ViewBag.Item["collection"][4]["StoryId"], Isslider = ViewBag.Item["collection"][0]["Isslider"] })
                         }
                     }
                 </div>

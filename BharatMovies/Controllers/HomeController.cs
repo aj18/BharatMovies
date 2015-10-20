@@ -19,7 +19,7 @@ namespace BharatMovies.Controllers
     public class HomeController : Controller
     {
         // GET: Home
-        [OutputCache(Duration = 3600, VaryByParam = "none")]
+        //[OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Index()
         {
             using (var client = new HttpClient())
@@ -58,7 +58,7 @@ namespace BharatMovies.Controllers
             return View();
         }
         
-        [OutputCache(Duration = 3600, VaryByParam = "id")]
+        //[OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult News(string id)
         {
             using (var client = new HttpClient())
@@ -90,6 +90,23 @@ namespace BharatMovies.Controllers
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.ReturnUrl2 = returnUrl2;
                     ViewBag.ReturnUrl3 = returnUrl3;
+                    ViewBag.Title = deserializedObj.Description;
+
+
+                    if (deserializedObj.Photos != null)
+                    {
+                        foreach (var item in deserializedObj.Photos)
+                        {
+                            ViewBag.Description += item.Description + " ";
+                        }
+                    }
+                    if (deserializedObj.Tags != null)
+                    {
+                        foreach (var item in deserializedObj.Tags)
+                        {
+                            ViewBag.Keyword += item.key + " ";
+                        }
+                    }
 
                 }
             }
@@ -101,7 +118,7 @@ namespace BharatMovies.Controllers
         }
 
 
-        [OutputCache(Duration = 3600, VaryByParam = "id")]
+        //[OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult Story(string id , string storyid)
         {
             using (var client = new HttpClient())
@@ -128,7 +145,23 @@ namespace BharatMovies.Controllers
                     ViewBag.Name = deserializedObj.Name;
                     ViewBag.Stories = deserializedObj.Stories;
 
-                    ViewBag.Description = deserializedObj.Description;
+                    ViewBag.Title = deserializedObj.Description;
+                   
+                    
+                    if (deserializedObj.Photos != null)
+                    {
+                        foreach (var item in deserializedObj.Photos)
+                        {
+                            ViewBag.Description += item.Description +" ";
+                        }
+                    }
+                    if (deserializedObj.Tags != null)
+                    {
+                        foreach (var item in deserializedObj.Tags)
+                        {
+                            ViewBag.Keyword += item.key + " ";
+                        }
+                    }
                     ViewBag.SearchQuery = deserializedObj.SearchQuery;
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.ReturnUrl2 = returnUrl2;
@@ -170,7 +203,23 @@ namespace BharatMovies.Controllers
 
 
                     ViewBag.Name = deserializedObj.Name;
-                    ViewBag.Description = deserializedObj.Description;
+                    ViewBag.Title = deserializedObj.Description;
+
+
+                    if (deserializedObj.Photos != null)
+                    {
+                        foreach (var item in deserializedObj.Photos)
+                        {
+                            ViewBag.Description += item.Description + " ";
+                        }
+                    }
+                    if (deserializedObj.Tags != null)
+                    {
+                        foreach (var item in deserializedObj.Tags)
+                        {
+                            ViewBag.Keyword += item.key + " ";
+                        }
+                    }
                     ViewBag.SearchQuery = deserializedObj.SearchQuery;
 
 
@@ -286,6 +335,8 @@ namespace BharatMovies.Controllers
         public string StoryId { get; set; }
         public string StoryTitle { get; set; }
         public IList<object> Stories { get; set; }
+        public IList<object> Tags { get; set; }
+        public IList<object> Photos { get; set; }
 
 
 
