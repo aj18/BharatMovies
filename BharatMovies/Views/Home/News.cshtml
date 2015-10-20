@@ -92,7 +92,7 @@
                         foreach (var item in ViewBag.Stories)
                         {
 
-                                    @Html.Action("StoryCard", "PartialView", new { cardType = "STORYSMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall , Isslider = false })
+                            @Html.Action("StoryCard", "PartialView", new { cardType = "SMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall, Isslider = false })
 
 
                         }

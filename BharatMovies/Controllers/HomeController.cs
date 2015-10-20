@@ -203,6 +203,8 @@ namespace BharatMovies.Controllers
 
 
                     ViewBag.Name = deserializedObj.Name;
+                    ViewBag.Stories = deserializedObj.Stories;
+
                     ViewBag.Title = deserializedObj.Description;
 
 

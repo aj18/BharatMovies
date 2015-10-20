@@ -4,11 +4,50 @@
 @{
     string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
     string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+    string returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
+    string styleSmall = @"{
+	panelStyle: {
+		'padding': '0px;',
+		'height': '247px;',
+		'border-radius': '5px !important;'
+	},
+	titleStyle: {
+		'position': 'relative;',
+		'height': '35px;',
+		'left': '0px;',
+		'padding': '5px;',
+		'display': 'inline-block;',
+		'max-width': '65%;',
+		'text-overflow': 'ellipsis;',
+		'white-space': 'nowrap;',
+		'overflow': 'hidden;',
+		'background-color': 'rgba(255, 80, 10, 0.85);',
+		'font-size': '16px;',
+		'color': '#fff;',
+		'bottom': '90px;',
+	},
+	subTitleStyle: {
+		'background-color': 'rgba(255, 255, 255, 0.65);',
+		'font-size': '14px;',
+		'color': '#000;',
+		'text-overflow': 'ellipsis;',
+		'white-space': 'nowrap;',
+		'overflow': 'hidden;',
+		'bottom': '90px',
+		'position': 'relative;',
+		'padding': '5px;'
+	},
+	pictureStyle: {
+		'height': '247px !important;',
+		'border-radius': '5px !important;'
+	}
+}";
 
 }
 <script type="text/javascript">
 
     var returnUrl ="@(Html.Raw(returnUrl))";
+    var returnUrl2 ="@(Html.Raw(returnUrl2))";
     var returnUrl3 ="@(Html.Raw(returnUrl3))";
 
 
@@ -36,7 +75,7 @@
                     foreach (var item in ViewBag.Stories)
                     {
 
-                        @Html.Action("StoryCard", "PartialView", new { cardType = "STORYSMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall, Isslider = false })
+                        @Html.Action("StoryCard", "PartialView", new { cardType = "SMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall, Isslider = false })
 
 
                     }
@@ -54,8 +93,9 @@
         var ID ="@(Html.Raw(ViewBag.ID))";
         var q = "@(Html.Raw(ViewBag.q))";
         var type ="@(Html.Raw(ViewBag.type))" ;
-        var ReturnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
-        var ReturnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+        var ReturnUrl="@(Html.Raw(returnUrl))"
+        var ReturnUrl3="@(Html.Raw(returnUrl3))"
+        var ReturnUrl2="@(Html.Raw(returnUrl2))"
 
 
         Bubbly.showComments({ "campaignId": ID, "cardType": "COMMENTS", "returnUrl": ReturnUrl3, "styles": {}, "clientId": 100, "commentsType":type, "commentsTitle": "", "commentsQ": q, "commentsSkipBy": "1", "commentsLimit": "20" }, null, document.getElementById("wall"));
