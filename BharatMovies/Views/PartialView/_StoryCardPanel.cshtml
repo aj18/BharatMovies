@@ -1,5 +1,9 @@
-﻿@{
+﻿@using System.Configuration;
+@{
     var divID = ViewBag.Did;
+    var returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    var returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
+    var returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
 }
 <div id=@divID></div>
 <script type="text/javascript">
@@ -7,9 +11,9 @@
 
     var data =@(Html.Raw(ViewBag.Summary));
     var ID ="@(Html.Raw(ViewBag.ID))";
-    var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
-    var returnUrl2="@(Html.Raw(ViewBag.ReturnUrl2))"
-    var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+    var returnUrl="@(Html.Raw(returnUrl))"
+    var returnUrl2="@(Html.Raw(returnUrl2))"
+    var returnUrl3="@(Html.Raw(returnUrl3))"
     var Did = "@(Html.Raw(ViewBag.Did))";
     var storyID = "@(Html.Raw(ViewBag.storyID))";
 

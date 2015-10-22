@@ -1,16 +1,22 @@
-﻿@{
+﻿@using System.Configuration;
+@{
     var divID = ViewBag.Did;
+    var returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    var returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
+    var returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
 }
+
 <div id=@divID></div>
 @*<div id="vcardm"></div>
 <div id="vcardm1"></div>*@
 <script type="text/javascript">
     var Bubbly = new BubblyCard();
-    
+
     var data =@(Html.Raw(ViewBag.Summary));
     var ID ="@(Html.Raw(ViewBag.ID))";
-    var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
-    var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+  var returnUrl="@(Html.Raw(returnUrl))"
+    var returnUrl2="@(Html.Raw(returnUrl2))"
+    var returnUrl3="@(Html.Raw(returnUrl3))"
     var Did = "@(Html.Raw(ViewBag.Did))";
 
     var paraVCardM ={
@@ -20,7 +26,7 @@
         "styles" :@(Html.Raw(ViewBag.Style)) ,
         "clientId" : "100"
     };
-    
+
     Bubbly.showCard(paraVCardM, data, document.getElementById(Did));
-    
+
 </script>

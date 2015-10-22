@@ -1,0 +1,6 @@
+﻿User-Agent: *
+Disallow: 
+Disallow: /Home/Advertise
+Disallow: /Home/Privacy
+Disallow: /Home/CopyWrite
+Disallow: /Home/Contact
