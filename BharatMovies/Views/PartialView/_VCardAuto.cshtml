@@ -1,11 +1,19 @@
-﻿<div id="vcardm"></div>
+﻿@using System.Configuration;
+@{
+  
+    var returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    var returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
+    var returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+}
+<div id="vcardm"></div>
 <script type="text/javascript">
     var Bubbly = new BubblyCard();
 
     var data =@(Html.Raw(ViewBag.Summary));
     var ID ="@(Html.Raw(ViewBag.ID))";
-    var returnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
-    var returnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+    var returnUrl="@(Html.Raw(returnUrl))"
+    var returnUrl2="@(Html.Raw(returnUrl2))"
+    var returnUrl3="@(Html.Raw(returnUrl3))"
     var paraVCardM = {
         "campaignId": ID,
         "cardType": "VCARDAUTO",
