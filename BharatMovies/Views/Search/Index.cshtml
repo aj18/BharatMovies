@@ -1,0 +1,37 @@
+﻿@using System.Web.Script.Serialization;
+@using System.Configuration;
+@{
+    string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+    string styleMedium = @" {cardStyle : {'background-color': '#ffffff;','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);'},
+            cardImageStyle : {},
+            cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;'},
+            cardTitleAnchoStyle :{'color':'#ffffff'},
+            descriptionStyle : {'color': '#000000 !important'},
+            actionStyle : {}
+        }";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="divider social-divider" style="background-color:#08893E;"></div>
+        <a href="@Url.Action("Index", "Home")"><h2 style="color:#08893E;">Search Result  "@ViewBag.Title"  <i class="fa fa-angle-right fa-lg"></i></h2></a>
+
+        @foreach (var item in ViewBag.uniqueid)
+        {
+            <div class="col s12 m6 l3">
+
+                @Html.Action("Medium", "PartialView", new { cardType = "Medium", cNo = item, style = styleMedium })
+
+            </div>
+        }
+
+
+
+
+
+
+
+        </div>
+   
+</div>

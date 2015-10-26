@@ -18,8 +18,52 @@ namespace BharatMovies.Controllers
     
     public class HomeController : Controller
     {
-        // GET: Home
+        // GET: Preview
         //[OutputCache(Duration = 3600, VaryByParam = "none")]
+        public ActionResult Preview(string id)
+        {
+            using (var client = new HttpClient())
+            {
+                string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
+                string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
+                string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
+              
+
+                string uri = baseUri + "api/summary/template/?id=" + id;
+
+                var response = client.GetAsync(uri).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = response.Content;
+                    string responseString = responseContent.ReadAsStringAsync().Result;
+                    dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
+
+                    JavaScriptSerializer serializer = new JavaScriptSerializer();
+                    dynamic item = serializer.Deserialize<object>(responseString);
+                    string test = item["_id"];
+
+                    ViewBag.data = responseString;
+                   
+                    ViewBag.Name = deserializedObj.Name;
+                    ViewBag.SearchQuery = deserializedObj.SearchQuery;
+
+                    ViewBag.Title = deserializedObj.Title;
+                    ViewBag.Description = deserializedObj.Description;
+                    ViewBag.Keyword = deserializedObj.Keyword;
+
+
+                    ViewBag.ReturnUrl = returnUrl;
+                    ViewBag.ReturnUrl3 = returnUrl3;
+
+                }
+            }
+            
+            return View("Index");
+        }
+
+        // GET: Home
+        [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Index()
         {
             using (var client = new HttpClient())
@@ -47,14 +91,16 @@ namespace BharatMovies.Controllers
 
                     ViewBag.ID = deserializedObj.ID;
                     ViewBag.Name = deserializedObj.Name;
+                    ViewBag.Title = deserializedObj.Title;
                     ViewBag.Description = deserializedObj.Description;
+                    ViewBag.Keyword = deserializedObj.Keyword;
                     ViewBag.SearchQuery = deserializedObj.SearchQuery;
                     ViewBag.ReturnUrl = returnUrl;
                     ViewBag.ReturnUrl3 = returnUrl3;
 
                 }
             }
-            
+
             return View();
         }
 
@@ -324,6 +370,8 @@ namespace BharatMovies.Controllers
         public string Name { get; set; }
         public string Description { get; set; }
         public string Category { get; set; }
+        public string Title { get; set; }
+        public string Keyword { get; set; }
         public bool ShowDefaultPicture { get; set; }
         public string SearchQuery { get; set; }
         public int VideosCount { get; set; }
