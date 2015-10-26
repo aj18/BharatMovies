@@ -184,6 +184,9 @@
     <Content Include="Views\PartialView\_StorySmall.cshtml" />
     <Content Include="Views\Shared\_LayoutGolf.cshtml" />
     <Content Include="Views\PartialView\StoryCard.cshtml" />
+    <Content Include="Views\PartialView\_storycollection.cshtml" />
+    <Content Include="Views\PartialView\_storycollectionmix.cshtml" />
+    <Content Include="Views\PartialView\_storymixnmatch.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

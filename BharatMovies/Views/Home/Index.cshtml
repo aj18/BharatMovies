@@ -9,6 +9,37 @@
     JavaScriptSerializer serializer = new JavaScriptSerializer();
     dynamic templatedata = serializer.Deserialize<object>(ViewBag.data);
 }
+<style>
+    .container {
+        margin: 0 auto;
+        max-width: 1286px !important;
+        width: 95%;
+    }
+
+    ul {
+        MARGIN-TOP: 20PX;
+    }
+
+    .bg-image {
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        width: 100%;
+        height: 100%;
+    }
+
+    .social-main-title a {
+        color: #ffffff !important;
+    }
+
+    .lh-small {
+        overflow: hidden;
+        width: 212px !important;
+        height: 299px;
+        float: left;
+        padding: 0 0rem !important;
+        margin: 0px 0.3rem 0.3rem 0px !important;
+    }
+</style>
 @foreach (var item in templatedata["layout"])
 {
     if (item["id"] == "missionary" || item["id"] == "masonry")
@@ -44,5 +75,17 @@
     else if (item["id"] == "largeCollection")
     {
         @Html.Action("LargeCollection", "PartialView", new { item = item })
+    }
+    else if (item["id"] == "storymixnmatch")
+    {
+        @Html.Action("StorymixNmatch", "PartialView", new { item = item })
+    }
+    else if (item["id"] == "storycollection")
+    {
+        @Html.Action("StoryCollection", "PartialView", new { item = item })
+    }
+    else if (item["id"] == "storycollectionmix")
+    {
+        @Html.Action("StoryCollectionMix", "PartialView", new { item = item })
     }
 }
