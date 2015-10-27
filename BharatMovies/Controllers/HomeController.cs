@@ -54,7 +54,11 @@ namespace BharatMovies.Controllers
 
                 }
             }
-            
+            //using (StreamReader sr = new StreamReader("C:\\Users\\Arun\\Downloads\\document(2).json"))
+            //{
+            //    ViewBag.data = sr.ReadToEnd();
+            //}
+
             return View();
         }
 
