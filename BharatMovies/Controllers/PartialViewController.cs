@@ -57,6 +57,21 @@ namespace BharatMovies.Controllers
             ViewBag.Item = item;
             return PartialView("_largeCollection");
         }
+        public ActionResult StorymixNmatch(object item)
+        {
+            ViewBag.Item = item;
+            return PartialView("_storymixnmatch");
+        }
+        public ActionResult StoryCollection(object item)
+        {
+            ViewBag.Item = item;
+            return PartialView("_storycollection");
+        }
+        public ActionResult StoryCollectionMix(object item)
+        {
+            ViewBag.Item = item;
+            return PartialView("_storycollectionmix");
+        }
         public ActionResult CardPanel(string cardType, string cNo,string style)
         {
             using (var client = new HttpClient())
