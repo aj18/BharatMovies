@@ -1,59 +1,27 @@
 ﻿@{
-    string styleSmall1 = @"{
-	panelStyle: {
-		'padding': '0px;',
-		'height': '247px;',
-		'border-radius': '5px !important;'
-	},
-	titleStyle: {
-		'position': 'relative;',
-		'height': '35px;',
-		'left': '0px;',
-		'padding': '5px;',
-		'display': 'inline-block;',
-		'max-width': '65%;',
-		'text-overflow': 'ellipsis;',
-		'white-space': 'nowrap;',
-		'overflow': 'hidden;',
-		'background-color': 'rgba(255, 80, 10, 0.85);',
-		'font-size': '16px;',
-		'color': '#fff;',
-		'bottom': '90px;',
-	},
-	subTitleStyle: {
-		'background-color': 'rgba(255, 255, 255, 0.65);',
-		'font-size': '14px;',
-		'color': '#000;',
-		'text-overflow': 'ellipsis;',
-		'white-space': 'nowrap;',
-		'overflow': 'hidden;',
-		'bottom': '90px',
-		'position': 'relative;',
-		'padding': '5px;'
-	},
-	pictureStyle: {
-		'height': '247px !important;',
-		'border-radius': '5px !important;'
-	}
-}";
+    string styleSmall1 = @"{panelStyle:{'padding':'0px;','height':'299px !important;'},
+	  titleStyle:{
+	  'background-color': 'rgba(40, 180, 220, 0.85)!important;',
+	  'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
+	  subTitleStyle:{'background-color' : 'rgba(40, 180, 220, 0.85);',
+	  'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
+	  pictureStyle:{'width' : '100%;','height':'299px !important;','border' : 'none !important;',},
+	  iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}}";
 
-    string styleVCardSmall = @"{panelStyle:{'padding':'0px;','height':'247px !important;'},
-            titleStyle:
-    {
-        'background-color': 'rgba(40, 180, 220, 0.85)!important;',
-                'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
-            subTitleStyle:
-    {
-        'background-color': 'rgba(255, 255, 255, 0.65);',
-                'font-size': '14px;','color':'#000;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
-            pictureStyle: { 'width' : '100%;','height':'247px !important;','border' : 'none !important;',},
-            iconStyle: { 'color':'rgba(75, 188, 150, 0.85);'}}";
+    string styleVCardSmall = @"{panelStyle:{'padding':'0px;','height':'299px !important;'},
+	  titleStyle:{
+	  'background-color': 'rgba(40, 180, 220, 0.85)!important;',
+	  'font-size': '16px;','color':'#fff;', 'font-weight': 'normal !important;'},
+	  subTitleStyle:{'background-color' : 'rgba(40, 180, 220, 0.85);',
+	  'font-size': '14px;','color':'#fff;', 'bottom': '65px !important;', 'position':'relative;', 'font-weight': 'normal !important;'},
+	  pictureStyle:{'width' : '100%;','height':'299px !important;','border' : 'none !important;',},
+	  iconStyle:{'color':'rgba(75, 188, 150, 0.85);'}}";
 
-    var PanelStyle = @"{cardStyle:{'background-color': '#017ede;','min-height': '247px;',
-            'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
-            'vertical-align': 'middle;','height': '247px !important;','display': 'table-cell;'}
-	                ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','font-weight':'bold'}
-	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}}";
+    var PanelStyle = @"{cardStyle:{'background-color': '#7b1fa2;','min-height': '299px;',
+                 'text-align':'center;','padding':'30px;','color':'#ffffff;','line-height':'20px;',
+              'vertical-align': 'middle;','height': '299px !important;','display': 'inline-block;'}
+                 ,cardTitleStyle:{'color': '#FBF8F8 !important','text-align':'center;','font-size':'18px;','font-weight':'bold'}
+              ,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}}";
 
 };
 
@@ -93,7 +61,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="col s12 m4 l2" style="overflow:hidden;width:360px;height:299px;float:left;padding: 0 0rem !important;margin: 0px 0.3rem 0.3rem 0px !important;">
+                    <div class="col s12 m8 l4 ll4" style="overflow:hidden;height:299px;float:left;padding: 0 0rem !important;margin: 0px 0.3rem 0.3rem 0px !important;">
                         @if (ViewBag.Item["collection"][2]["id"] == "3")
                         {
                             if (ViewBag.Item["collection"][2]["StoryId"] == "")
@@ -200,7 +168,7 @@
                     </div>
                 </li>
                 <li>
-                    <div class="col s12 m4 l2" style="overflow:hidden;width:360px;height:299px;float:left;padding: 0 0rem !important;margin: 0px 0.3rem 0.3rem 0px !important;">
+                    <div class="col s12 m8 l4 ll4" style="overflow:hidden;height:299px;float:left;padding: 0 0rem !important;margin: 0px 0.3rem 0.3rem 0px !important;">
                         @if (ViewBag.Item["collection"][9]["id"] == "10")
                         {
                             if (ViewBag.Item["collection"][9]["StoryId"] == "")
