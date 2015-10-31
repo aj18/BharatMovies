@@ -24,169 +24,168 @@
               ,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}}";
 
 };
+<div style="background-color:#262629; width:100%;">
+    <div class="container">
+        <div class="row">
+            <div class="col s12" style="padding:0px;">
 
-<div class="container">
-    <div class="row">
-        <div class="col s12" style="padding:0px;">
-            <ul>
                 <!-------------------Row Start------------------->
-                <li>
-                    <div class="col s12 m4 l2 lh-small">
-                        @if (ViewBag.Item["collection"][0]["id"] == "1")
+
+                <div class="col s12 m4 l2 lh-small">
+                    @if (ViewBag.Item["collection"][0]["id"] == "1")
+                    {
+                        if (ViewBag.Item["collection"][0]["StoryId"] == "")
                         {
-                            if (ViewBag.Item["collection"][0]["StoryId"] == "")
-                            {
-                                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], style = styleSmall1 })
-                            }
-                            else
-                            {
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][0]["StoryId"], Isslider = ViewBag.Item["collection"][0]["Isslider"] })
-                            }
+                            @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], style = styleSmall1 })
                         }
-                    </div>
-                </li>
-                <li>
-                    <div class="col s12 m4 l2 lh-small">
-                        @if (ViewBag.Item["collection"][1]["id"] == "2")
+                        else
                         {
-                            if (ViewBag.Item["collection"][1]["StoryId"] == "")
-                            {
-                                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = styleSmall1 })
-                            }
-                            else
-                            {
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][1]["StoryId"], Isslider = ViewBag.Item["collection"][1]["Isslider"] })
-                            }
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][0]["cardType"], cNo = ViewBag.Item["collection"][0]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][0]["StoryId"], Isslider = ViewBag.Item["collection"][0]["Isslider"] })
                         }
-                    </div>
-                </li>
-                <li>
-                    <div class="col s12 m8 l4 ll4" style="overflow:hidden;height:299px;float:left;padding: 0 0rem !important;margin: 0px 0.3rem 0.3rem 0px !important;">
-                        @if (ViewBag.Item["collection"][2]["id"] == "3")
+                    }
+                </div>
+
+
+                <div class="col s12 m4 l2 lh-small">
+                    @if (ViewBag.Item["collection"][1]["id"] == "2")
+                    {
+                        if (ViewBag.Item["collection"][1]["StoryId"] == "")
                         {
-                            if (ViewBag.Item["collection"][2]["StoryId"] == "")
-                            {
-                                @Html.Action("VCard", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], style = styleVCardSmall })
-                            }
-                            else
-                            {
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], style = styleVCardSmall, StoryId = ViewBag.Item["collection"][2]["StoryId"], Isslider = ViewBag.Item["collection"][2]["Isslider"] })
-                            }
+                            @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = styleSmall1 })
                         }
-                    </div>
-                </li>
-                <li>
-                    <div class="col s12 m4 l2 lh-small">
-                        @if (ViewBag.Item["collection"][3]["id"] == "4")
+                        else
+                        {
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][1]["cardType"], cNo = ViewBag.Item["collection"][1]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][1]["StoryId"], Isslider = ViewBag.Item["collection"][1]["Isslider"] })
+                        }
+                    }
+                </div>
+
+
+                <div class="col s12 m8 l4 ll4" style="overflow:hidden;height:299px;float:left;padding: 0 0rem !important;margin: 0px 0.3rem 0.3rem 0px !important;">
+                    @if (ViewBag.Item["collection"][2]["id"] == "3")
+                    {
+                        if (ViewBag.Item["collection"][2]["StoryId"] == "")
+                        {
+                            @Html.Action("VCard", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], style = styleVCardSmall })
+                        }
+                        else
+                        {
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][2]["cardType"], cNo = ViewBag.Item["collection"][2]["campaignId"], style = styleVCardSmall, StoryId = ViewBag.Item["collection"][2]["StoryId"], Isslider = ViewBag.Item["collection"][2]["Isslider"] })
+                        }
+                    }
+                </div>
+
+
+                <div class="col s12 m4 l2 lh-small">
+                    @if (ViewBag.Item["collection"][3]["id"] == "4")
             {
                 if (ViewBag.Item["collection"][3]["StoryId"] == "")
                 {
-                                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], style = styleSmall1 })
-                            }
-                            else
-                            {
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][3]["StoryId"], Isslider = ViewBag.Item["collection"][3]["Isslider"] })
-                            }
+                            @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], style = styleSmall1 })
                         }
-                    </div>
-                </li>
-                <li>
-                    <div class="col s12 m4 l2 lh-small">
-                        @if (ViewBag.Item["collection"][4]["id"] == "5")
+                        else
+                        {
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][3]["StoryId"], Isslider = ViewBag.Item["collection"][3]["Isslider"] })
+                        }
+                    }
+                </div>
+
+
+                <div class="col s12 m4 l2 lh-small">
+                    @if (ViewBag.Item["collection"][4]["id"] == "5")
             {
                 if (ViewBag.Item["collection"][4]["StoryId"] == "")
                 {
-                                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], style = styleSmall1 })
-                            }
-                            else
-                            {
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][4]["StoryId"], Isslider = ViewBag.Item["collection"][4]["Isslider"] })
-                            }
+                            @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], style = styleSmall1 })
                         }
-                    </div>
-                </li>
-                <li>
-                    <div class="col s12 m4 l2 lh-small">
-                        @if (ViewBag.Item["collection"][5]["id"] == "2")
+                        else
                         {
-                            if (ViewBag.Item["collection"][5]["StoryId"] == "")
-                            {
-                                @Html.Action("CardPanel", "PartialView", new { cardType = ViewBag.Item["collection"][5]["cardType"], cNo = ViewBag.Item["collection"][5]["campaignId"], style = PanelStyle })
-                            }
-                            else
-                            {
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][5]["cardType"], cNo = ViewBag.Item["collection"][5]["campaignId"], style = PanelStyle, StoryId = ViewBag.Item["collection"][5]["StoryId"], Isslider = ViewBag.Item["collection"][5]["Isslider"] })
-                            }
-
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][4]["cardType"], cNo = ViewBag.Item["collection"][4]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][4]["StoryId"], Isslider = ViewBag.Item["collection"][4]["Isslider"] })
                         }
-                    </div>
-                </li>
-                <li>
-                    <div class="col s12 m4 l2 lh-small">
-                        @if (ViewBag.Item["collection"][6]["id"] == "7")
+                    }
+                </div>
+
+
+                <div class="col s12 m4 l2 lh-small">
+                    @if (ViewBag.Item["collection"][5]["id"] == "2")
+                    {
+                        if (ViewBag.Item["collection"][5]["StoryId"] == "")
+                        {
+                            @Html.Action("CardPanel", "PartialView", new { cardType = ViewBag.Item["collection"][5]["cardType"], cNo = ViewBag.Item["collection"][5]["campaignId"], style = PanelStyle })
+                        }
+                        else
+                        {
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][5]["cardType"], cNo = ViewBag.Item["collection"][5]["campaignId"], style = PanelStyle, StoryId = ViewBag.Item["collection"][5]["StoryId"], Isslider = ViewBag.Item["collection"][5]["Isslider"] })
+                        }
+
+                    }
+                </div>
+
+
+                <div class="col s12 m4 l2 lh-small">
+                    @if (ViewBag.Item["collection"][6]["id"] == "7")
             {
                 if (ViewBag.Item["collection"][6]["StoryId"] == "")
                 {
-                                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][6]["cardType"], cNo = ViewBag.Item["collection"][6]["campaignId"], style = styleSmall1 })
-                            }
-                            else
-                            {
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][6]["cardType"], cNo = ViewBag.Item["collection"][6]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][6]["StoryId"], Isslider = ViewBag.Item["collection"][6]["Isslider"] })
-                            }
+                            @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][6]["cardType"], cNo = ViewBag.Item["collection"][6]["campaignId"], style = styleSmall1 })
                         }
-                    </div>
-                </li>
-                <li>
-                    <div class="col s12 m4 l2 lh-small">
-                        @if (ViewBag.Item["collection"][7]["id"] == "8")
+                        else
+                        {
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][6]["cardType"], cNo = ViewBag.Item["collection"][6]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][6]["StoryId"], Isslider = ViewBag.Item["collection"][6]["Isslider"] })
+                        }
+                    }
+                </div>
+
+
+                <div class="col s12 m4 l2 lh-small">
+                    @if (ViewBag.Item["collection"][7]["id"] == "8")
             {
                 if (ViewBag.Item["collection"][7]["StoryId"] == "")
                 {
-                                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][7]["cardType"], cNo = ViewBag.Item["collection"][7]["campaignId"], style = styleSmall1 })
-                            }
-                            else
-                            {
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][7]["cardType"], cNo = ViewBag.Item["collection"][7]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][7]["StoryId"], Isslider = ViewBag.Item["collection"][7]["Isslider"] })
-                            }
+                            @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][7]["cardType"], cNo = ViewBag.Item["collection"][7]["campaignId"], style = styleSmall1 })
                         }
-                    </div>
-                </li>
-                <li>
-                    <div class="col s12 m4 l2 lh-small">
-                        @if (ViewBag.Item["collection"][8]["id"] == "9")
+                        else
+                        {
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][7]["cardType"], cNo = ViewBag.Item["collection"][7]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][7]["StoryId"], Isslider = ViewBag.Item["collection"][7]["Isslider"] })
+                        }
+                    }
+                </div>
+
+
+                <div class="col s12 m4 l2 lh-small">
+                    @if (ViewBag.Item["collection"][8]["id"] == "9")
             {
                 if (ViewBag.Item["collection"][8]["StoryId"] == "")
                 {
-                                @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][8]["cardType"], cNo = ViewBag.Item["collection"][8]["campaignId"], style = styleSmall1 })
-                            }
-                            else
-                            {
-
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][8]["cardType"], cNo = ViewBag.Item["collection"][8]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][8]["StoryId"], Isslider = ViewBag.Item["collection"][8]["Isslider"] })
-                            }
+                            @Html.Action("PCard", "PartialView", new { cardType = ViewBag.Item["collection"][8]["cardType"], cNo = ViewBag.Item["collection"][8]["campaignId"], style = styleSmall1 })
                         }
-                    </div>
-                </li>
-                <li>
-                    <div class="col s12 m8 l4 ll4" style="overflow:hidden;height:299px;float:left;padding: 0 0rem !important;margin: 0px 0.3rem 0.3rem 0px !important;">
-                        @if (ViewBag.Item["collection"][9]["id"] == "10")
+                        else
                         {
-                            if (ViewBag.Item["collection"][9]["StoryId"] == "")
-                            {
-                                @Html.Action("VCard", "PartialView", new { cardType = ViewBag.Item["collection"][9]["cardType"], cNo = ViewBag.Item["collection"][9]["campaignId"], style = styleVCardSmall })
-                            }
-                            else
-                            {
-                                @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][9]["cardType"], cNo = ViewBag.Item["collection"][9]["campaignId"], style = styleVCardSmall, StoryId = ViewBag.Item["collection"][9]["StoryId"], Isslider = ViewBag.Item["collection"][9]["Isslider"] })
-                            }
+
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][8]["cardType"], cNo = ViewBag.Item["collection"][8]["campaignId"], style = styleSmall1, StoryId = ViewBag.Item["collection"][8]["StoryId"], Isslider = ViewBag.Item["collection"][8]["Isslider"] })
                         }
-                    </div>
-                </li>
+                    }
+                </div>
+
+
+                <div class="col s12 m8 l4 ll4" style="overflow:hidden;height:299px;float:left;padding: 0 0rem !important;margin: 0px 0.3rem 0.3rem 0px !important;">
+                    @if (ViewBag.Item["collection"][9]["id"] == "10")
+                    {
+                        if (ViewBag.Item["collection"][9]["StoryId"] == "")
+                        {
+                            @Html.Action("VCard", "PartialView", new { cardType = ViewBag.Item["collection"][9]["cardType"], cNo = ViewBag.Item["collection"][9]["campaignId"], style = styleVCardSmall })
+                        }
+                        else
+                        {
+                            @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][9]["cardType"], cNo = ViewBag.Item["collection"][9]["campaignId"], style = styleVCardSmall, StoryId = ViewBag.Item["collection"][9]["StoryId"], Isslider = ViewBag.Item["collection"][9]["Isslider"] })
+                        }
+                    }
+                </div>
+
 
                 <!-------------------Row end------------------->
-            </ul>
+
+            </div>
         </div>
     </div>
 </div>
-
-
