@@ -9,21 +9,27 @@
 <script type="text/javascript">
 
     var Bubbly = new BubblyCard();
-
+    var url="";
+    var ReturnUrl="@(Html.Raw(returnUrl))"
+    var ReturnUrl2="@(Html.Raw(returnUrl2))"
+    var ReturnUrl3="@(Html.Raw(returnUrl3))"
     var data =@(Html.Raw(ViewBag.Summary));
     var ID ="@(Html.Raw(ViewBag.ID))";
-   var returnUrl="@(Html.Raw(returnUrl))"
-    var returnUrl2="@(Html.Raw(returnUrl2))"
-    var returnUrl3="@(Html.Raw(returnUrl3))"
     var Did = "@(Html.Raw(ViewBag.Did))";
     var storyID = "@(Html.Raw(ViewBag.storyID))";
-    var Isslider=Isslider;
+    var Isslider="@(Html.Raw(ViewBag.Isslider))";
+
+    if(Isslider=="true" || Isslider=="True")
+        url=ReturnUrl;
+    else
+        url=ReturnUrl2;
+
     var paraStoryNew ={
         "campaignId" : ID,
         "cardType" : "STORYPCARD",
-        "returnUrl" : returnUrl2,
+        "returnUrl" : url,
         "styles" :  @(Html.Raw(ViewBag.Style)),
-        "storyLB" : true,
+        "storyLB" : Isslider,
         "title" : "",
         "description" : "",
         "clientId" : "100" ,
