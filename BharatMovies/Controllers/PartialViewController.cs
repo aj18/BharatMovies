@@ -401,37 +401,39 @@ namespace BharatMovies.Controllers
                 string id = ConfigurationManager.AppSettings.Get("Template");
                 string campainID = cNo != "" ? cNo : id;
                 string uri = baseUri + "api/summary/?id=" + campainID;
-                
-                var response = client.GetAsync(uri).Result;
-                ViewBag.Did = campainID + "-SmallVertical-" + System.Guid.NewGuid().ToString();
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = response.Content;
-                    string responseString = responseContent.ReadAsStringAsync().Result;
-                    dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
+                try {
+                    var response = client.GetAsync(uri).Result;
+                    ViewBag.Did = campainID + "-SmallVertical-" + System.Guid.NewGuid().ToString();
+                    if (response.IsSuccessStatusCode)
+                    {
+                        var responseContent = response.Content;
+                        string responseString = responseContent.ReadAsStringAsync().Result;
+                        dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
 
-                    JavaScriptSerializer serializer = new JavaScriptSerializer();
-                    dynamic item = serializer.Deserialize<object>(responseString);
-                    
+                        JavaScriptSerializer serializer = new JavaScriptSerializer();
+                        dynamic item = serializer.Deserialize<object>(responseString);
 
-                    ViewBag.Summary = responseString;
 
-                    ViewBag.ID = deserializedObj.ID;
-                    ViewBag.Name = deserializedObj.Name;
-                    ViewBag.Description += deserializedObj.Description;
-                    ViewBag.SearchQuery = deserializedObj.SearchQuery;
-                   
-                    //ViewBag.Did = did;
-                    ViewBag.Style = style;
+                        ViewBag.Summary = responseString;
+
+                        ViewBag.ID = deserializedObj.ID;
+                        ViewBag.Name = deserializedObj.Name;
+                        ViewBag.Description += deserializedObj.Description;
+                        ViewBag.SearchQuery = deserializedObj.SearchQuery;
+
+                        //ViewBag.Did = did;
+                        ViewBag.Style = style;
+                    }
+                    else
+                    {
+                        ViewBag.ID = campainID;
+
+                        ViewBag.Summary = null;
+                        //ViewBag.Did = did;
+                        ViewBag.Style = style;
+                    }
                 }
-                else
-                {
-                    ViewBag.ID = campainID;
-                   
-                    ViewBag.Summary = null;
-                    //ViewBag.Did = did;
-                    ViewBag.Style = style;
-                }
+                catch(Exception e) { }
             }
             return PartialView("_SmallVertical");
         }
