@@ -85,7 +85,7 @@ namespace BharatMovies.Controllers
 
                     JavaScriptSerializer serializer = new JavaScriptSerializer();
                     dynamic item = serializer.Deserialize<object>(responseString);
-                    string test = item["_id"];
+                    //string test = item["_id"];
 
                     ViewBag.data = responseString;
 
