@@ -63,11 +63,11 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MyCouch.Cloudant.Net45, Version=3.1.1.39083, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MyCouch.Cloudant.3.2.0\lib\net45\MyCouch.Cloudant.Net45.dll</HintPath>
+      <HintPath>packages\MyCouch.Cloudant.3.2.0\lib\net45\MyCouch.Cloudant.Net45.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MyCouch.Net45, Version=3.1.1.39083, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\MyCouch.3.2.0\lib\net45\MyCouch.Net45.dll</HintPath>
+      <HintPath>packages\MyCouch.3.2.0\lib\net45\MyCouch.Net45.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -130,15 +130,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <None Include="jsonData.json" />
-    <None Include="Properties\PublishProfiles\BharatMovies.pubxml" />
-    <None Include="Properties\PublishProfiles\golf24x7 - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\golf24x7 - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Images\golf_logo.png" />
     <Content Include="Images\logo.png" />
     <Content Include="Scripts\bubbly.min.js" />
+    <Content Include="Scripts\images\fb_black.png" />
+    <Content Include="Scripts\images\fb_blue.png" />
+    <Content Include="Scripts\images\tw_black.png" />
+    <Content Include="Scripts\images\tw_blue.png" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\materialize.min.js" />
