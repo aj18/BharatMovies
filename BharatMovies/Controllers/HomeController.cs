@@ -66,41 +66,31 @@ namespace BharatMovies.Controllers
         [OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Index()
         {
-            using (var client = new HttpClient())
+            string responseString = "";
+
+            string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
+            string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
+            if (Session["bolly_default"] == null)
             {
-                string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
-                string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
-                string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
-                string id = ConfigurationManager.AppSettings.Get("Template");
-
-                string uri = baseUri + "api/summary/template/?id=" + id;
-
-                var response = client.GetAsync(uri).Result;
-
-                if (response.IsSuccessStatusCode)
-                {
-                    var responseContent = response.Content;
-                    string responseString = responseContent.ReadAsStringAsync().Result;
-                    dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
-
-                    JavaScriptSerializer serializer = new JavaScriptSerializer();
-                    dynamic item = serializer.Deserialize<object>(responseString);
-                    //string test = item["_id"];
-
-                    ViewBag.data = responseString;
-
-                    ViewBag.ID = deserializedObj.ID;
-                    ViewBag.Name = deserializedObj.Name;
-                    ViewBag.Title = deserializedObj.Title;
-                    ViewBag.Description = deserializedObj.Description;
-                    ViewBag.Keyword = deserializedObj.Keyword;
-                    ViewBag.SearchQuery = deserializedObj.SearchQuery;
-                    ViewBag.ReturnUrl = returnUrl;
-                    ViewBag.ReturnUrl3 = returnUrl3;
-
-                }
+                responseString = Common.GetTempateData();
+                Session["bolly_default"] = responseString;
+            }
+            else
+            {
+                responseString = (string)Session["bolly_default"];
             }
 
+            dynamic deserializedObj = (RootObject)Newtonsoft.Json.JsonConvert.DeserializeObject(responseString, typeof(RootObject));
+            
+            ViewBag.data = responseString;
+            ViewBag.ID = deserializedObj.ID;
+            ViewBag.Name = deserializedObj.Name;
+            ViewBag.Title = deserializedObj.Title;
+            ViewBag.Description = deserializedObj.Description;
+            ViewBag.Keyword = deserializedObj.Keyword;
+            ViewBag.SearchQuery = deserializedObj.SearchQuery;
+            ViewBag.ReturnUrl = returnUrl;
+            ViewBag.ReturnUrl3 = returnUrl3;
             return View();
         }
 
@@ -292,7 +282,7 @@ namespace BharatMovies.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Contact(MyMailModel objModelMail, HttpPostedFileBase fileUploader)
+        public ActionResult Contact(Common objModelMail, HttpPostedFileBase fileUploader)
         {
             if (ModelState.IsValid)
             {

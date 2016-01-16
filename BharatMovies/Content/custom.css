@@ -1,7 +1,44 @@
-﻿
+﻿.container {
+    padding: 0px 0.15rem !important;
+    margin: 0px auto;
+    max-width: none;
+    width: 95% !important;
+}
+
+.card-panel {
+    padding: 0px;
+    margin: 0rem 0px 1rem;
+    border-radius: 0px;
+    background-clip: padding-box;
+    background-color: #000;
+}
+.nav-wrapper p{width: 28%;float: left;margin: 0px;}
+nav .brand-logo {
+    color: #FFF;
+    font-size: 2.1rem;
+    width: 10%;
+    display: inline-block;
+    padding: 0px;
+    float: left;
+    position: relative;
+}
+.social-nav {
+	position: fixed;
+	top: 0px;
+	z-index: 100;
+	background-color: #CF1C2E;
+	height: 60px;
+	overflow: visible !important;
+}
 .social-main-nav {
 	margin-bottom: 0px;
 	height:60px;
+}
+.main {
+    float: left !important;
+}
+.main > nav {
+    height:200px;
 }
 .socialmedia-nav{
 	float: right;
@@ -9,16 +46,22 @@
 	line-height: 0px;
 	padding: 0px 0px;
 }
+.socialmedia-nav li a{
+	font-size: 1rem;
+	color: #FFF;
+	display: inline-block;
+	padding: 0px 8px;
+}
 .socialmedia-nav li{
 	float:left;
-	margin-right:4px;
 }
 .social-follower {
     float: right;
     height: 60px;
     padding: 0px 0px;
     line-height: 20px;
-margin-top: 20px !important;
+	margin-top: 20px !important;
+	
 }
 .social-follower li {
 	margin-right: -6px;
@@ -33,8 +76,6 @@ margin-top: 20px !important;
 	background: #232323;
 	padding: 20px;
 }
-.card{margin:0px !important;}
-.card a {margin-right: 0px !important;}
 .row masonry-card .col {
     float: left;
     box-sizing: border-box;
@@ -55,9 +96,8 @@ margin-top: 20px !important;
 	border-image: none;
 	border-width: 0px 0.1rem 0.1rem 0px;
 }
-.z-depth-3 {
-	box-shadow: none !important;
-}
+
+
 .panel .card {
 	border:none;
 	border-width: 0px 0px 0px 0px;
@@ -72,37 +112,7 @@ iframe{
 	border:none !important;
 	border-width: 0px 0px 0px 0px !important;
 }
-.card {
-	position: relative;
-	overflow: hidden;
-	margin: 0.5rem 0px 1rem;
-	background-color: #FFF;
-	border-radius: 0px;
-	border-style: solid;
-	border-color: #DFDFDD;
-	-moz-border-top-colors: none;
-	-moz-border-right-colors: none;
-	-moz-border-bottom-colors: none;
-	-moz-border-left-colors: none;
-	border-image: none;
-	border-width: 0px 0.1rem 0.1rem 0px;
-}
-.card-panel {
-	padding: 20px;
-	margin: 0.0rem 0px 1rem;
-	border-radius: 2px;
-	background-color: #FFF;
-	border-radius: 0px;
-	border-style: solid;
-	border-color: #DFDFDD;
-	-moz-border-top-colors: none;
-	-moz-border-right-colors: none;
-	-moz-border-bottom-colors: none;
-	-moz-border-left-colors: none;
-	border-image: none;
-	border-width: 0px 0.1rem 0.1rem 0px;
-	box-shadow: none;
-}
+
 .card-content.white-text {
 	color: #333333 !important;
 }
@@ -111,6 +121,7 @@ iframe{
 	overflow: hidden;
 	background-color: #333333;
 }
+.social-news-travel-celeb-weird ul {margin-top:0px !important;}
 .social-news-travel-celeb-weird h6 {
 	font-weight: normal;
 	font-size: 1.5rem;
@@ -128,105 +139,28 @@ iframe{
 	border-width: 0px 0.1rem 0.1rem 0px;
 	box-shadow: none;
 	padding: 0px 0px;
-}
-.social-news-travel-celeb-weird .card-panel {
-	padding: 0px !important;
-	background-color: transparent !important;
-}
-.social-news-travel-celeb-weird .card-panel span {
-	float: left;
-	font-size: 12px !important;
-	color: #333;
-	height: 20px;
-	overflow: hidden;
-	text-overflow: ellipsis !important;
-	width: 20em;
-	white-space: nowrap;
+	margin-bottom:0px;
 }
 	.social-news-travel-celeb-weird .card-panel p {
-		float: left;
-	text-align: left;
 	color: #333;
 	margin: 5px 0px;
 	font-size: 14px;
 	height: 42px;
 	overflow: hidden;
 	text-overflow: ellipsis !important;
-	width: 17em;
+	width: 20em;
 	}
 
 .social-news-travel-celeb-weird .card-panel span a {
 	color:#606060 !important;
-	text-align: center;
 	font-size: 15px !important;
 	font-weight: bold !important;
 }
-
-.slider .indicators .indicator-item {
-	display: inline-block;
-	position: relative;
-	cursor: pointer;
-	height: 7px;
-	width: 7px;
-	margin: 0px 12px;
-	background-color: rgb(180, 180, 180);
-	transition: background-color 0.3s ease 0s;
-	border-radius: 50%;
-}
-.slider .indicators .indicator-item.active {
-	background-color: #ffffff;
-}
-
 h6 {
     color: #333;
     font-size: 1.5rem;
     padding: 8px 0px;
     line-height: 18px;
-}
-.row .col {
-    float: left;
-    box-sizing: border-box;
-    padding: 0px 0.3rem ;
-}
-
-.col.s12.m8.l7.sub-panel {    padding: 0px !important;border-radius:5px !important;box-shadow:1px 1px 3px #000;box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.92);}
-.col.s12.m8.l5.sub-panel {    padding: 0px !important;border-radius:5px !important;box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.92);}
-.col.s12.m12.l12.sub-panel3x2 {    padding: 0px !important;border-radius:5px !important;box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.92);}
-.col.s12.m6.l12.sub-panel3x2 {    padding: 0px !important;margin: 0.1rem 0px;border-radius:5px !important;box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.92);}
-.col.s12.m6.l12.sub-panel3x2 {    padding: 0px !important;margin: 0rem 0rem !important;border-radius:5px !important;box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.92);}
-.col.s12.m12.l6.sub-panel3x2{ border-radius:5px !important;box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.92);}
-
-.col.s12.m12.l12.sub-panel3x2 .card-panel {
-	padding: 20px;
-    margin: 0.0rem 0px 0.3rem !important;
-    border-radius: 2px;
-    background-color: #FFF;
-    border-radius:5px !important;
-    border-style: solid;
-    border-color: #DFDFDD;
-    -moz-border-top-colors: none;
-    -moz-border-right-colors: none;
-    -moz-border-bottom-colors: none;
-    -moz-border-left-colors: none;
-    border-image: none;
-    border-width: 0px 0.1rem 0.1rem 0px !important;
-    box-shadow: none;
-}
-.card .card-content p {
-    margin: 0px;
-    color: inherit !important;
-    height: 45px;
-    overflow: hidden;
-    color: #333333 !important;
-}
-
-#small15 #small17 {
-    position: relative;
-    top: -8px !important;
-}
-#small16, #small18  {
-    position: relative;
-    bottom: 0px;
 }
 
 #videos.owl-wrapper-outer.owl-wrapper.owl-item {
@@ -257,18 +191,8 @@ nav.social-nav .brand-logo span{font-size: 1.3rem;}
 .divider {
 	height: 1px;
 	overflow: hidden;
-	background-color: #333333;
+	background-color: #e0e0e0;
 	margin: 12px 0px;
-}
-.slider .slides {
-	background-color: transparent !important;
-	margin: 0px;
-	height: 340px;
-}
-.slider {
-    position: relative;
-    height: 365px;
-    width: 100%;
 }
 #amazingslider-1 {
     height: 445px !important;
@@ -277,26 +201,17 @@ nav.social-nav .brand-logo span{font-size: 1.3rem;}
     height: 435px !important;
 }
 #PCARD {        margin-bottom: 8px;    margin-top: 8px;}
-/*.owl-item {
-    width: 300px !important;
-    margin-right: 8px !important;
-    height: 225px !important;
-}*/
-
 .owl-item {
     width: 300px !important;
     margin-right: 0px !important;
     height: 218px !important;
     border-right: 8px solid black;
 }
-
-
 .social-collection-header {
     font-size: 1.64rem;
     font-weight: 500;
     color: #000000 !important;
 }
-
 #si .social-card .row {
      margin-left: 0rem; 
      margin-right: 0rem; 
@@ -316,48 +231,26 @@ nav.social-nav .brand-logo span{font-size: 1.3rem;}
     background: transparent none repeat scroll 0% 0%;
     max-width: 99%;
 }
-
 .row.social-headline{ margin-left: 0.0rem !important;margin-right: -0.75rem !important;}
 .social-headline h2{
     font-size: 3.00rem;
     line-height: 2.50rem;
     margin: 1.5rem 0px 1rem;
 }
-
 .social-headline small{
     font-size: 1.00rem;
     background: #ffffff;
 	color:black;	
 }
-
-#imagegallery .slider ul.indicators {
-    bottom: 0;
-    left: 0;
-    margin: 0;
-    position: absolute;
-    right: 0;
-    text-align: center;
-    z-index: 99 !important;
-}
-
-
-
-#card .card-action {
-   
+#card .card-action {   
     padding: 0px !important;
 }
-
 #card-reveal .card .card-content { color:#000000 !important;}
-
-
 #VC1 .owl-slider.owl-carousel.owl-theme{ height:250px !important;}
 #VC1 .owl-theme .owl-controls {margin-top: 0px !important;}
 #VC1 .owl-prev {position: absolute;top: -120px;}
 #VC1 .owl-next {position: absolute;top: -120px;}
 #VC1 .owl-carousel .owl-wrapper-outer {margin: 1px !important;}
-
-
-
 
 #bolly_data3394_page2_COMMENTS .row {margin-left: 0.0rem !important;}
 #bolly_data3394_page2_COMMENTS .container .row {margin-left: 0.0rem !important;}
@@ -371,7 +264,6 @@ nav.social-nav .brand-logo span{font-size: 1.3rem;}
 
 #imggallery-sport #amazingslider-1 {    height: 342px !important;}
 #imggallery-sport .amazingslider-space-1 {height: 350px !important;}
-
 
 .privacy-policy h2{
     font-size: 2rem;
@@ -388,70 +280,112 @@ nav.social-nav .brand-logo span{font-size: 1.3rem;}
 .privacy-policy p {
     color: #888888;
 }
-
-
-
-
-
-@media only screen and (min-width: 320px) and (max-device-width : 480px) {
-		.col.s12.m6.l12.sub-panel3x2	  {  width:96.4% !important;background:#F36; }
-	 	.col.s12.m8.l7.sub-panel { width:96.4% !important; }
-		.col.s12.m8.l5.sub-panel { width:96.4% !important; }
-		.col.s12.m12.l12.sub-panel3x2 { width:96.4% !important; }
-		.col.s12.m6.l12.sub-panel3x2 { width:96.4% !important; }
-		.col.s12.m6.l12.sub-panel3x2 { width:96.4% !important; }
-		.col.s12.m12.l6.sub-panel3x2{ width:96.4% !important; }
-		.col.s12.m12.l12.sub-panel3x2 .card-panel { width:96.4% !important; }
-		.row .col {    float: left;    box-sizing: border-box;    padding: 0px 0.9rem;}
-		nav ul a {    font-size: 1rem;    color: #FFF;    display: block;    padding: 0px 10px;}
+@media only screen and (min-width : 240px){
+nav .brand-logo {
+    color: #FFF;
+    font-size: 2.1rem;
+    width: 92px;
+    display: inline-block;
+    padding: 0px;
+    float: left;
+    position: relative;
 }
-
-@media only screen and (min-width : 601px) and (max-device-width : 1080px) { {
-  nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+}
+@media only screen and (min-width : 320px){	
+nav a.button-collapse {
+    float: right;
+    z-index: 1;
     height: 60px;
-    line-height: 60px; }
-  .navbar-fixed {
-    height: 60px; }
+    color: #FFF;
+    width: 45px;
+    position: relative;
+}
+nav .brand-logo {
+    color: #FFF;
+    font-size: 2.1rem;
+    padding: 0px;
+    float: left;
+    position: relative;
+    width: 128px;
+    margin-left: 10px;
+    display: inline-block;
+	
+}
+.nav-wrapper p {
+    width: 35%;
+    float: left;
+    margin: 10px 0px 0px;
+    white-space: initial;
+    line-height: 12px;
+    font-size: 10px;
+	font-style: italic;
+}
+}
+@media only screen and (min-width : 601px) {
+3nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+    /* height: 120px; */
+    line-height: 60px;
+	}
+nav a.button-collapse {
+    float: right;
+    z-index: 1;
+    height: 60px;
+    color: #FFF;
+    width: 50px;
+    position: relative;
+	}
+.navbar-fixed {   height: 60px; }
 
-	.social-follower {
+.social-follower {
     float: right;
     height: 60px;
     padding: 0px;
     line-height: 20px;
-    margin-top: 0px !important;
+    margin-top: 20px !important;
 }
-
+.nav-wrapper p {
+    float: left;
+    margin: 23px 0px 0px;
+    white-space: initial;
+    line-height: 12px;
+    font-size: 13px;
+    width: 375px;
+	font-style: italic;
 }
+}
+@media only screen and (min-width : 992px){
 
+nav .brand-logo {
+    color: #FFF;
+    font-size: 2.1rem;
+    padding: 0px;
+    float: left;
+    position: relative;
+    width: 128px !important;
+    margin-left: 10px;
+    display: inline-block;
+}
+.nav-wrapper p {
+    width: 26%;
+    float: left;
+    margin: 0px auto;
+    white-space: initial;
+    line-height: 60px;
+    font-size: 14px;
+	font-style: italic;
+}
+}
 @media only screen and (max-width : 992px){
-	nav .brand-logo{
-		left: 35%;
-transform: translate(-50%, -50%);
-top: 41px;
-	}
-	
-	nav .brand-logo p{
-		font-size:10px;
-		float:right;
-	} 
-	.socialmedia-nav {
-		display:none;
-	}
-
+	nav .brand-logo {
+		top: 0% !important;
+		left: 0% !important;
+		transform: translate(-0%, -0%);
+		height: 60px;
 }
-@media only screen and (max-width : 320px){
-	nav .brand-logo{
-		left: 170px;
-transform: translate(-50%, -50%);
-top: 41px;
-	}
-	
-	nav .brand-logo p{
-		display:none;
-	} 
-	.socialmedia-nav, .social-follower {
-		display:none;
-	}
-
 }
+@media only screen and (min-width : 320px) and (max-width : 1023px) {
+	.socialmedia-nav{display:none;}
+	.social-follower{display:none;}
+}
+
 

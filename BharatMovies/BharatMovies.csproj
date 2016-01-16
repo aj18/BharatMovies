@@ -125,6 +125,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bubbly.css" />
+    <Content Include="Content\component.css" />
     <Content Include="Content\custom.css" />
     <Content Include="Content\materialize.min.css" />
     <Content Include="Content\Site.css" />
@@ -133,9 +134,16 @@
     <None Include="Properties\PublishProfiles\golf24x7 - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Images\fb.png" />
     <Content Include="Images\golf_logo.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\mail.png" />
+    <Content Include="Images\pintrest.png" />
+    <Content Include="Images\search-icon-blk.png" />
+    <Content Include="Images\search-icon.png" />
+    <Content Include="Images\twitter.png" />
     <Content Include="Scripts\bubbly.min.js" />
+    <Content Include="Scripts\cbpHorizontalMenu.min.js" />
     <Content Include="Scripts\images\fb_black.png" />
     <Content Include="Scripts\images\fb_blue.png" />
     <Content Include="Scripts\images\tw_black.png" />
@@ -144,6 +152,7 @@
     <Content Include="Scripts\jquery-2.1.1.min.js" />
     <Content Include="Scripts\materialize.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\modernizr.custom.js" />
     <Content Include="Scripts\player_api.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
@@ -166,7 +175,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\MyMailModel.cs" />
+    <Compile Include="Models\Common.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +214,7 @@
     <Content Include="Views\PartialView\_storymixnmatch.cshtml" />
     <Content Include="Views\Shared\_js.cshtml" />
     <Content Include="Views\Search\Index.cshtml" />
+    <Content Include="Views\PartialView\_Menu.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

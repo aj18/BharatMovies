@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
 using System.Security.Cryptography;
 using System.Text;
 using System.Web;
 
 namespace BharatMovies.Models
 {
-    public class MyMailModel
+    public class Common
     {
         public string Email { get; set; }
         public string Subject { get; set; }
@@ -47,7 +49,26 @@ namespace BharatMovies.Models
             System.Text.Encoding encoding = System.Text.Encoding.UTF8;
             return encoding.GetString(ms.ToArray());
         }
+        public static string GetTempateData()
+        {
+            string responseString = "";
+            using (var client = new HttpClient())
+            {
+                string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
+                string id = ConfigurationManager.AppSettings.Get("Template");
 
+                string uri = baseUri + "api/summary/template/?id=" + id;
+
+                var response = client.GetAsync(uri).Result;
+
+                if (response.IsSuccessStatusCode)
+                {
+                    var responseContent = response.Content;
+                    responseString = responseContent.ReadAsStringAsync().Result;
+                }
+            }
+            return responseString;
+        } 
     }
 
 }

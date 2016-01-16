@@ -1,0 +1,56 @@
+﻿@using System.Web.Script.Serialization;
+@using System.Configuration;
+@{
+    var url = "";
+    var returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    var returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
+    var returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+
+    JavaScriptSerializer serializer = new JavaScriptSerializer();
+    dynamic templatedata = serializer.Deserialize<object>(ViewBag.data);
+}
+
+<div id="cbp-hrmenu" class="cbp-hrmenu">
+    <ul class="cbp-hrmenu-ul" id="cbp-hrmenu-ul">
+        @foreach (var item in templatedata["layout"])
+        {
+            <li>
+                <a href="#">@item["id"].Substring(0,3)</a>
+                <div class="cbp-hrsub">
+                    <div class="cbp-hrsub-inner row">
+                        <div class="col s12 m12 l12">
+                            <ul>
+                                @foreach (var subItem in item["collection"])
+                                {
+                                    if(subItem["StoryId"] == "")
+                                    {
+                                        url = returnUrl + "?id=" + subItem["campaignId"];
+                                    }
+                                    else
+                                    {
+                                        url = returnUrl2 + "?id=" + subItem["campaignId"] + "&storyid=" + subItem["StoryId"];
+                                    }
+                                    <li class="cbp-hrsub-li">
+                                        <!-- <div class="col s12 m12 l12"> -->
+                                        <div class="cbp-hrsub-inner-img">
+                                            <a href=@url>
+                                                <img src=@subItem["Pictureurl"]>
+                                            </a>
+                                        </div>
+                                        <div class="cbp-hrsub-inner-img-a">
+                                            <a href=@url>@subItem["Description"]</a>
+                                        </div>
+                                        @*<div class="cbp-hrsub-inner-img-a-p">
+                                            <p>12 hours ago</p>
+                                        </div>*@
+                                        <!-- </div> -->
+                                    </li>
+                                }
+                            </ul>
+                        </div>
+                    </div><!-- /cbp-hrsub-inner -->
+                </div><!-- /cbp-hrsub -->
+            </li>
+        }
+    </ul>
+</div>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BharatMovies.Models;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
@@ -11,7 +12,25 @@ namespace BharatMovies.Controllers
 {
     public class PartialViewController : Controller 
     {
-        
+        //Load Menu
+        public ActionResult Menu()
+         {
+            string responseString = "";
+            
+            if (Session["bolly_default"] == null)
+            {
+                responseString = Common.GetTempateData();
+                Session["bolly_default"] = responseString;
+            }
+            else
+            {
+                responseString = (string)Session["bolly_default"];
+                ViewBag.data = responseString;
+            }
+            
+            return PartialView("_Menu");
+        }
+
         // GET: PartialView
         public ActionResult Index()
         {

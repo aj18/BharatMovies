@@ -45,6 +45,21 @@
 
 }
 @Html.Partial("~/Views/Shared/_js.cshtml")
+
+<style type="text/css">
+    .pack-layout {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        position: relative;
+    }
+
+        .pack-layout li {
+            width: 300px;
+            position: absolute;
+        }
+</style>
+
 <script type="text/javascript">
 
     var returnUrl ="@(Html.Raw(returnUrl))";

@@ -27,16 +27,12 @@
     @*<link href="~/Content/bubbly.css" rel="stylesheet" />*@
     @*<link href="~/Content/custom.css" rel="stylesheet" />*@
     <link href="http://social24x7.azurewebsites.net/cdn/css/bubbly.css" rel="stylesheet" />
-    
+    <link href="~/Content/component.css" rel="stylesheet" />
+    <link href="~/Content/custom.css" rel="stylesheet" />
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
-
-    <style>
-   
-
-    </style>
 
 
 </head>
@@ -51,72 +47,32 @@
         fjs.parentNode.insertBefore(js, fjs);
     } (document, 'script', 'facebook-jssdk'));</script>
 
-    <header class="starter-template">
-        <div class="row social-main-nav">
-            <nav class="social-nav">
-                <div class="container nav-wrapper" style="">
-                    <a href="@Url.Action("Index", "Home")" class="brand-logo"><img src=" ~/Images/logo.png" /></a>
-                    <p>Your Unlimited Bollywood's Social Media Destination</p>
-                    <a href="@Url.Action("Index", "Home")"
-                        data-activates="mobile-demo" class="button-collapse">
-                        <i class="material-icons">menu</i>
-                    </a>
+    <div class="row social-main-nav">
+        <nav class="social-nav">
+            <div class="container nav-wrapper" style="">
+                <a href="@Url.Action("Index", "Home")" class="brand-logo"><img style="height:60px" src="~/Images/logo.png"/></a>
+                <p style="max-width:215px;line-height:2">Your Unlimited Bollywood's Social Media Destination</p>
+                <a class="d-toggle-menu-dashborad"><i class="material-icons dp48">view_headline</i></a>
 
-                    <ul class="socialmedia-nav">
-                        <li><a href="https://www.facebook.com/bharatmovies"><i class="fa fa-facebook-square"></i></a></li>
-                        <li><a href="https://twitter.com/bharatmovies"><i class="fa fa-twitter-square"></i></a></li>
-                        <li><a href="#"><i class="fa fa-envelope-square"></i></a></li>
-                        <li>
-                            <a href="https://www.pinterest.com/bharatmovies/"><i class="fa fa-pinterest-square"></a></i>
-                        </li>
-                    </ul>
 
-                    <ul class="social-follower"  >
-                        <li>
-                            <a class="white-text" href="https://www.facebook.com/bharatmovies"></a>
-                            <div class="socialright col l6 s12 ">
-                                <div class="fb-like" data-href="https://www.facebook.com/bharatmovies" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>
+                <form id="demo-2" style="right:187px;top:4px">
+                    <input type="search" placeholder="Search">
+                </form>
+                <!-- <a class="cd-search-trigger search-is-visible" href="#cd-search">Search<span></span></a> -->
 
-                            </div>
-                        </li>
-                        <li>
-                            <a href="https://twitter.com/bharatmovies" class="twitter-follow-button" data-show-count="vertical" data-width="100px"
-                               data-count="vertical" data-align="right" data-show-screen-name="false" data-lang="en"></a>
-                            <script>
-                        !function (d, s, id) {
-                            var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id))
-                            { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); }
-                        } (document, "script", "twitter-wjs");
-                            </script>
-
-                        </li>
-                    </ul>
-
-                    <ul id="nav-mobile" class="hide-on-med-and-down">
-                        <!--<li><a href="/">Bollywood</a></li>
-                    <li><a href="/sports">Sports</a></li>
-                    <li><a href="/movies">Movies</a></li>-->
-
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <!--<li><a href="/">Bollywood</a></li>
-                    <li><a href="/sports">Sports</a></li>
-                    <li><a href="/movies">Movies</a></li>-->
-                        <li><a href="https://www.facebook.com/bharatmovies"><i class="fa fa-facebook-square"></i></a></li>
-                        <li><a href="https://twitter.com/bharatmovies"><i class="fa fa-twitter-square"></i></a></li>
-                        <li><a href="#"><i class="fa fa-envelope-square"></i></a></li>
-                        <li>
-                            <a href="https://www.pinterest.com/bharatmovies/"><i class="fa fa-pinterest-square"></a></i>
-                        </li>
-
-                    </ul>
+                <div class="main" style="margin-left:-35px">
+                    @Html.Action("Menu", "PartialView")
                 </div>
-            </nav>
-        </div>
-       
-
-
-    </header>
+                <!-- end Main -->
+                <ul class="socialmedia-nav">
+                    <li><a href="https://www.facebook.com/bharatmovies"><i class="fa fa-facebook-square"></i></a></li>
+                    <li><a href="https://twitter.com/bharatmovies"><i class="fa fa-twitter-square"></i></a></li>
+                    <li><a href="#"><i class="fa fa-envelope-square"></i></a></li>
+                    <li><a href="https://www.pinterest.com/bharatmovies/"><i class="fa fa-pinterest-square"></a></i></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
     <script src="~/Scripts/jquery-2.1.1.min.js"></script>
     
     <script src="~/Scripts/materialize.min.js"></script>
@@ -134,6 +90,8 @@
 
    
     <script src="~/Scripts/bubbly.min.js"></script>
+    <script src="~/Scripts/cbpHorizontalMenu.min.js"></script>
+    <script src="~/Scripts/modernizr.custom.js"></script>
     @*<script src="http://social24x7.azurewebsites.net/cdn/js/bubbly.min.js"></script>*@
     <div class=" body-content">
         @RenderBody()
