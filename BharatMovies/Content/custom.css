@@ -4,13 +4,22 @@
     max-width: none;
     width: 95% !important;
 }
+.row {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
 
+nav .nav-wrapper {
+    position: relative;
+    height: 100%;
+    width: 95% !important;
+}
 .card-panel {
     padding: 0px;
     margin: 0rem 0px 1rem;
     border-radius: 0px;
     background-clip: padding-box;
-    background-color: #000;
 }
 .nav-wrapper p{width: 28%;float: left;margin: 0px;}
 nav .brand-logo {
@@ -25,7 +34,7 @@ nav .brand-logo {
 .social-nav {
 	position: fixed;
 	top: 0px;
-	z-index: 100;
+	z-index: 1000;
 	background-color: #CF1C2E;
 	height: 60px;
 	overflow: visible !important;
@@ -33,6 +42,9 @@ nav .brand-logo {
 .social-main-nav {
 	margin-bottom: 0px;
 	height:60px;
+}
+.d-toggle-menu-dashborad > i {
+    font-size: 1.5rem !important;
 }
 .main {
     float: left !important;
@@ -129,17 +141,10 @@ iframe{
 	color: #000000;
 	height: 2.9rem;
 	line-height: 2.6rem;
-	border-style: solid;
-	border-color: #DFDFDD;
-	-moz-border-top-colors: none;
-	-moz-border-right-colors: none;
-	-moz-border-bottom-colors: none;
-	-moz-border-left-colors: none;
-	border-image: none;
-	border-width: 0px 0.1rem 0.1rem 0px;
 	box-shadow: none;
 	padding: 0px 0px;
 	margin-bottom:0px;
+    border: none !important;
 }
 	.social-news-travel-celeb-weird .card-panel p {
 	color: #333;
@@ -159,7 +164,7 @@ iframe{
 h6 {
     color: #333;
     font-size: 1.5rem;
-    padding: 8px 0px;
+    padding: 5px 0px;
     line-height: 18px;
 }
 
@@ -189,10 +194,10 @@ nav.social-nav .brand-logo span{font-size: 1.3rem;}
     line-height: 25px;
 }
 .divider {
-	height: 1px;
-	overflow: hidden;
-	background-color: #e0e0e0;
-	margin: 12px 0px;
+	height: 3px;
+    overflow: hidden;
+    background-color: #606060;
+	
 }
 #amazingslider-1 {
     height: 445px !important;
@@ -265,6 +270,13 @@ nav.social-nav .brand-logo span{font-size: 1.3rem;}
 #imggallery-sport #amazingslider-1 {    height: 342px !important;}
 #imggallery-sport .amazingslider-space-1 {height: 350px !important;}
 
+/*  yogesh patel 02-01-2016 */
+.container > header {padding: 0rem !important;margin: 0px !important;}
+.sidenav-top{top: 60px !important;}
+div#VC1 {
+    border: 1px double #cccccc;
+    padding: 0px 10px;
+}
 .privacy-policy h2{
     font-size: 2rem;
     line-height: 3.212rem;
@@ -280,6 +292,269 @@ nav.social-nav .brand-logo span{font-size: 1.3rem;}
 .privacy-policy p {
     color: #888888;
 }
+
+.left_pad_rmv{padding-left: 0px !important;}
+.right_pad_rmv{padding-right: 0px !important;}
+.left-nav-link {
+    border-top: 1px solid #ccc;
+    min-height: 112px;
+    margin: 0 0 12px 0;
+    overflow: hidden;
+    padding: 18px 18px 0 18px !important;
+    position: relative;
+}
+.left-nav-link a {
+    color: #444;
+    display: block;
+    font-size: 1.2rem;
+    min-height: 90px !important;
+    line-height: 24px;
+    padding: 0 15px;
+}
+.articles-container {
+    margin: 0px 0 0 276px;
+    max-width: 860px;
+    overflow: hidden;
+    padding: 0 0 100px 0;
+    position: relative;
+    top: 0;
+}
+
+.article {
+    background: white;
+    color: #414042;
+    margin: 0 0 8px 0;
+    position: relative;
+    padding: 8px !important;
+    border: 1px solid #CCCCCC;
+}
+.article_image {
+    width: 100%;
+    overflow: hidden;
+    max-height: 500px;
+}
+.article-topic {
+    font-size: 18px;
+    color: #af4317;
+    font-weight: 700;
+    margin: 0 0 4px 0;
+    padding: 0;
+    text-transform: uppercase;
+}
+.article_image img{max-width:100%;}
+.article-img {
+    display: block;
+    width: 100%;
+}
+.article-content {
+    margin: 38px 35px 0 35px;
+    overflow: hidden;
+}
+.article-title {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 43px;
+    padding: 0 0 5px 0;
+}
+.article-sub-title {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+    padding: 0 0 10px 0;
+}
+.article-byline {
+    font-size: 14px;
+    padding: 0 0 20px 0;
+}
+.article-byline span {
+    display: inline;
+    font-size: 14px;
+}
+.article-author {
+    font-weight: 700;
+}
+.z_depth_none{box-shadow: none !important;}
+.main-si{border: 1px solid #cccccc;}
+
+.z-depth-3 {
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    -ms-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    -o-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+
+}
+
+.small_card_main {
+    padding: 8px 0px;
+    height: 100px;
+    margin-bottom: 10px;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    -ms-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    -o-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    background: #ffffff;
+    border-radius: 5px;
+}
+.small_card{
+    width: 100%;
+    overflow: hidden;
+    height: 78px;
+    line-height: 19px;
+    font-weight: normal;
+    max-height: 78px;
+}
+.small_card_detail {
+    width: 100%;
+    overflow: hidden;
+    height: 78px;
+    line-height: 19px;
+    font-weight: normal;
+    max-height: 78px;
+}
+.small_card_detail p {
+    margin: 0px 0px;
+    padding: 0px 0px;
+    color: #7B7B7B;
+    font-weight: 400;
+    font-size: 14px;
+    height: 58px;
+    overflow: hidden;
+}
+.small_card_detail p:hover{color:#424242;}
+.small_card_detail > a > p{
+    margin: 0px 0px;
+    padding: 0px 0px;
+    color: #CF1C2E;
+    font-weight: 500;
+    font-size: 14px;
+    height: 58px;
+    overflow: hidden;
+}
+.small_card_detail > a{
+    color:#CF1C2E;
+    font-weight: 500;
+    font-size: 14px;
+}
+.small_card img{max-width:100%;height: inherit;/*border: 1px double rgb(170, 170, 170);*/}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-moz-scrollbar {
+    width: 12px;
+}
+::-ms-scrollbar {
+    width: 12px;
+}
+::scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+::-moz-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+::-ms-scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+::scrollbar-track {
+    background-color: #eaeaea;
+    border-left: 1px solid #ccc;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+::-moz-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+::-ms-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+::scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #aaa;
+    border-radius: 10px;    
+}
+::-moz-scrollbar-thumb:hover {
+    background-color: #aaa;
+    border-radius: 10px;
+}
+::-ms-scrollbar-thumb:hover {
+    background-color: #aaa;
+    border-radius: 10px;
+}
+::scrollbar-thumb:hover {
+    background-color: #aaa;
+    border-radius: 10px;
+}
+
+/*  yogesh patel 02-01-2016 */
+
+
+/*  yogesh patel small_vertical 12-01-2016 */
+.section_cardpanel {    border-right: 1px solid #cccccc;}
+.section_cardpanel > h6{border-bottom: 1px solid #DFDFDD;}
+.section_picture_card .card-panel .card-image > div{    border-radius: 5px;}
+.section_cardpanel .card-panel {
+    margin-bottom: 5px;   padding: 10px;
+    -webkit-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    -moz-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    -ms-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    -o-box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.22) !important;
+}
+
+/*  yogesh patel small_vertical 12-01-2016 */
+.section_small_vertical .card.small{height: 272px !important;}
+.section_small_vertical .card .card-content{height: 68px;}
+.section_small_vertical .card .card-content p{color:#624F87;}
+/*  yogesh patel medium-card 011-01-2016 */
+.card .card-action, .card .card-action, .card .card-content {padding: 12px;}
+
+
+.section_medium .card.medium . {    height: 390px;}
+.section_medium .card.medium .card-content {    height: 90px;}
+.section_medium .card > .card-action{border-top: 1px solid rgba(160, 160, 160, 0.36);}
+.section_medium .card.medium .card-image span{padding: 5px 12px;background-color: rgba(8, 137, 62, 0.93);}
+.section_medium .card.medium .card-image span a{font-size: 16px;}
+
+.section_medium .card > .card-action a,
+.section_medium .card > .card-action a i{ color:#08893E; }
+.section_medium .card > .card-action a,
+.section_medium .card > .card-action a i:hover{ color:#29A25C; }
+
+/*  yogesh patel larg-card 011-01-2016 */
+.section_medium .card, .section_large .card, .section_small_vertical .card,
+.section_picture_card .card-panel{
+    border-radius: 5px;
+} 
+.section_large .card.large {    height: 465px;}
+.section_large .card > .card-action{border-top: 1px solid rgba(160, 160, 160, 0.36);}
+.section_large .card.large .card-image {    height: 290px;}
+.section_large .card > .card-image > .card-title > a{    font-weight: 400;}
+
+.section_large .card > .card-action a,
+.section_large .card > .card-action a i{ color:#AB1142; }
+.section_large .card > .card-action a,
+.section_large .card > .card-action a i:hover{ color:#C54870; }
+
+/*  yogesh patel 011-01-2016 */
 @media only screen and (min-width : 240px){
 nav .brand-logo {
     color: #FFF;
@@ -387,5 +662,3 @@ nav .brand-logo {
 	.socialmedia-nav{display:none;}
 	.social-follower{display:none;}
 }
-
-
