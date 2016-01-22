@@ -131,7 +131,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <None Include="jsonData.json" />
+    <None Include="Properties\PublishProfiles\golf24x7 - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\golf24x7 - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Images\fb.png" />

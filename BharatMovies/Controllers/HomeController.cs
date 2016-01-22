@@ -63,7 +63,7 @@ namespace BharatMovies.Controllers
         }
 
         // GET: Home
-        [OutputCache(Duration = 3600, VaryByParam = "none")]
+        //[OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Index()
         {
             string responseString = "";
@@ -94,7 +94,7 @@ namespace BharatMovies.Controllers
             return View();
         }
 
-        [OutputCache(Duration = 3600, VaryByParam = "id")]
+        //[OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult News(string id)
         {
             using (var client = new HttpClient())
@@ -154,7 +154,7 @@ namespace BharatMovies.Controllers
         }
 
 
-        [OutputCache(Duration = 3600, VaryByParam = "id")]
+        //[OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult Story(string id , string storyid)
         {
             using (var client = new HttpClient())
