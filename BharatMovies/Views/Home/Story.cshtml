@@ -56,17 +56,7 @@
 <div class="main-bg" style="background-color:#ffffff;padding:0px 0px;width: 95%;padding: 0px 0px;margin: 0 auto;">
 
     <div class="container" style="margin:0px 0px;width:100% !important;">
-        <div class="row social-headline">
-            <div class="col s12 m7 l9 offset-l3 offset-m5" style="color:black">
-                <h3 style="padding:0px 20px;">
-                      @ViewBag.Name
-                    <br>
-                </h3>
-            </div>
-            <div class="col s12 m7 l9 offset-l3 offset-m5">
-                <img class="responsive-img" src="~/Images/ad1.jpeg" style="overflow:hidden;height:100px;">
-            </div>
-        </div>
+       
         <header class="mainheader">
             <div class="container">
                 <a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
@@ -76,8 +66,8 @@
 
         </header>
         <div class="row">
-            <div class="col s12" id="flex">
-                <div class="col s12 m5 l3" id="card-container" style="position: fixed; top: 2px;">
+           
+                <div class="col s12 m3 l3" >
                     @if (ViewBag.Stories != null)
                     {
                         foreach (var item in ViewBag.Stories)
@@ -90,34 +80,49 @@
                         }
                     }
                 </div>
-                <div class="col s12 m7 l6 offset-l3 offset-m5" id="articles-container">
-                    <section>
-                        <div style="display:block;">
-                            <div id="story"></div>
-                        </div>
-                    </section>
-                </div>
-                <div class="col s12 m5 l3 offset-m6" id="main-si">
-                    <img src="~/Images/ad-small.jpg" width="100%" style="padding-top:10px">
-                    <div class="row">
-                        <div class="col s12" id="si">
-                            <div class="card z_depth_none">
-                                <div id="si">
-                                </div>
+                <div class="col s12 m9 l9 " >
+                   
+                        <div class="row ">
+                            <div class="col s12 m12 l12" style="color:black">
+                                <h3 style="padding:0px 20px;">
+                                    @ViewBag.Name
+                                    <br>
+                                </h3>
+                            </div>
+                            <div  class="col s12 m12 l12">
+                                <img class="responsive-img" src="~/Images/ad1.jpeg" style="overflow:hidden;height:100px;">
                             </div>
                         </div>
-                        <div class="col s12">
-                            <img src="~/Images/ad-small1.jpg" width="100%" style="padding-top:10px">
-                        </div>
-                        <div class="col s12">
-                            <img src="~/Images/ad-small2.jpg" width="100%" style="padding-top:10px">
-                        </div>
-                        <div class="col s12">
-                            <img src="~/Images/ad-small3.jpg" width="100%" style="padding-top:10px">
+                   
+
+                        <div class="row">
+                            <div class="col s12 m8 l8 " style="display:block;">
+                                <div id="story"></div>
+                            </div>
+                            <div class="col s12 m4 l4 " id="main-si">
+                                    <img src="~/Images/ad-small.jpg" width="100%" style="padding-top:10px">
+                                    <div class="row">
+                                        <div class="col s12" id="si">
+                                            <div class="card z_depth_none">
+                                                <div id="si">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col s12">
+                                            <img src="~/Images/ad-small1.jpg" width="100%" style="padding-top:10px">
+                                        </div>
+                                        <div class="col s12">
+                                            <img src="~/Images/ad-small2.jpg" width="100%" style="padding-top:10px">
+                                        </div>
+                                        <div class="col s12">
+                                            <img src="~/Images/ad-small3.jpg" width="100%" style="padding-top:10px">
+                                        </div>
+                                    </div>
+                                </div>
                         </div>
                     </div>
-                </div>
-            </div>
+               
+         
         </div>
     </div>
     <!---------------row finish-------------------->
