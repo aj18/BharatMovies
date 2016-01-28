@@ -136,6 +136,12 @@
     <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\golf24x7 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Images\ad-small.jpg" />
+    <Content Include="Images\ad-small1.jpg" />
+    <Content Include="Images\ad-small2.jpg" />
+    <Content Include="Images\ad-small3.jpg" />
+    <Content Include="Images\ad1.jpeg" />
+    <Content Include="Images\Blank.png" />
     <Content Include="Images\fb.png" />
     <Content Include="Images\golf_logo.png" />
     <Content Include="Images\logo.png" />
