@@ -36,7 +36,7 @@ nav#cbp-hrmenu{
 }
 .cbp-hrsub-inner-img-a{
 	width: 142px;
-	height: 40px;
+	/*height: 40px;*/
 	overflow: hidden;
 	margin-bottom: 5px;
 }
@@ -73,7 +73,7 @@ nav#cbp-hrmenu{
 	max-width: 70em;
 	margin: 0 auto;
 	padding: 0 1.875em;
-	height: 260px;
+	height: auto;
 	overflow: hidden;
 }
 .cbp-hrmenu .cbp-hrsub-inner {

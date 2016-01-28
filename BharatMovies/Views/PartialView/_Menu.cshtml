@@ -34,7 +34,8 @@
                                         <!-- <div class="col s12 m12 l12"> -->
                                         <div class="cbp-hrsub-inner-img">
                                             <a href=@url>
-                                                <img src=@subItem["Pictureurl"]>
+                                                <img src=@subItem["Pictureurl"] style="height:142px;" onerror="this.onerror = null; this.src = '/Images/Blank.png';">
+                                                @*<div style="opacity:1;overflow:hidden;width:100%;display:block;background-image:url(@subItem["Pictureurl"]);background-size:cover;background-repeat:no-repeat;"></div>*@
                                             </a>
                                         </div>
                                         <div class="cbp-hrsub-inner-img-a">
