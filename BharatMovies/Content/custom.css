@@ -618,8 +618,8 @@ div#VC1 {
 
 /*  yogesh patel 27-01-2016 */
 div#card-container {
-    height: 532px;
-    overflow: scroll;
+    /*height: 532px;
+    overflow: scroll;*/
    margin-top: 62px;
 }
 
