@@ -57,73 +57,63 @@
 
     <div class="container" style="margin:0px 0px;width:100% !important;">
         <div class="row social-headline">
-            <div class="col s12 m12 l12" style="color:black">
-                <h3>
-                    @*<%=Name %>: <%=Description %>*@
+            <div class="col s12 m7 l9 offset-l3 offset-m5" style="color:black">
+                <h3 style="padding:0px 20px;">
+                      @ViewBag.Name
                     <br>
                 </h3>
             </div>
-            <div class="col s12">
-                <img class="responsive-img" src="../images/ad1.jpeg" style="overflow:hidden;height:100px;">
-                <!-- <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="235" height="90">
-                  <param name="movie" value="http://www.surfboost.com/ads/SurfBoost-How%20Fast-235x90.swf">
-                  <param name=quality value=high>
-                  <embed src="http://www.surfboost.com/ads/SurfBoost-How%20Fast-235x90.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="235" height="90"></embed>
-                </object>
-                <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=6,0,29,0" width="235" height="90">
-                  <param name="movie" value="http://www.surfboost.com/ads/SurfBoost-How%20Fast-235x90.swf">
-                  <param name=quality value=high>
-                  <embed src="http://www.surfboost.com/ads/SurfBoost-How%20Fast-235x90.swf" quality=high pluginspage="http://www.macromedia.com/shockwave/download/index.cgi?P1_Prod_Version=ShockwaveFlash" type="application/x-shockwave-flash" width="235" height="90"></embed>
-                </object>             -->
+            <div class="col s12 m7 l9 offset-l3 offset-m5">
+                <img class="responsive-img" src="~/Images/ad1.jpeg" style="overflow:hidden;height:100px;">
             </div>
         </div>
-        @*<header class="mainheader">
+        <header class="mainheader">
             <div class="container">
                 <a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
                     <i class="mdi-navigation-menu"></i>
                 </a>
             </div>
 
-        </header>*@
+        </header>
         <div class="row">
             <div class="col s12" id="flex">
-                <div class="col s12 m5 l3" id="card-container" style="padding-top: 5px;">
-                   @if (ViewBag.Stories != null)
-                   {
-                       foreach (var item in ViewBag.Stories)
-                       {
-                        <div class="row">
-                            <div class="col s12 left_pad_rmv right_pad_rmv">
-                                @Html.Action("StoryCard", "PartialView", new { cardType = "SMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall, Isslider = false })
+                <div class="col s12 m5 l3" id="card-container">
+                    @if (ViewBag.Stories != null)
+                    {
+                        foreach (var item in ViewBag.Stories)
+                        {
+                            <div class="row">
+                                <div class="col s12 left_pad_rmv right_pad_rmv">
+                                    @Html.Action("StoryCard", "PartialView", new { cardType = "SMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall, Isslider = false })
+                                </div>
                             </div>
-                        </div>
-                       }
-                   }
+                        }
+                    }
                 </div>
-                <div class="col s12 m7 l6" id="articles-container">
+                <div class="col s12 m7 l6 offset-l3 offset-m5" id="articles-container">
                     <section>
                         <div style="display:block;">
                             <div id="story"></div>
                         </div>
                     </section>
                 </div>
-                <div class="col s12 m5 l3" id="main-si">
-                    <img src="../images/ad-small.jpg" width="100%" style="padding-top:10px">
+                <div class="col s12 m5 l3 offset-m6" id="main-si">
+                    <img src="~/Images/ad-small.jpg" width="100%" style="padding-top:10px">
                     <div class="row">
                         <div class="col s12" id="si">
-                            <div class="card z_depth_none" >
+                            <div class="card z_depth_none">
                                 <div id="si">
                                 </div>
                             </div>
                         </div>
                         <div class="col s12">
-                            <img src="../images/ad-small.jpg" width="100%" style="padding-top:10px">
+                            <img src="~/Images/ad-small1.jpg" width="100%" style="padding-top:10px">
                         </div>
                         <div class="col s12">
-                            <img src="../images/ad-small.jpg" width="100%" style="padding-top:10px">
+                            <img src="~/Images/ad-small2.jpg" width="100%" style="padding-top:10px">
                         </div>
                         <div class="col s12">
-                            <img src="../images/ad-small.jpg" width="100%" style="padding-top:10px">
+                            <img src="~/Images/ad-small3.jpg" width="100%" style="padding-top:10px">
                         </div>
                     </div>
                 </div>
@@ -141,43 +131,42 @@
                 <div class="adblade-dyna zone-1117 container-14816 ad_type_1">
                     <div class="zone znContentIndicator" data-impression-id="6097374877824835651:23239">
                         <div class="adbladetitle">Trending Offers and Articles</div><div class="advlabel"><a href="//www.adblade.com" target="_blank">Ads by Adblade</a></div><ul>
-                        @foreach (var item in templatedata)
-                        {
-                           <li class="nb pos-1 ad-type-1">
-                                <div class="ad" data-adid="247709">
-                                    <div class="image"><a onmousedown="this.href='http://web.adblade.com/clicks.php?appId=23239&amp;zid=560b555ab9edb&amp;adId=247709&amp;pos=1&amp;impt=1453727454&amp;zoneId=1117&amp;algid=4&amp;csig=589477588323502658&amp;reqid=549e3a256723e043&amp;ord=1453727454&amp;url=http%3A%2F%2Fbharat-movies.com%2FBollywood%2Fjukebox%2Ffitoor-songs-online.htm'; return true;" href="http://web.adblade.com/clicks.php?appId=23239&amp;zid=560b555ab9edb&amp;adId=247709&amp;pos=1&amp;impt=1453727454&amp;zoneId=1117&amp;algid=4&amp;csig=589477588323502658&amp;reqid=549e3a256723e043&amp;ord=1453727454&amp;url=http%3A%2F%2Fbharat-movies.com%2FBollywood%2Fjukebox%2Ffitoor-songs-online.htm" target="_blank"> 
-                                        <img data-adblade-imagesrc=@item["Pictureurl"] src=@item["Pictureurl"]> </a>
+                            @foreach (var item in templatedata)
+                            {
+                                <li class="nb pos-1 ad-type-1">
+                                    <div class="ad" data-adid="247709">
+                                        <div class="image">
+                                            <a onmousedown="this.href='http://web.adblade.com/clicks.php?appId=23239&amp;zid=560b555ab9edb&amp;adId=247709&amp;pos=1&amp;impt=1453727454&amp;zoneId=1117&amp;algid=4&amp;csig=589477588323502658&amp;reqid=549e3a256723e043&amp;ord=1453727454&amp;url=http%3A%2F%2Fbharat-movies.com%2FBollywood%2Fjukebox%2Ffitoor-songs-online.htm'; return true;" href="http://web.adblade.com/clicks.php?appId=23239&amp;zid=560b555ab9edb&amp;adId=247709&amp;pos=1&amp;impt=1453727454&amp;zoneId=1117&amp;algid=4&amp;csig=589477588323502658&amp;reqid=549e3a256723e043&amp;ord=1453727454&amp;url=http%3A%2F%2Fbharat-movies.com%2FBollywood%2Fjukebox%2Ffitoor-songs-online.htm" target="_blank">
+                                                <img data-adblade-imagesrc=@item["Pictureurl"] src=@item["Pictureurl"]>
+                                            </a>
+                                        </div>
+                                        <div class="text">
+                                            <a class="description" onmousedown="this.href='http://web.adblade.com/clicks.php?appId=23239&amp;zid=560b555ab9edb&amp;adId=247709&amp;pos=1&amp;impt=1453727454&amp;zoneId=1117&amp;algid=4&amp;csig=589477588323502658&amp;reqid=549e3a256723e043&amp;ord=1453727454&amp;url=http%3A%2F%2Fbharat-movies.com%2FBollywood%2Fjukebox%2Ffitoor-songs-online.htm'; return true;" href="http://www.burinazarsurakha.com/d58786d4-3dc6-4830-8055-53a1b069712e?clk={clk}&amp;adid=face" target="_blank">
+                                                @item["Description"]
+                                            </a>
+                                        </div>
                                     </div>
-                                    <div class="text"><a class="description" onmousedown="this.href='http://web.adblade.com/clicks.php?appId=23239&amp;zid=560b555ab9edb&amp;adId=247709&amp;pos=1&amp;impt=1453727454&amp;zoneId=1117&amp;algid=4&amp;csig=589477588323502658&amp;reqid=549e3a256723e043&amp;ord=1453727454&amp;url=http%3A%2F%2Fbharat-movies.com%2FBollywood%2Fjukebox%2Ffitoor-songs-online.htm'; return true;" href="http://www.burinazarsurakha.com/d58786d4-3dc6-4830-8055-53a1b069712e?clk={clk}&amp;adid=face" target="_blank">
-                                        @item["Description"]</a>
-                                    </div>
-                                </div>
-                            </li>
-                        }
+                                </li>
+                            }
                         </ul>
                     </div>
                     <script type="text/javascript" defer="true" src="http://av.adblade.com/js/ads/elementViewability.js"></script>
                     <script type="text/javascript" defer="true">
-(function check() {
-    var exports = window.adbladeExports;
-    if (exports && "object" === typeof exports.ViewabilityCheck) {
-        exports.ViewabilityCheck.setReportHostname("av.adblade.com");
-        exports.ViewabilityCheck.addEligibleContainers();
-    }
-    else {
-        setTimeout(check, 100);
-    }
-})();
+                        (function check() {
+                            var exports = window.adbladeExports;
+                            if (exports && "object" === typeof exports.ViewabilityCheck) {
+                                exports.ViewabilityCheck.setReportHostname("av.adblade.com");
+                                exports.ViewabilityCheck.addEligibleContainers();
+                            }
+                            else {
+                                setTimeout(check, 100);
+                            }
+                        })();
                     </script>
                 </div>
             </div>
         </div>
-
-
-        <div id=<%=serverIp %> > </div>
-        <div id=<%=campaignId %> > </div>
-        <div id=<%=searchQuery %> > </div>
-        </div>
+    </div>
 </div>
 <script type="text/javascript">
             var Bubbly = new BubblyCard();
@@ -203,6 +192,4 @@
                 "storyId" : StoryId
             };
             Bubbly.showStoryCards(paraStory,null,document.getElementById("story"));
-        </script>
-
-
+</script>
