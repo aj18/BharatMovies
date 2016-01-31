@@ -15,7 +15,7 @@
     <div class="row">
         <div class="divider social-divider" style="background-color:blue;"></div>
         <h2 style="color:blue;">@ViewBag.Item["title"]   <i class="fa fa-angle-right fa-lg"></i></h2>
-        <div class="col s12 m12 l3">
+        <div class="col s12 m12 l3 section_picture_card">
             @if (ViewBag.Item["collection"][0]["id"] == "1")
             {
                 if (ViewBag.Item["collection"][0]["StoryId"] == "")
@@ -28,7 +28,7 @@
             }
             }
         </div>
-        <div class="col s12 m6 l3">
+        <div class="col s12 m6 l3 section_picture_card">
             @if (ViewBag.Item["collection"][1]["id"] == "2")
             {
                 if (ViewBag.Item["collection"][1]["StoryId"] == "")
@@ -52,7 +52,7 @@
             }
             }
         </div>
-        <div class="col s12 m6 l3">
+        <div class="col s12 m6 l3 section_picture_card">
             @if (ViewBag.Item["collection"][3]["id"] == "4")
             {
                 if (ViewBag.Item["collection"][3]["StoryId"] == "")
@@ -76,7 +76,7 @@
             }
             }
         </div>
-        <div class="col s12 m12 l3">
+        <div class="col s12 m12 l3 section_picture_card">
             @if (ViewBag.Item["collection"][5]["id"] == "6")
             {
                 if (ViewBag.Item["collection"][5]["StoryId"] == "")

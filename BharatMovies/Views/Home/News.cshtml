@@ -2,12 +2,18 @@
 @using System.Web.Script.Serialization;
 @using System.Configuration;
 @{
-    string returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
-    string returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
-    string returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
-   
+
+    var url = "";
+    var returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    var returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
+    var returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
+
     JavaScriptSerializer serializer = new JavaScriptSerializer();
-    //dynamic templatedata = serializer.Deserialize<object>(ViewBag.Stories);
+    dynamic templatedata = serializer.Deserialize<object>(Convert.ToString(@Session["bolly_default"]));
+    //var templatedata1 = templatedata["layout"][1];
+    //var templatedata5 = templatedata["layout"][5]["collection"];
+    //var templatedata7 = templatedata["layout"][7]["collection"];
+    var templatedata2 = templatedata["layout"][2]["collection"];
     string styleSmall = @"{
 	panelStyle: {
 		'padding': '0px;',
@@ -45,131 +51,268 @@
 		'border-radius': '5px !important;'
 	}
 }";
+    string styleSmall1 = @"{panelStyle:{'padding':'0px;','height':'247px;','cursor': 'pointer;'},
+	    titleStyle:{
+		'position' : 'relative; ', 'height': '34px; ', 'left' : '0px; ', 'padding' : '5px; ', 'display' : 'inline-block', 'max-width' : '65%; ', 'text-overflow' : 'ellipsis; ', 'white-space' : 'nowrap; ', 'overflow' : 'hidden; ', 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px !important;','color':'#fff;', 'bottom':'90px;', 'font-weight': 'normal !important;'},
+        subTitleStyle: { 'background-color': 'rgba(255, 255, 255, 0.65);', 'font-size': '14px;','color':'#000;','text-overflow' : 'ellipsis;', 'white-space' : 'nowrap;',  'overflow' : 'hidden;','bottom' : '90px', 'position':'relative;', 'padding':'5px;',},
+    	pictureStyle: { 'height':'247px !important;'}}";
+
 }
-@Html.Partial("~/Views/Shared/_js.cshtml")
-<script type="text/javascript">
+<div class="main-bg" style="background-color:#ffffff;padding:0px 0px;width: 95%;padding: 0px 0px;margin: 0 auto;">
 
-    var returnUrl ="@(Html.Raw(returnUrl))";
-    var returnUrl2 ="@(Html.Raw(returnUrl2))";
-    var returnUrl3 ="@(Html.Raw(returnUrl3))";
+    <div class="container" style="margin:0px 0px;width:100% !important;">
 
-
-</script>
-
-    <div class="row" >
-        <div class="col s12 l12 m12" ><h4>@(Html.Raw(ViewBag.Title))</h4></div>
-        <div class="col s12 l9 m9" style="padding-right:50px">
-            <div class="row">
-                <div class="col s12" id="rss">
-                </div>
-                @*<div class="col s3" id="add">
-                </div>*@
-            </div>
-            <div class="row">
-                @*<div class="col s12 l12 m12"><h3>Popular Comments</h3></div>*@
-                <div class="col s12" id="story1">
-                </div>
-                <div class="col s12" id="story">
-                </div>
-                <div class="col s12" id="wall">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col s12 l12 m12"><h4>Picture Gallery</h4></div>
-                <div class="col s12" id="pc">
-                </div>
+        <header class="mainheader">
+            <div class="container">
+                <a href="#" data-activates="nav-mobile" class="button-collapse top-nav waves-effect waves-light circle hide-on-large-only">
+                    <i class="mdi-navigation-menu"></i>
+                </a>
             </div>
 
-        </div>
-        <div class="col s12 l3 m3">
-            <div class="row">
-                <div class="col s12" id="si">
-                </div>
-                <div class="col s12">
-                    
-                    @if (ViewBag.Stories != null)
-                    {
-                        <h4>Related Story</h4>
-                        foreach (var item in ViewBag.Stories)
+        </header>
+        <div class="row">
+            <div class="col s12 m3 l3 hide-on-med-and-up">
+                <div class="slider">
+                    <ul class="slides">
+                        @if (ViewBag.Stories != null)
                         {
-
-                            @Html.Action("StoryCard", "PartialView", new { cardType = "SMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall, Isslider = false })
-
-
+                            foreach (var item in ViewBag.Stories)
+                            {
+                                <li>
+                                    @Html.Action("StoryCard", "PartialView", new { cardType = "PCARD", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall1, Isslider = false })
+                                </li>
+                            }
                         }
-                    }
+                    </ul>
                 </div>
             </div>
+            <div class="col s12 m3 l3 hide-on-small-and-down">
+                <div class="row">
+                    <div class="col s12">
+                        @if (ViewBag.Stories != null)
+                        {
+                            <h6 style="padding:0px 20px;">
+                                Related Stories
+                            </h6>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col s12">
+                        @if (ViewBag.Stories != null)
+                        {
+                            foreach (var item in ViewBag.Stories)
+                            {
+                            @Html.Action("StoryCard", "PartialView", new { cardType = "SMALL", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall, Isslider = false })
+                            }
+                        }
+                    </div>
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="col s12">
+                                <h6 style="padding:0px 20px;">
+                                    Other stories
+                                </h6>
+                            </div>
+                        </div>
+                        <div class="row">
+                            @foreach (var Item in templatedata["layout"])
+                            {
+                                if (Item["Shortdescription"] == null)
+                                {
+                                    foreach (var item in Item["collection"])
+                                    {
+                                        if (item["StoryId"] == "")
+                                        {
+                                            url = returnUrl + "?id=" + item["campaignId"];
+                                        }
+                                        else
+                                        {
+                                            url = returnUrl2 + "?id=" + item["campaignId"] + "&storyid=" + item["StoryId"];
+                                        }
+                                        <div class="col s12 m6 l6" style="height:200px">
+                                            <div style="height:150px;overflow: hidden;background-size: cover;margin-bottom: 5px;">
+                                                <a href=@url>
+                                                    <img src=@item["Pictureurl"] style="height:142px;" onerror="this.onerror = null; this.src = '/Images/Blank.png';">
+                                                </a>
+                                            </div>
+                                            <div class="cbp-hrsub-inner-img-a">
+                                                <a href=@url>@item["Description"]</a>
+                                            </div>
+                                        </div>
+                                    }
+                                }
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m9 l9 ">
+
+                <div class="row ">
+                    <div class="col s12 m12 l12" style="color:black">
+                        <h3 style="padding:0px 20px;">
+                            @(Html.Raw(ViewBag.Title))
+                            <br>
+                        </h3>
+                    </div>
+                    <div class="col s12 m12 l12">
+                        <img class="responsive-img" src="~/Images/ad1.jpeg" style="overflow:hidden;height:100px;">
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col s12 m8 l8 " style="display:block;">
+                        <div id="wall"></div>
+                        <div id="story"></div>
+                    </div>
+                    <div class="col s12 m4 l4 " id="main-si">
+                        <img src="~/Images/ad-small.jpg" width="100%" style="padding-top:10px">
+                        <div class="row">
+                            <div class="col s12" id="si">
+                                <div class="card z_depth_none">
+                                    <div id="si">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col s12">
+                                <img src="~/Images/ad-small1.jpg" width="100%" style="padding-top:10px">
+                            </div>
+                            <div class="col s12">
+                                <img src="~/Images/ad-small2.jpg" width="100%" style="padding-top:10px">
+                            </div>
+                            <div class="col s12">
+                                <img src="~/Images/ad-small3.jpg" width="100%" style="padding-top:10px">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     </div>
+    <!---------------row finish-------------------->
 
-<div class="row">
-    <div class="col s12 l12 m12"><h4>Video Gallery</h4></div>
-    <div class="col s12" id="vc">
+    <div class="row" style="background-color:#ffffff;padding:10px;margin-bottom:0px !important;">
+        <div class="col s12 m10 l9 offset-l3" style="background-color:#ccc;">
+            <!-- <h6 style="color:#ccc;">Videos <i class="fa fa-angle-right fa-lg"></i></i></h6>
+            <div id="VC1"></div> -->
+            <div class="adblade-dyna zone-1117 container-14816 ad_type_1">
+                <div class="zone znContentIndicator" data-impression-id="6097374877824835651:23239">
+                    <div class="adbladetitle">Trending Offers and Articles</div><div class="advlabel"><a href="//www.adblade.com" target="_blank">Ads by Adblade</a></div><ul>
+                        @foreach (var item in templatedata2)
+                        {
+                            <li class="nb pos-1 ad-type-1">
+                                <div class="ad" data-adid="247709">
+                                    <div class="image">
+                                        <a onmousedown="this.href='http://web.adblade.com/clicks.php?appId=23239&amp;zid=560b555ab9edb&amp;adId=247709&amp;pos=1&amp;impt=1453727454&amp;zoneId=1117&amp;algid=4&amp;csig=589477588323502658&amp;reqid=549e3a256723e043&amp;ord=1453727454&amp;url=http%3A%2F%2Fbharat-movies.com%2FBollywood%2Fjukebox%2Ffitoor-songs-online.htm'; return true;" href="http://web.adblade.com/clicks.php?appId=23239&amp;zid=560b555ab9edb&amp;adId=247709&amp;pos=1&amp;impt=1453727454&amp;zoneId=1117&amp;algid=4&amp;csig=589477588323502658&amp;reqid=549e3a256723e043&amp;ord=1453727454&amp;url=http%3A%2F%2Fbharat-movies.com%2FBollywood%2Fjukebox%2Ffitoor-songs-online.htm" target="_blank">
+                                            <img data-adblade-imagesrc=@item["Pictureurl"] src=@item["Pictureurl"]>
+                                        </a>
+                                    </div>
+                                    <div class="text">
+                                        <a class="description" onmousedown="this.href='http://web.adblade.com/clicks.php?appId=23239&amp;zid=560b555ab9edb&amp;adId=247709&amp;pos=1&amp;impt=1453727454&amp;zoneId=1117&amp;algid=4&amp;csig=589477588323502658&amp;reqid=549e3a256723e043&amp;ord=1453727454&amp;url=http%3A%2F%2Fbharat-movies.com%2FBollywood%2Fjukebox%2Ffitoor-songs-online.htm'; return true;" href="http://www.burinazarsurakha.com/d58786d4-3dc6-4830-8055-53a1b069712e?clk={clk}&amp;adid=face" target="_blank">
+                                            @item["Description"]
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+                <script type="text/javascript" defer="true" src="http://av.adblade.com/js/ads/elementViewability.js"></script>
+                <script type="text/javascript" defer="true">
+                        (function check() {
+                            var exports = window.adbladeExports;
+                            if (exports && "object" === typeof exports.ViewabilityCheck) {
+                                exports.ViewabilityCheck.setReportHostname("av.adblade.com");
+                                exports.ViewabilityCheck.addEligibleContainers();
+                            }
+                            else {
+                                setTimeout(check, 100);
+                            }
+                        })();
+                </script>
+            </div>
+        </div>
+        <div class="col s12 m3 l3 hide-on-med-and-up">
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="col s12">
+                            <h6 style="padding:0px 20px;">
+                                Other stories
+                            </h6>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @foreach (var Item in templatedata["layout"])
+                        {
+                            if (Item["Shortdescription"] == null)
+                            {
+                                foreach (var item in Item["collection"])
+                                {
+                                    if (item["StoryId"] == "")
+                                    {
+                                        url = returnUrl + "?id=" + item["campaignId"];
+                                    }
+                                    else
+                                    {
+                                        url = returnUrl2 + "?id=" + item["campaignId"] + "&storyid=" + item["StoryId"];
+                                    }
+                                    <div class="col s12 m6 l6" style="height:200px;min-width:200px">
+                                        <div style="height:150px;overflow: hidden;background-size: cover;margin-bottom: 5px;">
+                                            <a href=@url>
+                                                <img src=@item["Pictureurl"] style="height:142px;" onerror="this.onerror = null; this.src = '/Images/Blank.png';">
+                                            </a>
+                                        </div>
+                                        <div class="cbp-hrsub-inner-img-a">
+                                            <a href=@url>@item["Description"]</a>
+                                        </div>
+                                    </div>
+                                }
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-
 <script type="text/javascript">
-            var Bubbly = new BubblyCard();
 
-                    var data =@(Html.Raw(ViewBag.Summary));
-            var ID ="@(Html.Raw(ViewBag.ID))";
-                    var ReturnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
-            var ReturnUrl2="@(Html.Raw(ViewBag.ReturnUrl2))"
-            var ReturnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
-            var SearchQuery ="@(Html.Raw(ViewBag.SearchQuery))";
-                    var StoryId ="@(Html.Raw(ViewBag.StoryId))";
+    var Bubbly = new BubblyCard();
 
+    var data =@(Html.Raw(ViewBag.Summary));
+    var ID ="@(Html.Raw(ViewBag.ID))";
+    var ReturnUrl="@(Html.Raw(ViewBag.ReturnUrl))"
+    var ReturnUrl2="@(Html.Raw(ViewBag.ReturnUrl2))"
+    var ReturnUrl3="@(Html.Raw(ViewBag.ReturnUrl3))"
+    var StoryId ="@(Html.Raw(ViewBag.StoryId))";
 
-                    var containerRSSImg = document.getElementById('pc') ;
-                    var paraImgGallery ={
-                "campaignId" : ID,
-                "cardType" : "IMGGALLERY",
-                "returnUrl" : returnUrl+"?id="+ID,
-                "styles": {
-                    cardStyle: { 'padding': '0px;', 'height': '475px;' },
-                    sliderStyle: { 'padding': '0px;', 'height': '475px !important;' },
-                    slidesStyle: { 'padding': '0px;', 'height': '475px !important;' },
-                    cardTitleStyle: { 'z-index': '10 !important', 'bottom': '80px !important;' },
-                    cardSubTitleStyle: { 'z-index': '9999 !important', 'bottom': '70px !important;' },
-                },
-                "clientId" : "100"
-            };
-
-
-	
-
-   
-
-
-           // 
-            Bubbly.showRSSCard({ "campaignId": ID, "cardType": "RSSDESC", "returnUrl": ReturnUrl, "styles": {}, "clientId": 100, "rssCriteria": SearchQuery}, null, document.getElementById("rss"));
-            Bubbly.showCard({ "campaignId": ID, "cardType": "VC", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 }, data, document.getElementById("vc"));
-            //Bubbly.showCard({ "campaignId":ID, "cardType": "IMGGALLERY", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 }, data, document.getElementById("pc"));
-            Bubbly.showCard(paraImgGallery,null,containerRSSImg);
-            Bubbly.showCard({ "campaignId": ID, "cardType": "SIM", "returnUrl": returnUrl3, "styles": {}, "clientId": 100 },data, document.getElementById("si"));
-            if (StoryId!="")
-            {
-                var paraStory ={
-                    "campaignId" : ID,
-                    "cardType" : "STORY",
-                    "returnUrl" : "",
-                    "styles" : { },
-                    "title" : "",
-                    "description" : "",
-                    "clientId" : "100" ,
-                    "storyId" : StoryId
-                };
-               
-
-                Bubbly.showStoryCards(paraStory,null,document.getElementById("story"));
-               
-            }
-            else
-            {
-                Bubbly.showComments({ "campaignId": ID, "cardType": "COMMENTS", "returnUrl": returnUrl3, "styles": {}, "clientId": 100, "commentsType": "popular", "commentsTitle": "", "commentsQ": "", "commentsSkipBy": "1", "commentsLimit": "20" }, null, document.getElementById("wall"));
-
-
-            }
-           // Bubbly.showStoryCards(paraStory,null,document.getElementById("story1"));
+    Bubbly.showCard({ "campaignId": ID, "cardType": "SIM", "returnUrl": ReturnUrl3, "styles": {}, "clientId": 100 },data, document.getElementById("si"));
+    if (StoryId!="")
+    {
+        var paraStory ={
+            "campaignId" : ID,
+            "cardType" : "STORY",
+            "returnUrl" : "",
+            "styles" : { },
+            "title" : "",
+            "description" : "",
+            "clientId" : "100" ,
+            "storyId" : StoryId
+        };
+        Bubbly.showStoryCards(paraStory,null,document.getElementById("story"));
+    }
+    else
+    {
+        Bubbly.showComments({ "campaignId": ID, "cardType": "COMMENTS", "returnUrl": ReturnUrl3, "styles": {}, "clientId": 100, "commentsType": "popular", "commentsTitle": "", "commentsQ": "", "commentsSkipBy": "1", "commentsLimit": "20" }, null, document.getElementById("wall"));
+    }
+    $(document).ready(function(){
+        $('.slider').slider({full_width: true});
+    });
 </script>

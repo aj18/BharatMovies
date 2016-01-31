@@ -14,8 +14,9 @@
     <ul class="cbp-hrmenu-ul" id="cbp-hrmenu-ul">
         @foreach (var item in templatedata["layout"])
         {
+            if (item["Shortdescription"] != null) { 
             <li>
-                <a href="#">@item["id"].Substring(0,3)</a>
+                <a href="#">@item["Shortdescription"]</a>
                 <div class="cbp-hrsub">
                     <div class="cbp-hrsub-inner row">
                         <div class="col s12 m12 l12">
@@ -52,6 +53,7 @@
                     </div><!-- /cbp-hrsub-inner -->
                 </div><!-- /cbp-hrsub -->
             </li>
+            }
         }
     </ul>
 </div>

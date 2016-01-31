@@ -18,6 +18,7 @@ namespace BharatMovies.Controllers
     
     public class HomeController : Controller
     {
+        string responseString = "";
         // GET: Preview
         //[OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Preview(string id)
@@ -66,8 +67,6 @@ namespace BharatMovies.Controllers
         //[OutputCache(Duration = 3600, VaryByParam = "none")]
         public ActionResult Index()
         {
-            string responseString = "";
-
             string returnUrl = ConfigurationManager.AppSettings.Get("ReturnUrl");
             string returnUrl3 = ConfigurationManager.AppSettings.Get("ReturnUrl3");
             if (Session["bolly_default"] == null)
@@ -97,6 +96,11 @@ namespace BharatMovies.Controllers
         //[OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult News(string id)
         {
+            if (Session["bolly_default"] == null)
+            {
+                responseString = Common.GetTempateData();
+                Session["bolly_default"] = responseString;
+            }
             using (var client = new HttpClient())
             {
                 string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");
@@ -157,6 +161,11 @@ namespace BharatMovies.Controllers
         //[OutputCache(Duration = 3600, VaryByParam = "id")]
         public ActionResult Story(string id , string storyid)
         {
+            if (Session["bolly_default"] == null)
+            {
+                responseString = Common.GetTempateData();
+                Session["bolly_default"] = responseString;
+            }
             using (var client = new HttpClient())
             {
                 string baseUri = ConfigurationManager.AppSettings.Get("BaseUri");

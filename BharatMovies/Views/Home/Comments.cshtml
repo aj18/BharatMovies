@@ -69,19 +69,31 @@
 
 </script>
 <div class="row">
-    <div class="col s12 l12 m12"><a href="@Url.Action("News", "Home",new { id = ViewBag.ID })"><h4>@(Html.Raw(ViewBag.Title))</h4></a></div>
     <div class="col s12 l9 m9">
-
         <div class="row">
-
-            <div class="col s12" id="wall">
+            <div class="col s12">
+                <a href="@Url.Action("News", "Home",new { id = ViewBag.ID })">
+                    <h4>@(Html.Raw(ViewBag.Title))</h4>
+                </a>
+                <div class="row">
+                    <div class="col s12 m7 l6 offset-l3 offset-m5">
+                        <img class="responsive-img" src="~/Images/ad1.jpeg" style="overflow:hidden;height:100px;">
+                    </div>
+                </div>
+            </div>
+            <div class="col s12">
+                <div class="row">
+                    <div class="col s12" id="wall" style="box-shadow: 1px 1px 1px 0 rgba(0,0,0,0.15) !important;">
+                    </div>
+                </div>
             </div>
         </div>
-
-
     </div>
     <div class="col s12 l3 m3">
         <div class="row">
+            <div class="col s12">
+                <img src="~/Images/ad-small.jpg" width="100%" style="padding-top:10px">
+            </div>
             <div class="col s12" id="si">
             </div>
             <div class="col s12">

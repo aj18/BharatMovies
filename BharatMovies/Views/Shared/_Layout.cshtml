@@ -33,9 +33,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/jquery-jvectormap.css" type="text/css" rel="stylesheet" media="screen,projection">
-    
+    <link href="~/Content/default-megamenu.css" type="text/css" rel="stylesheet" media="screen,projection" />
     <style>
-        @@media only screen and (min-width: 993px) {
+        @@media only screen and (min-width: 9       93px) {
             .container {
                 width: 70%;
             }
@@ -56,7 +56,60 @@
 </head>
 <body>
     <div id="fb-root"></div>
+    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
+    <script src="~/Scripts/cbpHorizontalMenu.min.js"></script>
+    <script src="~/Scripts/materialize.min.js"></script>
+    <script src="~/Scripts/player_api.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.js"></script>
+    <script type="text/javascript" src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+    <script type="text/javascript" src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script type="text/javascript" src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/vectormap-script.js"></script>
+    <script type='text/javascript' src='http://social24x7.azurewebsites.net/cdn/js/imagesloaded.pkgd.js?ver=4.2.2'></script>
+    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/morris.js"></script>
+    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/raphael.js"></script>
+    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/sparklines.js"></script>
+    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/chartjs/chart.min.js"></script>
+
+
+    <script src="~/Scripts/bubbly.min.js"></script>
+    <script src="~/Scripts/modernizr.custom.js"></script>
+    @*<script src="http://social24x7.azurewebsites.net/cdn/js/bubbly.min.js"></script>*@
     <script>
+        $(function () {
+            cbpHorizontalMenu.init();
+        });
+        $(document).ready(function () {
+            $(window).bind('scroll', function () {
+                var navHeight = $(window).height() - 0;
+                if ($(window).scrollTop() > navHeight) {
+
+                    $('.d-navigation-bar-nav').addClass('fixed');
+                }
+                else {
+                    $('.d-navigation-bar-nav').removeClass('fixed');
+                }
+            });
+        });
+
+        $(function () {
+            var pull = $('.d-toggle-menu-dashborad');
+            menu = $('.cbp-hrmenu-ul');
+            menuHeight = menu.height();
+
+            $(pull).on('click', function (e) {
+                e.preventDefault();
+                menu.slideToggle();
+            });
+
+            $(window).resize(function () {
+                var w = $(window).width();
+                if (w > 320 && menu.is(':hidden')) {
+                    menu.removeAttr('style');
+                }
+            });
+
+        });
     (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];
         if (d.getElementById(id)) return;
@@ -69,16 +122,16 @@
         <nav class="social-nav">
             <div class="container nav-wrapper" style="">
                 <a href="@Url.Action("Index", "Home")" class="brand-logo"><img style="height:60px" src="~/Images/logo.png"/></a>
-                <p style="max-width:215px;line-height:2">Your Unlimited Bollywood's Social Media Destination</p>
+                <p>Your Unlimited Bollywood's Social Media Destination</p>
                 <a class="d-toggle-menu-dashborad"><i class="material-icons dp48">view_headline</i></a>
 
 
-                <form id="demo-2" style="right:187px;top:4px">
+                <form id="demo-2">
                     <input type="search" placeholder="Search">
                 </form>
                 <!-- <a class="cd-search-trigger search-is-visible" href="#cd-search">Search<span></span></a> -->
 
-                <div class="main" style="margin-left:-35px">
+                <div class="main">
                     @Html.Action("Menu", "PartialView")
                 </div>
                 <!-- end Main -->
@@ -91,26 +144,7 @@
             </div>
         </nav>
     </div>
-    <script src="~/Scripts/jquery-2.1.1.min.js"></script>
     
-    <script src="~/Scripts/materialize.min.js"></script>
-    <script src="~/Scripts/player_api.js"></script>
-   
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.1/masonry.pkgd.js"></script>
-    <script type="text/javascript" src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-    <script type="text/javascript" src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-    <script type="text/javascript" src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/jvectormap/vectormap-script.js"></script>
-    <script type='text/javascript' src='http://social24x7.azurewebsites.net/cdn/js/imagesloaded.pkgd.js?ver=4.2.2'></script>
-    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/morris.js"></script>
-    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/raphael.js"></script>
-    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/sparklines.js"></script>
-    <script type='text/javascript' src="http://social24x7.azurewebsites.net/cdn/js/materialize/js/plugins/chartjs/chart.min.js"></script>
-
-   
-    <script src="~/Scripts/bubbly.min.js"></script>
-    <script src="~/Scripts/cbpHorizontalMenu.min.js"></script>
-    <script src="~/Scripts/modernizr.custom.js"></script>
-    @*<script src="http://social24x7.azurewebsites.net/cdn/js/bubbly.min.js"></script>*@
     <div class=" body-content">
         @RenderBody()
 
