@@ -507,7 +507,7 @@ namespace BharatMovies.Controllers
                 string id = ConfigurationManager.AppSettings.Get("Template");
                 string campainID = cNo != "" ? cNo : id;
                 string uri = baseUri + "api/summary/story/?id=" + campainID + "&storyid=" + StoryId;
-                ViewBag.Isslider = Isslider;
+                ViewBag.Isslider =Convert.ToBoolean(Convert.ToString(Isslider).ToLower());
                 ViewBag.Did = campainID + "-" + cardType +"-" + System.Guid.NewGuid().ToString();
                 var response = client.GetAsync(uri).Result;
 

@@ -79,7 +79,14 @@
                             foreach (var item in ViewBag.Stories)
                             {
                                 <li>
-                                    @Html.Action("StoryCard", "PartialView", new { cardType = "PCARD", cNo = ViewBag.ID, Storyid = item["key"], style = styleSmall1, Isslider = false })
+                                    <div style="overflow: hidden;background-size: cover;margin-bottom: 5px;">
+                                        <a href=@url>
+                                            <img src=@item["Url"] onerror="this.onerror = null; this.src = '/Images/Blank.png';">
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href=@url>@item["valuestr"]</a>
+                                    </div>
                                 </li>
                             }
                         }
@@ -130,13 +137,13 @@
                                         {
                                             url = returnUrl2 + "?id=" + item["campaignId"] + "&storyid=" + item["StoryId"];
                                         }
-                                        <div class="col s12 m6 l6" style="height:200px">
+                                        <div class="col s12 m6 l6" style="height:200px;width:50%">
                                             <div style="height:150px;overflow: hidden;background-size: cover;margin-bottom: 5px;">
                                                 <a href=@url>
-                                                    <img src=@item["Pictureurl"] style="height:142px;" onerror="this.onerror = null; this.src = '/Images/Blank.png';">
+                                                    <img src=@item["Pictureurl"] style="height:142px;width:100%" onerror="this.onerror = null; this.src = '/Images/Blank.png';">
                                                 </a>
                                             </div>
-                                            <div class="cbp-hrsub-inner-img-a">
+                                            <div style="width:100%">
                                                 <a href=@url>@item["Description"]</a>
                                             </div>
                                         </div>
@@ -263,13 +270,13 @@
                                     {
                                         url = returnUrl2 + "?id=" + item["campaignId"] + "&storyid=" + item["StoryId"];
                                     }
-                                    <div class="col s12 m6 l6" style="height:200px;min-width:200px">
+                                    <div class="col s12 m6 l6" style="height:200px;width:80%">
                                         <div style="height:150px;overflow: hidden;background-size: cover;margin-bottom: 5px;">
                                             <a href=@url>
-                                                <img src=@item["Pictureurl"] style="height:142px;" onerror="this.onerror = null; this.src = '/Images/Blank.png';">
+                                                <img src=@item["Pictureurl"] style="height:150px;width:100%" onerror="this.onerror = null; this.src = '/Images/Blank.png';">
                                             </a>
                                         </div>
-                                        <div class="cbp-hrsub-inner-img-a">
+                                        <div style="100%">
                                             <a href=@url>@item["Description"]</a>
                                         </div>
                                     </div>

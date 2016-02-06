@@ -124,8 +124,7 @@
         var ReturnUrl="@(Html.Raw(returnUrl))"
         var ReturnUrl3="@(Html.Raw(returnUrl3))"
         var ReturnUrl2="@(Html.Raw(returnUrl2))"
-
-
+    
         Bubbly.showComments({ "campaignId": ID, "cardType": "COMMENTS", "returnUrl": ReturnUrl3, "styles": {}, "clientId": 100, "commentsType":type, "commentsTitle": "", "commentsQ": q, "commentsSkipBy": "1", "commentsLimit": "20" }, null, document.getElementById("wall"));
 
         Bubbly.showCard({ "campaignId": ID, "cardType": "SIM", "returnUrl":ReturnUrl3, "styles": {}, "clientId": 100 },data, document.getElementById("si"));
