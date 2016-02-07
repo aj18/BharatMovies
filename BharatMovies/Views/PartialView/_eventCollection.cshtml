@@ -11,7 +11,7 @@
 			 cardTitleAnchoStyle :{'color':'#FFAB40'},
 			 descriptionStyle : { 'color':'#E5033F', 'font-size': '14px;',  'line-height': '1.184;','position': 'relative;',  'font-weight': 'bolder;','margin-bottom':'5px;','margin-bottom':'5px;','overflow':'hidden;','height':'70px;', 'margin': '0px;', 'padding': '5px;'}";
 };
-<div class="container">
+<div class="container hide-on-small-and-down">
     <div class="row">
         <div class="divider social-divider" style="background-color:blue;"></div>
         <h2 style="color:blue;">@ViewBag.Item["title"]   <i class="fa fa-angle-right fa-lg"></i></h2>
@@ -87,6 +87,26 @@
             {
                 @Html.Action("StoryCard", "PartialView", new { cardType = ViewBag.Item["collection"][5]["cardType"], cNo = ViewBag.Item["collection"][5]["campaignId"], style = stylePCardSmall, StoryId = ViewBag.Item["collection"][5]["StoryId"], Isslider = ViewBag.Item["collection"][5]["Isslider"] })
             }
+            }
+        </div>
+    </div>
+</div>
+<div class="container hide-on-med-and-up">
+    <div class="row">
+        <div class="divider social-divider" style="background-color:blue;"></div>
+        <h2 style="color:blue;">@ViewBag.Item["title"]   <i class="fa fa-angle-right fa-lg"></i></h2>
+        <div class="col s12">
+            @foreach (var subitem in ViewBag.Item["collection"])
+            {<div class="card">
+                <div class="card-image">
+                    <img src=@subitem["Pictureurl"] />
+                </div>
+                <div class="card-content">
+                    <p>
+                        @subitem["Description"]
+                    </p>
+                </div>
+            </div>
             }
         </div>
     </div>

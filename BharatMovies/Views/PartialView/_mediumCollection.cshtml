@@ -7,7 +7,7 @@
      actionStyle : {}
    }";
 }
-<div class="container">
+<div class="container hide-on-small-and-down">
     <div class="row">
         <div class="divider social-divider" style="background-color:#08893E;"></div>
         <h2 style="color:#08893E;">@ViewBag.Item["title"]  <i class="fa fa-angle-right fa-lg"></i></h2>
@@ -33,6 +33,26 @@
             @if (ViewBag.Item["collection"][3]["id"] == "4")
             {
                 @Html.Action("Medium", "PartialView", new { cardType = ViewBag.Item["collection"][3]["cardType"], cNo = ViewBag.Item["collection"][3]["campaignId"], style = styleMedium })
+            }
+        </div>
+    </div>
+</div>
+<div class="container hide-on-med-and-up">
+    <div class="row">
+        <div class="divider social-divider" style="background-color:#08893E;"></div>
+        <h2 style="color:#08893E;">@ViewBag.Item["title"]  <i class="fa fa-angle-right fa-lg"></i></h2>
+        <div class="col s12">
+            @foreach (var subitem in ViewBag.Item["collection"])
+            {<div class="card">
+                <div class="card-image">
+                    <img src=@subitem["Pictureurl"] />
+                </div>
+                <div class="card-content">
+                    <p>
+                        @subitem["Description"]
+                    </p>
+                </div>
+            </div>
             }
         </div>
     </div>

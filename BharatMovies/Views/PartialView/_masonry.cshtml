@@ -43,8 +43,7 @@
 	            	,cardDiscriptionStyle:{'color': '#FBF8F8 !important'}}";
 
 }
-
-<div style="background-color:#262629; width:100%;">
+<div class="hide-on-small-and-down" style="background-color:#262629; width:100%;">
     <div class="container">
         <div class="row ">
             <div class="col s12 m12 l7 ">
@@ -140,8 +139,25 @@
             </div>
         </div>
     </div>
-
 </div>
-        
+<div class="container hide-on-med-and-up" style="background-color:white; width:100%;">
+    <div class="row">
+        <div class="col s12">
+            <div class="slider">
+                <ul class="slides" style="background-color:transparent">
+                    @foreach (var subitem in ViewBag.Item["collection"])
+                    {
+                        <li>
+                            <div style="opacity:1;float:left;height:300px !important;;overflow:hidden;width:100%;display:block;background-image:url(@subitem["Pictureurl"]);background-size:cover;background-position:25% 0%;background-repeat:no-repeat;"></div>
+                            <p style="color:black">
+                                @subitem["Description"]
+                            </p>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
 
        
