@@ -1,4 +1,9 @@
-﻿@{
+﻿@using System.Configuration;
+@{
+    var url = "";
+    var returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    var returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
+    var returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
     var StaylesmallVer = @"{cardStyle : {'background-color': ';','box-shadow': '0 20px 15px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);' ,'height': '270px;'},
 		 cardImageStyle : {'height':'200px;'},
 		 cardTitleStyle : {'color': '#FBF8F8 !important','text-align':'center;','font-size':'16px;','bottom':'0px','padding':'2px 15px;', 'background-color': 'rgba(98, 79, 135, 0.78);'},
@@ -40,17 +45,29 @@
 </div>
 <div class="container hide-on-med-and-up">
     <div class="row">
+        <div class="divider social-divider" style="background-color:#624F87;"></div>
+        <h5 style="color:#624F87;">@ViewBag.Item["title"]   <i class="fa fa-angle-right fa-lg"></i></h5>
         <div class="col s12">
             @foreach (var subitem in ViewBag.Item["collection"])
-            {<div class="card">
+            {
+                if (subitem["StoryId"] == "")
+                {
+                    url = returnUrl + "?id=" + subitem["campaignId"];
+                }
+                else
+                {
+                    url = returnUrl2 + "?id=" + subitem["campaignId"] + "&storyid=" + subitem["StoryId"];
+                }
+                <div class="card">
                 <div class="card-image">
-                    <img src=@subitem["Pictureurl"] />
-                </div>
+                    <a href=@url> <img src=@subitem["Pictureurl"] /></a>
+</div>
                 <div class="card-content">
-                    <p>
-                        @subitem["Description"]
-                    </p>
-                </div>
+                    <a href=@url>
+                        <p>
+                            @subitem["Description"]
+                        </p></a>
+</div>
             </div>
             }
         </div>

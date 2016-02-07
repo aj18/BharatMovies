@@ -1,4 +1,9 @@
-﻿@{
+﻿@using System.Configuration
+@{
+    var url = "";
+    var returnUrl = ConfigurationManager.AppSettings.Get("returnUrl");
+    var returnUrl2 = ConfigurationManager.AppSettings.Get("returnUrl2");
+    var returnUrl3 = ConfigurationManager.AppSettings.Get("returnUrl3");
     string styleMedium = @"{panelStyle:{'padding':'0px;','height':'346px;','cursor': 'pointer;'},
 	    titleStyle:{
 		'position' : 'relative; ', 'height': '34px; ', 'left' : '0px; ', 'padding' : '5px; ', 'display' : 'inline-block; ', 'max - width' : '65%; ', 'text-overflow' : 'ellipsis; ', 'white-space' : 'nowrap; ', 'overflow' : 'hidden; ', 'background-color': 'rgba(75, 188, 150, 0.85);', 'font-size': '16px;','color':'#fff;',
@@ -96,19 +101,30 @@
 
 <div class="container hide-on-med-and-up" style="background-color:white; width:100%;">
     <div class="divider social-divider" style="background-color:#AB1142;"></div>
-    <h2 style="color:#AB1142;">@ViewBag.Item["title"] <i class="fa fa-angle-right fa-lg"></i></h2>
+    <h5 style="color:#AB1142;">@ViewBag.Item["title"] <i class="fa fa-angle-right fa-lg"></i></h5>
     <div class="row">
         <div class="col s12">
             <div class="slider">
                 <ul class="slides">
                     @foreach (var subitem in ViewBag.Item["collection"])
                     {
+                        if (subitem["StoryId"] == "")
+                        {
+                            url = returnUrl + "?id=" + subitem["campaignId"];
+                        }
+                        else
+                        {
+                            url = returnUrl2 + "?id=" + subitem["campaignId"] + "&storyid=" + subitem["StoryId"];
+                        }
                         <li>
-                            <div style="opacity:1;float:left;height:300px !important;;overflow:hidden;width:100%;display:block;background-image:url(@subitem["Pictureurl"]);background-size:cover;background-position:25% 0%;background-repeat:no-repeat;"></div>
-                            <p style="color:black">
-                                @subitem["Description"]
-                            </p>
-                        </li>
+                            <a href=@url>
+                                <div style="opacity:1;float:left;height:300px !important;;overflow:hidden;width:100%;display:block;background-image:url(@subitem["Pictureurl"]);background-size:cover;background-position:25% 0%;background-repeat:no-repeat;"></div>
+                                </a>
+                            <a href=@url>
+                                <p style="color:black">
+                                    @subitem["Description"]
+                                </p></a>
+</li>
                     }
                 </ul>
             </div>

@@ -1930,7 +1930,7 @@ hr{color:#A0A0A0;}
 
 
 
-.slider{color:#FFF !important;}
+/*.slider{color:#FFF !important;}*/
 .social-text-classs {width: 30%;position: absolute;bottom: 10px;text-align: center;left: 35%;}
 .social-text-classs h5{height:30px;overflow:hidden;color:white;}
 .social-text-classs h6{height:35px;overflow:hidden;color:white;}
@@ -1966,7 +1966,7 @@ hr{color:#A0A0A0;}
 }
 
 
-.slider ul.indicators {
+/*.slider ul.indicators {
     position: absolute;
     text-align: center;
     left: 0;
@@ -1974,7 +1974,7 @@ hr{color:#A0A0A0;}
     bottom: 0;
     margin: 0;
     z-index: 9999 !important;
-}
+}*/
 
 /*----------------------------------------
     Charts
